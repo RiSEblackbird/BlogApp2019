@@ -1,7 +1,19 @@
 <h1>StaticPages#contact</h1>
-<p>Find me in app/views/static_pages/contact.html.erb</p>
+<p>連絡先：トップページのサイドに統合したい</p>
 
 
-  <li><%= link_to "Home",    home_path %></li>
-  <li><%= link_to "About",    about_path %></li>
-  <li><%= link_to "Contact",    contact_path %></li>
+  <%= form_tag("/home", method: "get") do %>
+  <%= submit_tag("Home") %>
+  <% end %>
+
+  <%= form_tag("/about", method: "get") do %>
+  <%= submit_tag("About") %>
+  <% end %>
+
+  <%= form_tag("/contact", method: "get") do %>
+  <%= submit_tag("Contact") %>
+  <% end %>
+
+  <%= form_tag("/signup", method: "get") do %>
+  <%= submit_tag("会員登録ページ") %>
+  <% end %>
