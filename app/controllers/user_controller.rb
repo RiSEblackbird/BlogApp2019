@@ -4,7 +4,7 @@ class UserController < ApplicationController
   end
 
   def new
-    @user = User.new(name:, email:, password:)
+    @user = User.new(name: params[:name], email: params[:email], password_digest: params[:password_digest])
   end
 
   def edit
