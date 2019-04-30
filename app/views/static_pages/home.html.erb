@@ -1,18 +1,17 @@
-<h1>StaticPages#home</h1>
-  <p>ブログ記事一覧ページ</p>
-
-  <%= form_tag("/home", method: "get") do %>
-  <%= submit_tag("Home") %>
-  <% end %>
-
-  <%= form_tag("/about", method: "get") do %>
-  <%= submit_tag("About") %>
-  <% end %>
-
-  <%= form_tag("/contact", method: "get") do %>
-  <%= submit_tag("Contact") %>
-  <% end %>
-
-  <%= form_tag("/signup", method: "get") do %>
-  <%= submit_tag("会員登録ページ") %>
-  <% end %>
+<% provide(:title, '新着記事一覧') %>
+<% 3.times do |columns| %>
+  <div class="card-deck container-fruid" id="columns">
+    <% 4.times do |card| %>
+      <div class="card">
+        <div class="card-header">記事カテゴリ名を渡す</div>
+        <div class="card-body">
+          <h5 class="card-title">記事タイトル</h5>
+          <p class="card-text">記事の内容をこの欄に渡す。途中で表示を切る。記事の内容をこの欄に渡す。途中で表示を切る。記事の内容をこの欄に渡す。途中で表示を切る。記事の内容をこの欄に渡す。途中で表示を切る。</p>
+        </div>
+        <div class="card-footer">
+          <div class="text-muted" id="card-footer-text">投稿日時を記載</div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

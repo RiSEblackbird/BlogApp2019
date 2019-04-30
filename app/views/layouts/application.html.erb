@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PracApp1</title>
+    <title><%= (yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,8 +12,17 @@
 
   <body>
     <%= render 'layouts/header' %>
-    <div>
-      <%= yield %>
+    <div class="row" id="main-layout">
+      <div class="main-back-img"></div>
+      <div class="col-10">
+        <div class="title-sentence">
+          <h2><%= (yield(:title)) %></h2>
+        </div>
+        <%= yield %>
+      </div>
+      <div class="#"><%= render 'layouts/sidebar' %></div>
     </div>
+
+    <%= render 'layouts/footer' %>
   </body>
 </html>
