@@ -44,35 +44,72 @@
 }
 
 /* HOME */
+#columns {
+  margin: 0px 10px 0px 10px;
 
-.card-deck {
-  margin: 0px 50px 0px 0px;
-}
+  .card {
+    margin: 0px 25px 50px 25px;
+  }
 
-.card {
-  margin: 20px 40px 20px 0px;
-}
+  .card-header {
+    height: 15%;
+    font-size: 14px;
+    color: white;
+    background-color: #336666;
+  }
 
-.card-header {
-  height: 20%;
-  font-size: 0.8em;
-  color: white;
-  background-color: #336666;
-}
-.card-footer {
-  height: 20%;
-  font-size: 0.3em;
-  text-align: center;
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-body {
+    height: 200px;
+    background-color: #DDDDDD;
+    font-size: 12px;
+  }
+
+  .article-more {
+    margin: 0 0 0 auto;
+    text-align: right;
+    font-size: 12px;
+    text-decoration-line: underline;
+    color: #0000FF;
+  }
+
+  .card-footer {
+    height: 40px;
+    font-size: 0.4em;
+    text-align: center;
+    background-color: #808000;
+    color: white;
+  }
 }
 
 /* Sidebar */
 
 .sidebar {
+  z-index: 5;
   position: fixed;
-  margin-top: 30px 30px 30px 30px;
+  margin-top: 30px;
+  margin-left: 0px;
   height: 80vh;
   width: 200px;
-  background-color: #9999CC;
+}
+
+#sidebar-card {
+  margin: 0px 0px 20px 0px;
+
+  .card-header {
+    height: 35px;
+    font-size: 14px;
+    background-color: #BBBBBB;
+  }
+
+  .card-body {
+    height: 150px;
+    background-color: #DDDDDD;
+    font-size: 12px
+  }
 }
 
 #owners-introduction {

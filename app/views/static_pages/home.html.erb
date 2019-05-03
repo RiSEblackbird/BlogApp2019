@@ -1,5 +1,5 @@
 <% provide(:title, '新着記事一覧') %>
-<% 3.times do |columns| %>
+<% 5.times do |columns| %>
   <div class="card-deck container-fruid" id="columns">
     <% 4.times do |card| %>
       <div class="card">
@@ -7,9 +7,12 @@
         <div class="card-body">
           <h5 class="card-title">記事タイトル</h5>
           <p class="card-text">記事の内容をこの欄に渡す。途中で表示を切る。記事の内容をこの欄に渡す。途中で表示を切る。記事の内容をこの欄に渡す。途中で表示を切る。記事の内容をこの欄に渡す。途中で表示を切る。</p>
+          <div class="article-more" href="#">
+            <a href="#">続きを読む</a>
+          </div>
         </div>
         <div class="card-footer">
-          <div class="text-muted" id="card-footer-text">投稿日時を記載</div>
+          <div class="#" id="card-footer-text">2032.05.14, 23:45 投稿日時を記載</div>
         </div>
       </div>
     <% end %>
