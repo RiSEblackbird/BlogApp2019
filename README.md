@@ -10,4 +10,6 @@
 本番用DB : PostgreSQL  
 インフラ : Heroku  
 ログイン機能 : device
+権限管理機能 : cancan
+管理者用データ管理機能 : rails_admin
 フロントツール : Bootstrap4

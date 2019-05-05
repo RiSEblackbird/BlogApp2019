@@ -4,17 +4,38 @@
     <title><%= (yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= render 'layouts/shim' %>
   </head>
-
   <body>
     <%= render 'layouts/header' %>
+
+    <div class="main-back-color"></div>
+    <div class="main-back-img"></div>
+
     <div class="row" id="main-layout">
-      <div class="main-back-img"></div>
-      <div class="col-10">
+      <div id="login-alert">
+        <% if notice %>
+          <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+              <span class="sr-only">close</span>
+            </button>
+            <%= notice %>
+          </div>
+        <% end %>
+        <% if alert %>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+              <span class="sr-only">close</span>
+            </button>
+            <%= alert %>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-lg-10 col-md-9">
         <div class="title-sentence">
           <h2><%= (yield(:title)) %></h2>
         </div>
@@ -22,7 +43,7 @@
       </div>
       <div class="#"><%= render 'layouts/sidebar' %></div>
     </div>
-
     <%= render 'layouts/footer' %>
   </body>
+
 </html>
