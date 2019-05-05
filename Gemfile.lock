@@ -276,7 +276,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (= 4.6.2)
   jbuilder (~> 2.5)
-  jquery-rails (= 4.3.3)
+  jquery-rails
   listen (>= 3.0.5, < 3.2)
   pg (= 0.20.0)
   puma (~> 3.11)
@@ -284,7 +284,7 @@ DEPENDENCIES
   rails_admin
   sass-rails (~> 5.0)
   selenium-webdriver
-  spring (= 2.0.2)
+  spring
   spring-watcher-listen (~> 2.0.0)
   sprockets (= 3.7.2)
   sqlite3 (= 1.4.1)
