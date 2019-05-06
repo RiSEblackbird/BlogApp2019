@@ -7,6 +7,10 @@
 # Ignore bundler config.
 /.bundle
 
+# vendor/bundleにGemをインストールした時点で追記
+# Ignore bundler gems.
+vendor/bundle
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
