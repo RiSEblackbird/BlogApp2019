@@ -1,0 +1,15 @@
+current directory: /Users/Taishi/environment/PracApps/prac_app1/vendor/bundle/ruby/2.5.0/gems/bindex-0.7.0/ext/skiptrace
+/Users/Taishi/.rbenv/versions/2.5.3/bin/ruby -r ./siteconf20190506-71757-1wdlfnt.rb extconf.rb
+creating Makefile
+
+current directory: /Users/Taishi/environment/PracApps/prac_app1/vendor/bundle/ruby/2.5.0/gems/bindex-0.7.0/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/Taishi/environment/PracApps/prac_app1/vendor/bundle/ruby/2.5.0/gems/bindex-0.7.0/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/cruby.bundle
+
+current directory: /Users/Taishi/environment/PracApps/prac_app1/vendor/bundle/ruby/2.5.0/gems/bindex-0.7.0/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20190506-71757-14t35x8/skiptrace
