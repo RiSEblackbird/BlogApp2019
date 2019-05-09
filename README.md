@@ -13,7 +13,7 @@
 | インフラ | Heroku |
 | ログイン機能 | device |
 | 権限管理機能 | cancan |
-| 管理機能 | rails_admin |
+| ユーザー管理画面 | rails_admin |
 | フロントツール | Bootstrap4 |
 
 # (実装予定)
