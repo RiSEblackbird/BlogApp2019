@@ -2,11 +2,24 @@
   <div class="container-fruid">
     <nav class="navbar header-menu">
       <div>
-        <a class="navbar-brand justify-content-start" href="/home">HOME</a>
-        <a class="navbar-brand justify-content-start" href="/about">ABOUT</a>
-        <a class="navbar-brand justify-content-start" href="/contact">CONTACT</a>
-        <a class="navbar-brand justify-content-start" href="/users/sign_up">SIGNUP</a>
-        <a class="navbar-brand justify-content-start" href="/admin">ADMIN</a>
+        <a class="navbar-brand justify-content-start" href="/home">ホーム</a>
+        <a class="navbar-brand justify-content-start" href="/about">サイトについて</a>
+        <a class="navbar-brand justify-content-start" href="/contact">コンタクト</a>
+        <% if user_signed_in? %>
+          <a class="navbar-brand justify-content-start" href="/users/edit">
+            <%= link_to 'ユーザー設定変更', edit_user_registration_path %>
+          </a>
+          <a class="navbar-brand justify-content-start" href="/users/sign_out">
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+          </a>
+        <% else %>
+          <a class="navbar-brand justify-content-start" href="/users/sign_up">
+            <%= link_to 'ログイン', new_user_session_path %>
+          </a>
+          <a class="navbar-brand justify-content-start" href="/users/sign_up">
+            <%= link_to 'ユーザー登録', new_user_registration_path %>
+          </a>
+        <% end %>
       </div>
       <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
