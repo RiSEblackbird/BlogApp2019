@@ -2,7 +2,11 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @article = Article.order(released_at: :desc)
+    @articles = Article.order(created_at: :desc)
+  end
+
+  def show
+    @article = Article.find(params[:id])
   end
 
   def new
@@ -14,7 +18,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(params[:id])
+    @article = current_user.articles.build(article_params)
     if @article.save
       redirect_to @article, notice: "記事を投稿しました！"
     else
@@ -32,4 +36,9 @@ class ArticlesController < ApplicationController
     end
   end
 
+  private
+
+   def article_params
+     params.require(:article).permit(:category, :username, :title, :body)
+   end
 end
