@@ -1,0 +1,19 @@
+<% provide(:title, @article.title) %>
+
+
+
+<div class="card" id="show-page">
+  <div class="card-header">
+    <div class="float-left">カテゴリ：<%= @article.category %></div>
+    <% if current_user %>
+      <div id="edit-btn"><%= link_to "記事の編集", [:edit, @article], class: 'float-right btn btn-light' %></div>
+    <% end %>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">記事タイトル：<%= @article.title %></h5>
+    <p class="card-text"><%= simple_format(@article.body) %></p>
+  </div>
+  <div class="card-footer">
+    <div id="card-footer-text"><%= @article.created_at.strftime("%Y/%m/%d %H:%M") %></div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<% provide(:title, '新規記事の投稿') %>
+<% provide(:title, '記事の編集') %>
 
 <div id="article-form">
   <%= form_for @article do |f| %>
@@ -14,6 +14,6 @@
       <span :category, class="input-group-text">カテゴリ</span>
       <%= f.text_field :category, class: 'form-control', placeholder: "カテゴリを記載" %>
     </div>
-    <%= f.submit '記事を投稿する', class: 'btn btn-secondary btn-lg btn-block' %>
+    <%= f.submit '編集を登録する', class: 'btn btn-secondary btn-lg btn-block' %>
   <% end %>
 </div>

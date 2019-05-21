@@ -12,6 +12,12 @@
           <a class="navbar-brand justify-content-start" href="/users/sign_out">
             <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
           </a>
+          <a class="navbar-brand justify-content-start" href="/users/sign_out">
+            <%= link_to '新規記事作成', new_article_url %>
+          </a>
+          <a class="navbar-brand justify-content-start" href="/users/sign_out">
+            <%= link_to '（記事一覧）', :articles %>
+          </a>
         <% else %>
           <a class="navbar-brand justify-content-start" href="/users/sign_up">
             <%= link_to 'ログイン', new_user_session_path %>
