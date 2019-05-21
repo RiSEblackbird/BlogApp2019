@@ -1,0 +1,19 @@
+<% provide(:title, '新規記事の投稿') %>
+
+<div id="article-input">
+  <%= form_for @article do |f| %>
+    <div class= "input-group" id="article-title">
+      <span :title, class="input-group-text">タイトル</span>
+      <%= f.text_field :title, class: 'form-control', placeholder: "タイトルを記載" %>
+    </div>
+    <div class= "input-group" id="article-body">
+      <span :body, class="input-group-text">記事本文</span>
+      <%= f.text_area :body, class: 'form-control', placeholder: "本文を記載" %>
+    </div>
+    <div class= "input-group" id="article-category">
+      <span :category, class="input-group-text">カテゴリ</span>
+      <%= f.text_field :category, class: 'form-control', placeholder: "カテゴリを記載" %>
+    </div>
+    <%= f.submit '記事を投稿する', class: 'btn btn-secondary btn-lg btn-block' %>
+  <% end %>
+</div>
