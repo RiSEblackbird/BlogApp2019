@@ -1,5 +1,6 @@
 class Article < ApplicationRecord
-  validates :title, :body, :released_at, presence: true
+  belongs_to :user
+  validates :title, :body, presence: true
   validates :category, length: { maximum: 30 }
   validates :title, length: { maximum: 100 }
   validates :body, length: { maximum: 5000 }
