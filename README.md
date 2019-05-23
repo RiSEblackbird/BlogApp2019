@@ -11,10 +11,11 @@
 | 開発用DB | SQLite |
 | 本番用DB | PostgreSQL |
 | インフラ | Heroku |
-| ログイン機能 | device |
-| 権限管理機能 | cancan |
-| 管理機能 | rails_admin |
-| フロントツール | Bootstrap4 |
+| ログイン機能 | [device](https://github.com/plataformatec/devise) |
+| 権限管理機能 | [cancan](https://github.com/ryanb/cancan) |
+| ユーザー管理画面 | [rails_admin](https://github.com/sferik/rails_admin) |
+| フロントツール | [Bootstrap4](https://github.com/twbs/bootstrap-rubygem) |
+| 記事タグ付け機能 | [ActsAsTaggableOn](https://github.com/mbleigh/acts-as-taggable-on) |
 
 # (実装予定)
 | 技術 or ツール | 名称 |

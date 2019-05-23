@@ -1,17 +1,28 @@
 <header id="header-content">
   <div class="container-fruid">
     <nav class="navbar header-menu">
-      <div>
-        <a class="navbar-brand justify-content-start" href="/home">HOME</a>
-        <a class="navbar-brand justify-content-start" href="/about">ABOUT</a>
-        <a class="navbar-brand justify-content-start" href="/contact">CONTACT</a>
-        <a class="navbar-brand justify-content-start" href="/users/sign_up">SIGNUP</a>
-        <a class="navbar-brand justify-content-start" href="/admin">ADMIN</a>
+      <div class="justify-content-end">
+        <a class="navbar-brand" href="/home">ホーム</a>
       </div>
-      <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      <div class="dropdown">
+        <button class="btn btn-dark dropdown-toggle" type="button"
+        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <% if current_user %>
+            <%= current_user.username %> さん
+          <% else %>
+            登録 or ログイン
+          <% end %>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <% if user_signed_in? %>
+            <button class="dropdown-item" type="button"><%= link_to '新規記事作成', new_article_url %></button>
+            <button class="dropdown-item" type="button"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></button>
+            <button class="dropdown-item" type="button"><%= link_to 'ユーザー設定変更', edit_user_registration_path %></button>
+          <% else %>
+            <button class="dropdown-item" type="button"><%= link_to 'ログイン', new_user_session_path %></button>
+            <button class="dropdown-item" type="button"><%= link_to 'ユーザー登録', new_user_registration_path %></button>
+          <% end %>
+      </div>
     </nav>
   </div>
 </header>

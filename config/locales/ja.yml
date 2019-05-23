@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      member: 会員情報
+      article: ニュース記事
+    attributes:
+      member:
+        number: 背番号
+        name: ユーザー名
+        email: メールアドレス
+        adminitsrator: 管理者
+      errors:
+        messages:
+          invalid_user_name: 使用不可な文字が含まれています。
