@@ -1,15 +1,17 @@
 <% provide(:title, @article.title) %>
 
-
-
 <div class="card" id="show-page">
   <div class="card-header">
     <div class="float-left">カテゴリ：<%= @article.category %></div>
-    <% if current_user %>
-      <div id="edit-btn"><%= link_to "記事の編集", [:edit, @article], class: 'float-right btn btn-light' %></div>
+    <% if current_user.id == @article.user_id %>
+      <%= link_to "記事の削除", @article, method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'float-right btn btn-light', id: 'delete-btn' %>
+      <%= link_to "記事の編集", [:edit, @article], class: 'float-right btn btn-light' ,id: 'edit-btn' %>
+    <% else %>
+      <h3><span class="badge badge-secondary float-right">記事の投稿者であれば編集ができます。</span></h3>
     <% end %>
   </div>
   <div class="card-body">
+    <h4 class="username float-right"><span class="badge badge-warning float-right">投稿者：<%= @article.authorname %></span></h4>
     <h5 class="card-title">記事タイトル：<%= @article.title %></h5>
     <p class="card-text"><%= simple_format(@article.body) %></p>
   </div>

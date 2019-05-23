@@ -115,9 +115,9 @@
 /* Sidebar */
 
 .sidebar {
-  z-index: 5;
+  z-index: 4;
   position: fixed;
-  margin-top: 30px;
+  margin-top: 60px;
   height: 80vh;
   width: 15%;
 }
@@ -167,6 +167,10 @@
     font-size: 22px;
     color: white;
     background-color: #336666;
+
+    #edit-btn {
+      margin-right: 2%;
+    }
 
   }
 
