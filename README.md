@@ -15,6 +15,7 @@
 | 権限管理機能 | cancan |
 | ユーザー管理画面 | rails_admin |
 | フロントツール | Bootstrap4 |
+| 記事タグ付け機能 | [ActsAsTaggableOn](https://github.com/mbleigh/acts-as-taggable-on) |
 
 # (実装予定)
 | 技術 or ツール | 名称 |
