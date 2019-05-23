@@ -19,6 +19,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.build(article_params)
+    @article.authorname = current_user.username
     if @article.save
       redirect_to @article, notice: "記事を投稿しました！"
     else
@@ -28,7 +29,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    @article.assign_attributes(params[:article])
+    @article.assign_attributes(article_params)
     if @article.save
       redirect_to @article, notice: "記事内容を更新しました！"
     else
@@ -36,9 +37,15 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to :articles
+  end
+
   private
 
    def article_params
-     params.require(:article).permit(:category, :username, :title, :body)
+     params.require(:article).permit(:category, :authorname, :title, :body)
    end
 end
