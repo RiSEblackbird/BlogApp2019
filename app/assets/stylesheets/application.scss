@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 
-/* generally layout */
+/* 全体レイアウト */
 
 .title-sentence {
   padding: 10px;
@@ -41,7 +41,7 @@
   position: relative;
 
   #login-alert {
-    z-index: 5;
+    z-index: 4;
     width: 100%;
   }
 
@@ -54,7 +54,7 @@
   color: white;
 }
 
-/* Header */
+/* ヘッダー */
 
 #header-content {
   z-index: 5;
@@ -68,7 +68,7 @@
   }
 }
 
-/* index-page */
+/* 記事一覧ページ(index) */
 #columns {
   .row {
   }
@@ -112,7 +112,7 @@
   }
 }
 
-/* Sidebar */
+/* サイドバー */
 
 .sidebar {
   z-index: 4;
@@ -144,7 +144,7 @@
   padding-bottom: 20px;
 }
 
-/* articles-new */
+/* 新規記事作成ページ(articles/new) */
 #article-form {
   width: 80%;
   margin-left: 5vh;
@@ -158,7 +158,7 @@
   }
 }
 
-/* show-page */
+/* 記事詳細ページ(articles/show) */
 #show-page {
   margin: 0 10% 0 5%;
 
@@ -201,7 +201,18 @@
   }
 }
 
-/* footer */
+/* フッター */
 .footer {
   width: auto;
+}
+
+/* ゲストログインフォーム */
+#guestuser-form {
+  margin-left: 3%;
+  width: 30%;
+
+  .btn {
+    width: 80%;
+    margin: 1%;
+  }
 }
