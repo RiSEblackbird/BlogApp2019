@@ -8,9 +8,9 @@
       <span :body, class="input-group-text">記事本文</span>
       <%= f.text_area :body, class: 'form-control', placeholder: "本文を記載" %>
     </div>
-    <div class= "input-group" id="article-category">
-      <span :category, class="input-group-text">カテゴリ</span>
-      <%= f.text_field :category, class: 'form-control', placeholder: "カテゴリを記載" %>
+    <div class= "input-group" id="article-tags">
+      <span :tag_list, class="input-group-text">タグ</span>
+      <%= f.text_field :tag_list, value: @article.tag_list.join(","), class: 'form-control', placeholder: "タグを追加(複数可)" %>
     </div>
     <%= f.submit '編集を登録する', class: 'btn btn-secondary btn-lg btn-block' %>
   <% end %>

@@ -159,23 +159,24 @@
 }
 
 /* 記事詳細ページ(articles/show) */
+
 #show-page {
+  width: 80%;
   margin: 0 10% 0 5%;
 
   .card-header {
-    text-align: center;
     font-size: 22px;
     color: white;
     background-color: #336666;
 
-    #edit-btn {
-      margin-right: 2%;
+    .username {
+      margin: auto;
+      position: absolute;
     }
 
-  }
-
-  .card-title {
-    font-size: 22px;
+    .tag {
+      margin-right: 1%;
+    }
   }
 
   .card-body {
@@ -183,17 +184,7 @@
     font-size: 16px;
   }
 
-  .article-more {
-    background-color: #DDDDDD;
-    padding: 3% 3% 3% 0%;
-    text-align: right;
-    font-size: 12px;
-    text-decoration-line: underline;
-    color: #0000FF;
-  }
-
   .card-footer {
-    height: 40px;
     font-size: 0.4em;
     text-align: center;
     background-color: #808000;

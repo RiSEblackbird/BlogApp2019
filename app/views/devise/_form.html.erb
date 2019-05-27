@@ -6,7 +6,7 @@
       <%= f.hidden_field :email, value: "guest@mail.com" %>
       <%= f.hidden_field :password, value: "guestguest1" %>
     </div>
-    <%= f.submit 'ゲスト１ユーザーの登録(初回のみ)', class: 'btn btn-secondary btn-lg btn-block' %>
+    <%= f.submit 'ゲスト１ユーザーの登録(初回のみ)', class: 'container btn btn-secondary btn-lg btn-block' %>
   <% end %>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class= "input-group" id="article-title">
@@ -14,6 +14,6 @@
       <%= f.hidden_field :email, value: "guest@mail.com" %>
       <%= f.hidden_field :password, value: "guestguest1" %>
     </div>
-    <%= f.submit 'ゲスト１としてログインする', class: 'btn btn-secondary btn-lg btn-block' %>
+    <%= f.submit 'ゲスト１としてログインする', class: 'container btn btn-secondary btn-lg btn-block' %>
   <% end %>
 </div>
