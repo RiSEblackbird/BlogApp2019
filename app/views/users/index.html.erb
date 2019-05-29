@@ -1,0 +1,24 @@
+<% provide(:title, "#{current_user.username}") %>
+
+<div class="card-deck container-fruid" id="user-card">
+  <% @users.each do |user| %>
+  <div class="row col-3 justify-content-center">
+    <div class="card">
+      <div class="card-header">ID：<%= user.id %>, <%= user.username %></div>
+      <div class="card-body">
+        <div>
+          <% if current_user.image.url.present? %>
+            <%= image_tag @user.resized_image, class: 'form-control' %>
+          <% else %>
+          <% end %>
+        </div>
+      </div>
+      <%= link_to "ユーザーの詳細", user, id: "user-more" %>
+      <div class="card-footer">
+        <p id="card-footer-text"><%= user.updated_at.strftime("%Y/%m/%d %H:%M 更新") %></p>
+        <p id="card-footer-text"><%= user.created_at.strftime("%Y/%m/%d %H:%M 登録") %></p>
+      </div>
+    </div>
+    </div>
+  <% end %>
+</div>
