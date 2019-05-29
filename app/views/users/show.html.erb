@@ -1,0 +1,17 @@
+<% provide(:title, "#{current_user.username}") %>
+
+<%= form_for current_user do |f| %>
+    <div class= "input-group" id="">
+      <span :title, class="input-group-text">プロフィール画像</span>
+      <% if current_user.image.url.present? %>
+        <%= image_tag @user.resized_image, class: 'form-control' %>
+      <% else %>
+        <%= f.file_field :image, class: 'form-control' %>
+      <% end %>
+    </div>
+    <div class= "input-group" id="">
+      <span :title, class="input-group-text">ユーザー名</span>
+      <%= f.text_field :username, class: 'form-control' %>
+    </div>
+    <%= f.submit '編集を登録する', class: 'btn btn-secondary btn-lg btn-block' %>
+<% end %>
