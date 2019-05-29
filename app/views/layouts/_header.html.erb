@@ -18,6 +18,7 @@
             <button class="dropdown-item" type="button"><%= link_to '新規記事作成', new_article_url %></button>
             <button class="dropdown-item" type="button"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></button>
             <button class="dropdown-item" type="button"><%= link_to 'ユーザー設定変更', edit_user_registration_path %></button>
+            <button class="dropdown-item" type="button"><%= link_to 'ユーザー詳細', users_path %></button>
           <% else %>
             <button class="dropdown-item" type="button"><%= link_to 'ログイン', new_user_session_path %></button>
             <button class="dropdown-item" type="button"><%= link_to 'ユーザー登録', new_user_registration_path %></button>
