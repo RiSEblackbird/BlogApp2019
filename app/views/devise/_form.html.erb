@@ -14,6 +14,7 @@
       <div class= "input-group" id="article-title">
         <%= f.hidden_field :username, value: "ゲスト" %>
         <%= f.hidden_field :email, value: "guest@mail.com" %>
+        <%= f.hidden_field :profile, value: "このアカウントはポートフォリオの内容を確認するためのものです。" %>
         <%= f.hidden_field :password, value: "guestguest1" %>
       </div>
       <%= f.submit 'ゲスト１ユーザーの登録(初回のみ)', class: 'container btn btn-secondary btn-lg btn-block' %>
