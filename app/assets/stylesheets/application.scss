@@ -75,6 +75,7 @@
 
   .card {
     margin: 0 0 15% 20%;
+    width: auto;
   }
 
   .card-header {
@@ -92,6 +93,8 @@
     height: 180px;
     background-color: #DDDDDD;
     font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   #article-more {
@@ -116,6 +119,7 @@
 
 .sidebar {
   z-index: 4;
+  float: right;
   position: fixed;
   margin-top: 60px;
   height: 80vh;
@@ -161,11 +165,11 @@
 /* 記事詳細ページ(articles/show) */
 
 #show-page {
-  width: 80%;
+  width: 90%;
   margin: 0 10% 0 5%;
 
   .card-header {
-    font-size: 22px;
+    font-size: 20px;
     color: white;
     background-color: #336666;
 
@@ -176,12 +180,19 @@
 
     .tag {
       margin-right: 1%;
+      font-size: 12px;
+    }
+
+    #author-edit {
+      font-size: 12px;
     }
   }
 
   .card-body {
+    height: 65vh;
+    overflow: scroll;
     background-color: #DDDDDD;
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .card-footer {
