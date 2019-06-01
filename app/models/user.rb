@@ -14,6 +14,8 @@ class User < ApplicationRecord
   validates :username, presence: true,
     length: { minimum: 2, maximum: 20, allow_blank: true },
     uniqueness: { case_sensitive: false }
+  validates :profile,
+    length: { maximum: 150 }
 
   def resized_image
     return self.image.variant(resize: '100x100')
