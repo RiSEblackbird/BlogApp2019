@@ -6,9 +6,11 @@
   </div>
 
   <div>
-    <span, class="card-body input-group-text">プロフィール</span>
+    <p, class="card-body input-group-text">プロフィール</p>
     <div><%= simple_format(@user.profile) %></div>
   </div>
 </div>
 
-<%= link_to "ユーザー情報の編集", edit_user_registration_path, class: 'btn btn-secondary btn-lg btn-block' ,id: 'edit-btn' %>
+<% if current_user == @user.id %>
+  <%= link_to "ユーザー情報の編集", edit_user_registration_path, class: 'btn btn-secondary btn-lg btn-block' ,id: 'edit-btn' %>
+<% end %>
