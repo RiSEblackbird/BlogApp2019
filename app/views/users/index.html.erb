@@ -7,11 +7,14 @@
       <div class="card-header">ID：<%= user.id %>, <%= user.username %></div>
       <div class="card-body">
         <div>
-          <% if current_user.image.url.present? %>
+          <% if user.image.url.present? %>
             <%= image_tag @user.resized_image, class: 'form-control' %>
           <% else %>
           <% end %>
         </div>
+        <% if user.profile.present? %>
+          <div><%= simple_format(user.profile) %></div>
+        <% end %>
       </div>
       <%= link_to "ユーザーの詳細", user, id: "user-more" %>
       <div class="card-footer">
