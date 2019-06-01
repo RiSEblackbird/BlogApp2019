@@ -3,10 +3,21 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+  <div class= "input-group" id="username-edit">
+    <span :username, class="input-group-text">アカウント名</span>
+    <%= f.text_field :username, class: 'form-control', placeholder: "アカウント名を記載" %>
+  </div>
+
+  <div class= "input-group" id="article-body">
+    <span :profile, class="input-group-text">プロフィール</span>
+    <%= f.text_area :profile, class: 'form-control', placeholder: "プロフィール文を記載" %>
+  </div>
+
   <div class= "input-group" id="email-edit">
     <span :email, class="input-group-text">Eメールアドレス</span>
     <%= f.text_field :email, class: 'form-control', placeholder: "emailのアドレスを記載" %>
   </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
