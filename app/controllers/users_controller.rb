@@ -7,12 +7,16 @@ class UsersController < ApplicationController
   end
 
   def show
-    @users = User.find(params[:id])
+    @user = User.find(params[:id])
+  end
+
+  def edit
+    @user = User.find(params[:id])
   end
 
   def update
-    @users = User.find(params[:id])
-    @users.assign_attributes(configure_permitted_parameters)
+    @user = User.find(params[:id])
+    @user.assign_attributes(configure_permitted_parameters)
     if @user.save
       redirect_to @user, notice: "ユーザー情報を更新しました！"
     else
