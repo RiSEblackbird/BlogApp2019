@@ -13,6 +13,8 @@ gem 'rails_admin'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'mini_magick'
 gem 'carrierwave'
+gem "better_errors"
+gem "binding_of_caller"
 gem 'activesupport'
 gem 'rails', '~> 5.2.3'
 gem 'puma', '~> 3.11'
