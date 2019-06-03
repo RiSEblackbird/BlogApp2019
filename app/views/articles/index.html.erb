@@ -8,7 +8,6 @@
         <div class="card-body">
           <div>
             <h7 class="username float-right">by <%= article.authorname %></h7>
-            <h4 class="card-title"><%= article.title %></h4>
           </div>
           <p class="card-text"><%= article.body %></p>
         </div>
@@ -20,6 +19,9 @@
         </div>
         <div class="card-footer", id="date-footer">
           <div id="card-footer-text"><%= article.created_at.strftime("%Y/%m/%d %H:%M 投稿") %></div>
+          <div class="float-right">
+            <h7 class="username-box float-right"><span class="badge badge-warning">投稿者：<%= article.authorname %></span></h7>
+          </div>
         </div>
       </div>
       </div>

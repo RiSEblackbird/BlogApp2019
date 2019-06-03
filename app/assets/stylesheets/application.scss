@@ -123,6 +123,52 @@
   }
 }
 
+/* アカウント一覧ページ(index) */
+#user-card {
+  .row {
+  }
+
+  .card {
+    margin: 0 0 15% 20%;
+    width: auto;
+  }
+
+  .card-header {
+    height: 15%;
+    font-size: 14px;
+    color: white;
+    background-color: #4C0065;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-body {
+    height: 120px;
+    background-color: #DDDDDD;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-footer {
+    height: 70px;
+    font-size: 0.4em;
+    text-align: center;
+    background-color: #9800CB;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    .tag {
+      margin-right: 1%;
+      margin-bottom: 1%;
+      font-size: 9px;
+    }
+  }
+}
+
 /* サイドバー */
 
 .sidebar {

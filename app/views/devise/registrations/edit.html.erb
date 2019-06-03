@@ -3,6 +3,9 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+  <%= f.label :new_profile_picture %>
+  <%= f.file_field :new_profile_picture %>
+
   <div class= "input-group" id="username-edit">
     <span :username, class="input-group-text">アカウント名</span>
     <%= f.text_field :username, class: 'form-control', placeholder: "アカウント名を記載" %>
