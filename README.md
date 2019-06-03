@@ -12,12 +12,12 @@
 | 本番用DB | PostgreSQL |
 | インフラ | Heroku |
 | ログイン機能 | [device](https://github.com/plataformatec/devise) |
-| 権限管理機能 | [cancan](https://github.com/ryanb/cancan) |
-| ユーザー管理画面 | [rails_admin](https://github.com/sferik/rails_admin) |
+| 権限管理機能 | [CanCan](https://github.com/ryanb/cancan) |
+| ユーザー管理画面 | [RailsAdmin](https://github.com/sferik/rails_admin) |
 | フロントツール | [Bootstrap4](https://github.com/twbs/bootstrap-rubygem) |
-| 記事タグ付け機能 | [Acts As Taggable On](https://github.com/mbleigh/acts-as-taggable-on) |
-| 画像リサイズ機能 | [Mini Magick](https://github.com/minimagick/minimagick) |
-| 画像アップロード機能 | [Carrier Wave](https://github.com/carrierwaveuploader/carrierwave) |
+| 記事タグ付け機能 | [ActsAsTaggableOn](https://github.com/mbleigh/acts-as-taggable-on) |
+| 画像リサイズ機能 | [MiniMagick](https://github.com/minimagick/minimagick) |
+| 画像アップロード機能 | [CarrierWave](https://github.com/carrierwaveuploader/carrierwave) |
 | エラー詳細表示 | [Better Errors](https://github.com/BetterErrors/better_errors) |
 
 # (実装予定)
