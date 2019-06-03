@@ -13,7 +13,12 @@
           <p class="card-text"><%= article.body %></p>
         </div>
         <%= link_to "続きを読む", article, id: "article-more" %>
-        <div class="card-footer">
+        <div class="card-footer", id="tag-footer">
+          <% article.tag_list.each do |tag| %>
+            <span class="tag badge badge-primary float-left"><%= tag %></span>
+          <% end %>
+        </div>
+        <div class="card-footer", id="date-footer">
           <div id="card-footer-text"><%= article.created_at.strftime("%Y/%m/%d %H:%M 投稿") %></div>
         </div>
       </div>
