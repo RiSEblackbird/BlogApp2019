@@ -3,6 +3,9 @@ class User < ApplicationRecord
   # Articleモデルとの関連付け
   has_many :articles, dependent: :destroy
 
+  # プロフィール画像の適用
+  has_one_attached :image
+
   # プロフ写真との関連付け
   mount_uploader :image, ImageUploader
 
@@ -17,7 +20,7 @@ class User < ApplicationRecord
   validates :profile,
     length: { maximum: 150 }
 
-  def resized_image
-    return self.image.variant(resize: '100x100')
-  end
+#  def resized_image
+#    return self.image.variant(resize: '30x30')
+#  end
 end
