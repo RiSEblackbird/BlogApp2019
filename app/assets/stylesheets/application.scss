@@ -220,7 +220,7 @@
 
 #show-page {
   width: 90%;
-  margin: 0 10% 0 5%;
+  margin: 0 10% 3% 5%;
 
   .card-header {
     font-size: 20px;
@@ -254,6 +254,20 @@
     text-align: center;
     background-color: #808000;
     color: white;
+  }
+}
+
+/* コメントフォーム */
+.comments {
+  width: 90%;
+  margin: 0 10% 3% 5%;
+
+  #comment-form {
+    margin-bottom: 2%;
+  }
+
+  #comments-view {
+    margin-top: 1%;
   }
 }
 

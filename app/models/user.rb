@@ -1,7 +1,8 @@
 class User < ApplicationRecord
 
-  # Articleモデルとの関連付け
+  # Article, Commentモデルとの関連付け
   has_many :articles, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   # プロフィール画像の適用
   has_one_attached :image

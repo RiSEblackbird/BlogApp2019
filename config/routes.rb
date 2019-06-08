@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
   resources :users, :only => [:index, :show]
-  resources :articles
+
+  resources :articles do
+    resources :comments, only: [:create, :destroy]
+  end
 end

@@ -8,6 +8,8 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @comment = @article.comments.new
+    @comments = @article.comments.order(created_at: :desc)
   end
 
   def new
@@ -19,7 +21,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = current_user.articles.build(article_params)
+    @article = current_user.articles.new(article_params)
     @article.authorname = current_user.username
     if @article.save
       redirect_to @article, notice: "記事を投稿しました！"
