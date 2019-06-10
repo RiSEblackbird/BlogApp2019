@@ -1,23 +1,30 @@
 <div class="comments">
-  <div id="comment-form">
-  <%= form_for @comment, url: article_comments_path(@article), local: true do |f| %>
-    <div class= "input-group" id="comment-form">
-      <span :content, class="input-group-text">コメントを書く</span>
-      <%= f.text_area :content, class: 'form-control', placeholder: "コメントを書く" %>
-      <%= f.submit 'コメントする', class: 'btn btn-secondary btn-lg btn-block' %>
+  <% if user_signed_in? %>
+    <div id="comment-form">
+      <%= form_for @comment, url: article_comments_path(@article), local: true do |f| %>
+        <div class= "input-group" id="comment-form">
+          <span :content, class="input-group-text">コメントを書く</span>
+          <%= f.text_area :content, class: 'form-control', placeholder: "コメントを書く" %>
+          <%= f.submit 'コメントする', class: 'btn btn-secondary btn-lg btn-block' %>
+        </div>
+      <% end %>
     </div>
   <% end %>
-  </div>
 
-    <% @article.comments.each do |comment| %>
+  <% @article.comments.each do |comment| %>
+    <% if comment.id.present? %>
       <div class="card" id="comments-view">
+        <div>id：<%= comment.id %></div>
+        <div>created_at：<%= comment.created_at %></div>
         <div>アカウント名：<%= comment.username %></div>
         <div>コメント：<%= comment.content %></div>
+        <% if user_signed_in? %>
         <% if current_user.id == comment.user_id %>
           <%= link_to "コメントの削除", article_comment_path(comment), method: :delete,
            data: { confirm: '本当にコメントを削除しますか？' }, class: 'float-left mr-3 btn-sm btn-light', id: 'delete-btn' %>
         <% end %>
+        <% end %>
       </div>
     <% end %>
-  </div>
+  <% end %>
 </div>
