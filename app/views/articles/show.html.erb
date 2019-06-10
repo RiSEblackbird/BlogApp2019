@@ -12,17 +12,12 @@
       <span class="tag badge badge-primary float-left"><%= tag %></span>
     <% end %>
   </div>
-  <div class="card-header" id="author-edit">
-    <% if current_user.id == @article.user_id %>
-      <%= link_to "記事の削除", @article, method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'float-left mr-3 btn-sm btn-light', id: 'delete-btn' %>
-      <%= link_to "記事の編集", [:edit, @article], class: 'float-left mr-3 btn-sm btn-light' ,id: 'edit-btn' %>
-    <% else %>
-      <h4><span class="badge badge-secondary float-left">記事の投稿者であれば編集ができます。</span></h4>
-    <% end %>
+
+  <%= render 'articles/btns' %>
+
     <div class="float-right">
       <h4 class="username-box float-right"><span class="badge badge-warning">投稿者：<%= @article.authorname %></span></h4>
     </div>
-  </div>
   <div class="card-body"><%= simple_format(@article.body) %></div>
 </div>
 
