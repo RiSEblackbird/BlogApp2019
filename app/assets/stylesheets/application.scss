@@ -227,10 +227,7 @@
     color: white;
     background-color: #336666;
 
-    .username {
-      margin: auto;
-      position: absolute;
-    }
+
 
     .tag {
       margin-right: 1%;
@@ -240,6 +237,10 @@
     #author-edit {
       font-size: 12px;
     }
+  }
+
+  .username-box {
+    background-color: #DDDDDD;
   }
 
   .card-body {
