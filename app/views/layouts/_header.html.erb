@@ -1,30 +1,31 @@
 <header id="header-content">
   <div class="container-fruid">
     <nav class="navbar header-menu">
-      <div class="justify-content-end">
+      <div class="form-inline">
         <a class="navbar-brand" href="/home">全記事一覧</a>
-        <a class="navbar-brand" href="/users">ユーザー一覧</a>
+        <a class="navbar-brand" href="/users">アカウント一覧</a>
+        <% if user_signed_in? %>
+          <%= link_to '新規記事作成', new_article_url,
+            class: 'col-4 navbar-brand btn btn-dark btn-block' %>
+        <% end %>
       </div>
-      <div class="dropdown">
-        <button class="btn btn-dark dropdown-toggle" type="button"
-        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <% if current_user %>
+
+      <% if user_signed_in? %>
+        <div class="dropdown">
+          <button class="btn btn-dark dropdown-toggle" type="button"
+            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= current_user.username %> さん
-          <% else %>
-            登録 or ログイン
-          <% end %>
-        </button>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-          <% if user_signed_in? %>
-            <button class="dropdown-item" type="button"><%= link_to '新規記事作成', new_article_url %></button>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
             <button class="dropdown-item" type="button"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></button>
             <button class="dropdown-item" type="button"><%= link_to 'ユーザー設定変更', edit_user_registration_path %></button>
-            <button class="dropdown-item" type="button"><%= link_to 'ユーザー詳細', users_path %></button>
-          <% else %>
-            <button class="dropdown-item" type="button"><%= link_to 'ログイン', new_user_session_path %></button>
-            <button class="dropdown-item" type="button"><%= link_to 'ユーザー登録', new_user_registration_path %></button>
-          <% end %>
-      </div>
+            <button class="dropdown-item" type="button"><%= link_to 'ユーザー詳細', current_user %></button>
+          </div>
+        </div>
+      <% else %>
+        <%= link_to 'こちらからログイン', new_user_session_path,
+          class: 'col-2 float-right btn btn-primary btn-block' %>
+      <% end %>
     </nav>
   </div>
 </header>
