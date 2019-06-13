@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def create
-    @article = Article.find_by(id: [:post_id])
+    @article = Article.find_by(params[:article_id])
     @comment = current_user.comments.new(comment_params)
     @comment.article_id = params[:article_id]
     @comment.username = current_user.username
