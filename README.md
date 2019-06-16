@@ -19,7 +19,7 @@ Webサービスのアイデアとしては印象が薄いかもしれないで�
 | 画像リサイズ機能 | [MiniMagick](https://github.com/minimagick/minimagick) |
 | 画像アップロード機能 | [CarrierWave](https://github.com/carrierwaveuploader/carrierwave) |
 
-# (開発補助機能)
+# 開発補助機能
 | 技術 or ツール | 名称 |
 |:-------------|:-----|
 | フロントツール | [Bootstrap4](https://github.com/twbs/bootstrap-rubygem) |
