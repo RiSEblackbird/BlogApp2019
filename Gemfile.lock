@@ -325,6 +325,7 @@ DEPENDENCIES
   devise-i18n
   devise-i18n-views
   factory_bot_rails (~> 4.11)
+  font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
