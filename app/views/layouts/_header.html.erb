@@ -1,18 +1,24 @@
 <header id="header-content">
   <div class="container-fruid">
     <nav class="navbar header-menu">
-      <div class="form-inline">
-        <a class="navbar-brand" href="/home">全記事一覧</a>
-        <a class="navbar-brand" href="/users">アカウント一覧</a>
-        <% if user_signed_in? %>
-          <%= link_to '新規記事作成', new_article_url,
-            class: 'col-4 navbar-brand btn btn-dark btn-block' %>
-        <% end %>
-      </div>
+      <ul class="navbar-nav  navbar-expand-lg">
+        <li class="nav-item"><a class="navbar-brand" href="/home">全記事一覧</a></li>
+        <li class="nav-item"><a class="navbar-brand" href="/users">アカウント一覧</a></li>
+        <li class="nav-item">
+          <form class="form-inline">
+          <% if user_signed_in? %>
+            <%= link_to '新規記事作成', new_article_url,
+                class: 'btn btn-sm btn-dark btn-block navbar-text' %>
+          <% end %>
+          </form>
+        </li>
+
+      </ul>
+      <ul class="nav-item"><div class="navbar-brand badge badge-warning">※このポートフォリオアプリは制作中です(2019年6月現在)</div></ul>
 
       <% if user_signed_in? %>
         <div class="dropdown">
-          <button class="btn btn-dark dropdown-toggle" type="button"
+          <button class="btn btn-sm btn-dark dropdown-toggle" type="button"
             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= current_user.username %> さん
           </button>
@@ -23,8 +29,8 @@
           </div>
         </div>
       <% else %>
-        <%= link_to 'こちらからログイン', new_user_session_path,
-          class: 'col-2 float-right btn btn-primary btn-block' %>
+        <%= link_to 'ログイン', new_user_session_path,
+          class: 'col-2 float-right btn btn-sm btn-primary btn-block' %>
       <% end %>
     </nav>
   </div>
