@@ -1,15 +1,12 @@
 <% if user_signed_in? %>
-  <div class="card-header d-flex justify-content-between" id="author-edit">
-    <div class="">
+  <div class="card-header d-flex justify-content-between" id="author-option">
+    <div>
       <% if current_user.id == @article.user_id %>
         <%= link_to "記事の削除", @article, method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'float-left mr-3 btn-sm btn-light', id: 'delete-btn' %>
         <%= link_to "記事の編集", [:edit, @article], class: 'float-left mr-3 btn-sm btn-light' ,id: 'edit-btn' %>
       <% else %>
-        <span class="badge badge-secondary float-left">記事の投稿者であれば編集ができます。</span>
+        <span class="badge badge-secondary align-self-center">記事の投稿者であれば編集ができます。</span>
       <% end %>
-    </div>
-    <div>
-      <span class="badge badge-warning">投稿者：<%= @article.username %></span>
     </div>
   </div>
 <% end %>

@@ -1,17 +1,23 @@
 <% provide(:title, "アカウント一覧") %>
 
-<div class="card-deck container-fruid" id="user-card">
+<div class="card-deck mx-auto" id="user-card">
   <% @users.each do |user| %>
-  <div class="row col-3 justify-content-center">
+  <div class="col-3 justify-content-center">
     <div class="card">
-      <div class="card-header">ID：<%= user.id %>, <%= link_to user.username, user, id: "user-more" %></div>
-      <div class="card-body">
-        <div>
+      <div class="card-header d-flex">
+        <div class="align-self-center mr-2">
           <% if user.image.url.present? %>
-            <%= image_tag @user.resized_image, class: 'form-control' %>
+            <%= image_tag 'default.jpg', class: 'plofile_img', :size => '30x30' %>
           <% else %>
+            <%= image_tag 'default.jpg', class: 'plofile_img', :size => '30x30' %>
           <% end %>
         </div>
+        <div class="align-self-center font-weight-bold" id="name">
+          <%= link_to user.username, user, id: "user-more" %>
+        </div>
+      </div>
+      <div class="card-body">
+
         <% if user.profile.present? %>
           <div><%= simple_format(user.profile) %></div>
         <% end %>

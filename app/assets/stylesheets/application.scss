@@ -1,8 +1,8 @@
 @import "bootstrap";
-
+@import 'font-awesome-sprockets';
+@import "font-awesome";
 
 /* 全体レイアウト */
-
 .title-sentence {
   padding: 10px;
   color: yellow;
@@ -33,7 +33,6 @@
   opacity: 0.3;
 }
 
-
 #main-layout {
   width: 100%;
   height: 100%;
@@ -44,18 +43,15 @@
     z-index: 4;
     width: 100%;
   }
-
   #cards-space {
     padding: 0px;
   }
 }
-
 .users {
   color: white;
 }
 
 /* ヘッダー */
-
 #header-content {
   z-index: 5;
   position: -webkit-sticky;
@@ -64,39 +60,68 @@
   width: 100%;
 
   .header-menu {
-    background-color: #330033;
+    background-color: #4C0065;
+    padding: 0 10px 0 10px;
+  }
+}
+
+/* ユーザー関連のフォーム */
+#user-forms {
+  #guest-btn {
+    margin: 3em 0 3em 0;
+  }
+  .text-bold {
+    color: yellow;
+  }
+  .btn {
+    margin: 10px 0 10px 0;
+  }
+  .font-weight-bold {
+    color: yellow;
+  }
+  .form-check {
+    color: yellow;
+  }
+  .field {
+    margin-top: 10px;
+  }
+  .form-check {
+    margin: 0;
+    #check_box {
+      padding: 0;
+      margin: 0;
+    }
+    #check-label {
+      padding: 0;
+      margin: 0;
+    }
   }
 }
 
 /* 記事一覧ページ(index) */
 #columns {
-  .row {
-  }
-
   .card {
-    margin: 0 0 15% 20%;
-    width: auto;
+    margin: 0 5% 20% 5%;
   }
-
   .card-header {
-    height: 15%;
-    font-size: 14px;
+    padding: 6px 10px 6px 10px;
+    font-size: 12px;
     color: white;
     background-color: #336666;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-
   .card-title {
     font-size: 18px;
   }
-
   .card-body {
+    padding: 10px 14px 10px 14px;
     height: 180px;
     background-color: #DDDDDD;
     font-size: 12px;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-
   #article-more {
     background-color: #DDDDDD;
     padding: 3% 3% 3% 0%;
@@ -105,9 +130,8 @@
     text-decoration-line: underline;
     color: #0000FF;
   }
-
   .card-footer {
-    height: 50px;
+    padding: 6px 10px 6px 10px;
     font-size: 0.4em;
     text-align: center;
     background-color: #808000;
@@ -118,49 +142,39 @@
     .tag {
       margin-right: 1%;
       margin-bottom: 1%;
-      font-size: 9px;
+      font-size: 8px;
     }
   }
 }
 
 /* アカウント一覧ページ(index) */
 #user-card {
-  .row {
-  }
-
   .card {
-    margin: 0 0 15% 20%;
-    width: auto;
+    margin: 0 5% 20% 5%;
   }
-
   .card-header {
-    height: 15%;
-    font-size: 14px;
+    font-size: 16px;
     color: white;
-    background-color: #4C0065;
+    background-color: #CB9800;
+    padding: 6px 10px 6px 10px;
   }
-
-  .card-title {
-    font-size: 18px;
-  }
-
   .card-body {
+    padding: 6px 10px 6px 10px;
     height: 120px;
     background-color: #DDDDDD;
     font-size: 12px;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-
   .card-footer {
+    padding: 6px 10px 6px 10px;
     height: 70px;
     font-size: 0.4em;
     text-align: center;
-    background-color: #9800CB;
+    background-color: #CB9800;
     color: white;
     overflow: hidden;
     text-overflow: ellipsis;
-
     .tag {
       margin-right: 1%;
       margin-bottom: 1%;
@@ -170,7 +184,6 @@
 }
 
 /* サイドバー */
-
 .sidebar {
   z-index: 4;
   float: right;
@@ -181,15 +194,15 @@
 }
 
 #sidebar-card {
-  margin: 0px 10% 10% 0px;
+  margin: 0 5% 10% 0px;
 
   .card-header {
-    height: 35px;
+    padding: 6px 10px 6px 10px;
     font-size: 14px;
     background-color: #BBBBBB;
   }
-
   .card-body {
+    padding: 6px 10px 6px 10px;
     height: 150px;
     background-color: #DDDDDD;
     font-size: 12px
@@ -210,46 +223,44 @@
   .input-group {
     margin-bottom: 10px;
   }
-
   #article-body {
     height: 60vh;
   }
 }
 
 /* 記事詳細ページ(articles/show) */
-
-#show-page {
-  width: 90%;
-  margin: 0 10% 3% 5%;
-
+#article-show {
+  padding: 0;
   .card-header {
-    font-size: 20px;
+
+    padding: 6px 10px 6px 10px;
     color: white;
     background-color: #336666;
 
-
-
-    .tag {
-      margin-right: 1%;
-      font-size: 12px;
-    }
-
-    #author-edit {
-      font-size: 12px;
-    }
+      #badge-name {
+        font-size: 16px;
+      }
+      #article-title {
+        margin: 0;
+        font-size: 20px;
+      }
+      #date {
+        font-size: 12px;
+      }
+      .tag {
+        margin-right: 1%;
+        font-size: 12px;
+      }
   }
-
   .username-box {
     background-color: #DDDDDD;
   }
-
   .card-body {
     height: 65vh;
     overflow: scroll;
     background-color: #DDDDDD;
     font-size: 14px;
   }
-
   .card-footer {
     font-size: 0.4em;
     text-align: center;
@@ -258,32 +269,43 @@
   }
 }
 
+/* 記事投稿者オプション */
+#author-option {
+  font-size: 22px;
+}
+
+/* アカウント詳細 */
+#user-show {
+  .card-header {
+    padding: 6px 10px 6px 10px;
+
+    #name {
+      font-size: 28px;
+    }
+    #date {
+      font-size: 14px;
+    }
+  }
+}
+
 /* コメントフォーム */
 .comments {
-  width: 90%;
-  margin: 0 10% 3% 5%;
-
   #comment-form {
-    margin-bottom: 2%;
+    margin: 2% 0 2% 0;
   }
-
   #comments-view {
-    margin-top: 1%;
-  }
-}
-
-/* フッター */
-.footer {
-  width: auto;
-}
-
-/* ゲストログインフォーム */
-#guestuser-form {
-  margin-left: 3%;
-  width: 30%;
-
-  .btn {
-    width: 80%;
-    margin: 1%;
+    margin: 1% 0 1% 0;
+    .card-header {
+      padding: 6px 10px 6px 10px;
+      #name {
+        font-size: 14px;
+      }
+      #date {
+        font-size: 10px;
+      }
+    }
+    .card-body {
+      padding: 6px 10px 6px 10px;
+    }
   }
 }
