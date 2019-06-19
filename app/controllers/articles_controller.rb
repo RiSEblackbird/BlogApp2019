@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.new(article_params)
-    @article.authorname = current_user.username
+    @article.author = current_user
     if @article.save
       redirect_to @article, notice: "記事を投稿しました！"
     else
@@ -46,9 +46,10 @@ class ArticlesController < ApplicationController
     redirect_to :articles
   end
 
+
   private
 
    def article_params
-     params.require(:article).permit(:authorname, :title, :body, :tag_list)
+     params.require(:article).permit(:title, :body, :tag_list)
    end
 end
