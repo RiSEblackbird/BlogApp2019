@@ -21,6 +21,9 @@ class User < ApplicationRecord
   validates :profile,
     length: { maximum: 150 }
 
+
+
+#  別途要検討
 #  def resized_image
 #    return self.image.variant(resize: '30x30')
 #  end
