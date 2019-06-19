@@ -9,7 +9,7 @@
             <%= image_tag 'default.jpg', class: 'plofile_img', :size => '30x30' %>
           </div>
           <div class="align-self-center font-weight-bold" id="badge-name">
-            <%= @article.username %>
+            <%= @article.author.username %>
           </div>
         </div>
         <div class="card-title align-self-center" id="article-title"><%= @article.title %></div>
