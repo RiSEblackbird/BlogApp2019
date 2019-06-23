@@ -3,12 +3,12 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @users = User.order(created_at: :desc)
+    @users = User.page(params[:page]).per(12).order(created_at: :desc)
   end
 
   def show
     @user = User.find(params[:id])
-    @comments = Comment.where(user_id: @user.id).order(created_at: :desc)
+    @comments = Comment.where(user_id: @user.id).page(params[:page]).per(10).order(created_at: :desc)
   end
 
   def edit

@@ -3,13 +3,13 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @articles = Article.order(created_at: :desc)
+    @articles = Article.page(params[:page]).per(8).order(created_at: :desc)
   end
 
   def show
     @article = Article.find(params[:id])
     @comment = @article.comments.new
-    @comments = @article.comments.order(created_at: :desc)
+    @comments = @article.comments.page(params[:page]).per(5).order(created_at: :desc)
     @like = @article.likes.new
     @likes = @article.likes.where(article_id: params[:article_id])
   end
