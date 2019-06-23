@@ -18,6 +18,7 @@ Webサービスのアイデアとしては印象が薄いかもしれないで�
 | 記事タグ付け機能 | [ActsAsTaggableOn](https://github.com/mbleigh/acts-as-taggable-on) |
 | 画像リサイズ機能 | [MiniMagick](https://github.com/minimagick/minimagick) |
 | 画像アップロード機能 | [CarrierWave](https://github.com/carrierwaveuploader/carrierwave) |
+| ページネーション | [kaminari](https://github.com/kaminari/kaminari) |
 
 # 開発補助機能
 | 技術 or ツール | 名称 |
@@ -29,7 +30,6 @@ Webサービスのアイデアとしては印象が薄いかもしれないで�
 # (実装予定)
 | 技術 or ツール | 名称 |
 |:-------------|:-----|
-| ページネーション | kaminari |
 | テスト(単体・結合) | RSpec |
 
 # (使用検討中)
