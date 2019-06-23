@@ -1,7 +1,7 @@
 <html id="signup">
   <div class="container" id="user-forms">
     <div class="col-5 mx-auto">
-      <%= render 'devise/form' %>
+      <%= render 'devise/guest-form' %>
       <h4 class="text-bold">アカウント新規登録</h4>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>

@@ -1,64 +1,43 @@
-<% provide(:title, "#{current_user.username}") %>
-
-<div class="container">
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <%= f.label "プロフィール画像" %>
-  <%= f.file_field :image %>
-
-  <div class= "input-group" id="username-edit">
-    <span :username, class="input-group-text">アカウント名</span>
-    <%= f.text_field :username, class: 'form-control', placeholder: "アカウント名を記載" %>
+<html id="edit-user">
+  <div class="container" id="user-forms">
+    <div class="col-5 mx-auto">
+      <h4 class="text-bold">アカウント情報の編集</h4>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="field">
+          <%= f.text_field :username, autofocus: true, autocomplete: "username",
+              class: "form-control", placeholder: "アカウント名" %>
+        </div>
+        <div class="field">
+          <%= f.text_area :profile, autofocus: true, autocomplete: "profile",
+              class: "form-control", placeholder: "プロフィール文を記載" %>
+        </div>
+        <div class="field">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email",
+              class: "form-control", placeholder: "Eメールアドレス" %>
+        </div>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+        <div class="field">
+          <%= f.password_field :password, autocomplete: "new-password",
+              class: "form-control", placeholder: "新しいパスワード(最低６文字)" %>
+        </div>
+        <div class="field">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password",
+              class: "form-control", placeholder: "新しいパスワード(確認)" %>
+        </div>
+        <div class="field">
+          <%= f.password_field :current_password, autocomplete: "current_password",
+              class: "form-control", placeholder: "現在のパスワード" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "アカウント情報を更新する", class: "btn btn-sm btn-success" %>
+        </div>
+        <div>
+          <%= link_to "アカウントの削除", registration_path(resource_name), data: { confirm: "本当に削除しますか？" }, method: :delete, class: 'btn btn-sm btn-danger', id: 'delete-btn' %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <div class= "input-group" id="article-body">
-    <span :profile, class="input-group-text">プロフィール</span>
-    <%= f.text_area :profile, class: 'form-control', placeholder: "プロフィール文を記載" %>
-  </div>
-
-  <div class= "input-group" id="email-edit">
-    <span :email, class="input-group-text">Eメールアドレス</span>
-    <%= f.text_field :email, class: 'form-control', placeholder: "emailのアドレスを記載" %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="input-group">
-    <span :password, class="input-group-text">新しいパスワード</span>
-    <%= f.text_field :password, type: :password, class: 'form-control', placeholder: "パスワードを記載(最低６文字)" %>
-
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="input-group">
-    <span :password_confirmation, class="input-group-text">パスワード確認</span>
-    <%= f.password_field :password_confirmation, class: 'form-control' %>
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="input-group">
-    <span :current_password, class="input-group-text">現在のパスワードを入力</span>
-    <%= f.text_field :current_password, type: :password, class: 'form-control', placeholder: '現在のパスワードを入力' %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>アカウントの削除</h3>
-
-<p><%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
-</div>
+</html>

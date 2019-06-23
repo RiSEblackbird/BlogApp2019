@@ -4,7 +4,7 @@
   <div class="card" id="article-show">
     <div class="card-header d-flex justify-content-between" id="header1">
       <div class="d-flex">
-        <div class="badge badge-secondary d-flex mr-3">
+        <div class="d-flex badge badge-secondary mr-3">
           <div class="align-self-center mr-2">
             <%= image_tag 'default.jpg', class: 'plofile_img', :size => '30x30' %>
           </div>
@@ -19,17 +19,21 @@
         <div>投稿：<%= @article.created_at.strftime("%Y/%m/%d %H:%M") %></div>
       </div>
     </div>
-    <div class="card-header">
-      <% @article.tag_list.each do |tag| %>
-        <span class="tag badge badge-primary float-left"><%= tag %></span>
-      <% end %>
+    <div class="card-header d-flex justify-content-between">
+      <div class="d-flex">
+        <% @article.tag_list.each do |tag| %>
+          <span class="tag badge badge-primary m-1 align-self-center"><%= tag %></span>
+        <% end %>
+      </div>
+      <div class="d-flex align-self-center">
+        <%= render 'articles/btns' %>
+      </div>
     </div>
-
-    <%= render 'articles/btns' %>
-
     <div class="card-body">
       <%= simple_format(@article.body) %>
-      <%= render 'articles/likesarticle' %>
+    </div>
+    <div class="card-footer">
+      <%= render 'articles/like-for-article' %>
     </div>
   </div>
   <%= render 'articles/comments' %>

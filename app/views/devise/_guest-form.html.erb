@@ -1,0 +1,68 @@
+<div id="guestuser-form">
+  <% if User.where(email: "guest1@mail.com").present? %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class= "input-group" id="article-title">
+        <%= f.hidden_field :username, value: "ゲスト①" %>
+        <%= f.hidden_field :email, value: "guest1@mail.com" %>
+        <%= f.hidden_field :password, value: "guestguest1" %>
+      </div>
+      <%= f.submit 'ゲスト①としてテストログイン', class: 'btn btn-secondary btn-block my-1', id: "guest-btn" %>
+    <% end %>
+  <% else %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div class= "input-group" id="article-title">
+        <%= f.hidden_field :username, value: "ゲスト①" %>
+        <%= f.hidden_field :email, value: "guest1@mail.com" %>
+        <%= f.hidden_field :profile, value: "このアカウントはポートフォリオの内容を確認するためのものです。" %>
+        <%= f.hidden_field :password, value: "guestguest1" %>
+      </div>
+      <%= f.submit 'ゲスト①として登録(初回のみ)', class: 'container btn btn-secondary my-1' %>
+    <% end %>
+  <% end %>
+</div>
+
+<div id="guestuser-form">
+  <% if User.where(email: "guest2@mail.com").present? %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class= "input-group" id="article-title">
+        <%= f.hidden_field :username, value: "ゲスト②" %>
+        <%= f.hidden_field :email, value: "guest2@mail.com" %>
+        <%= f.hidden_field :password, value: "guestguest2" %>
+      </div>
+      <%= f.submit 'ゲスト②としてテストログイン', class: 'btn btn-secondary btn-block my-1', id: "guest-btn" %>
+    <% end %>
+  <% else %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div class= "input-group" id="article-title">
+        <%= f.hidden_field :username, value: "ゲスト②" %>
+        <%= f.hidden_field :email, value: "guest2@mail.com" %>
+        <%= f.hidden_field :profile, value: "このアカウントはポートフォリオの内容を確認するためのものです。" %>
+        <%= f.hidden_field :password, value: "guestguest2" %>
+      </div>
+      <%= f.submit 'ゲスト②として登録(初回のみ)', class: 'container btn btn-secondary my-1' %>
+    <% end %>
+  <% end %>
+</div>
+
+<div id="guestuser-form">
+  <% if User.where(email: "guest3@mail.com").present? %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class= "input-group" id="article-title">
+        <%= f.hidden_field :username, value: "ゲスト③" %>
+        <%= f.hidden_field :email, value: "guest3@mail.com" %>
+        <%= f.hidden_field :password, value: "guestguest3" %>
+      </div>
+      <%= f.submit 'ゲスト③としてテストログイン', class: 'btn btn-secondary btn-block my-1', id: "guest-btn" %>
+    <% end %>
+  <% else %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div class= "input-group" id="article-title">
+        <%= f.hidden_field :username, value: "ゲスト③" %>
+        <%= f.hidden_field :email, value: "guest3@mail.com" %>
+        <%= f.hidden_field :profile, value: "このアカウントはポートフォリオの内容を確認するためのものです。" %>
+        <%= f.hidden_field :password, value: "guestguest3" %>
+      </div>
+      <%= f.submit 'ゲスト③として登録(初回のみ)', class: 'container btn btn-secondary my-1' %>
+    <% end %>
+  <% end %>
+</div>

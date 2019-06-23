@@ -1,7 +1,7 @@
 <html id="login">
   <div class="container" id="user-forms">
     <div class="col-5 mx-auto">
-      <%= render 'devise/form' %>
+      <%= render 'devise/guest-form' %>
       <h4 class="text-bold">ログイン</h4>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
@@ -17,7 +17,6 @@
           <%= f.password_field :password, autocomplete: "new-password",
               class: "form-control", placeholder: "パスワード" %>
         </div>
-
         <div class="">
         <% if devise_mapping.rememberable? %>
     　　　　<div class="form-check">
@@ -26,9 +25,6 @@
   　　　　  </div>
   　　　　<% end %>
          </div>
-
-
-
         <div class="actions">
           <%= f.submit "ログインする", class: "btn btn-sm btn-success" %>
         </div>
