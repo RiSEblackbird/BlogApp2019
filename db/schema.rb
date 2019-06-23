@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_07_075653) do
+ActiveRecord::Schema.define(version: 2019_06_22_044950) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -35,11 +35,13 @@ ActiveRecord::Schema.define(version: 2019_06_07_075653) do
 
   create_table "articles", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "authorname", null: false
     t.string "title", null: false
     t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "like_count", default: 0
+    t.integer "comment_count", default: 0
+    t.integer "stock_count", default: 0
   end
 
   create_table "comments", force: :cascade do |t|
@@ -48,9 +50,16 @@ ActiveRecord::Schema.define(version: 2019_06_07_075653) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.string "username"
     t.index ["article_id"], name: "index_comments_on_article_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "article_id"
+    t.integer "comment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -95,6 +104,12 @@ ActiveRecord::Schema.define(version: 2019_06_07_075653) do
     t.boolean "admin_flg"
     t.string "image"
     t.text "profile"
+    t.integer "follow_count", default: 0
+    t.integer "follower_count", default: 0
+    t.integer "like_count", default: 0
+    t.integer "stock_count", default: 0
+    t.integer "article_count", default: 0
+    t.integer "comment_count", default: 0
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end

@@ -15,11 +15,16 @@ Webサービスのアイデアとしては印象が薄いかもしれないで�
 | ログイン機能 | [device](https://github.com/plataformatec/devise) |
 | 権限管理機能 | [CanCan](https://github.com/ryanb/cancan) |
 | ユーザー管理画面 | [RailsAdmin](https://github.com/sferik/rails_admin) |
-| フロントツール | [Bootstrap4](https://github.com/twbs/bootstrap-rubygem) |
 | 記事タグ付け機能 | [ActsAsTaggableOn](https://github.com/mbleigh/acts-as-taggable-on) |
 | 画像リサイズ機能 | [MiniMagick](https://github.com/minimagick/minimagick) |
 | 画像アップロード機能 | [CarrierWave](https://github.com/carrierwaveuploader/carrierwave) |
+
+# 開発補助機能
+| 技術 or ツール | 名称 |
+|:-------------|:-----|
+| フロントツール | [Bootstrap4](https://github.com/twbs/bootstrap-rubygem) |
 | エラー詳細表示 | [Better Errors](https://github.com/BetterErrors/better_errors) |
+| フロント用アイコン | [FontAwesome::Sass](https://github.com/FortAwesome/font-awesome-sass) |
 
 # (実装予定)
 | 技術 or ツール | 名称 |

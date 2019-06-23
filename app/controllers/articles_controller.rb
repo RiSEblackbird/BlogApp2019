@@ -10,6 +10,8 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @comment = @article.comments.new
     @comments = @article.comments.order(created_at: :desc)
+    @like = @article.likes.new
+    @likes = @article.likes.where(article_id: params[:article_id])
   end
 
   def new
@@ -22,7 +24,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.new(article_params)
-    @article.authorname = current_user.username
+    @article.author = current_user
     if @article.save
       redirect_to @article, notice: "記事を投稿しました！"
     else
@@ -46,9 +48,10 @@ class ArticlesController < ApplicationController
     redirect_to :articles
   end
 
+
   private
 
    def article_params
-     params.require(:article).permit(:authorname, :title, :body, :tag_list)
+     params.require(:article).permit(:title, :body, :tag_list)
    end
 end
