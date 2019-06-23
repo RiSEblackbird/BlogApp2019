@@ -6,6 +6,7 @@ gem 'bootstrap', '4.3.1'
 gem 'sprockets', '3.7.2'
 gem 'jquery-rails'
 gem "font-awesome-sass"
+gem "kaminari"
 gem 'devise', '4.6.2'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
