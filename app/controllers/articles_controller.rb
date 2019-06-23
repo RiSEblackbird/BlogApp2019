@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @comment = @article.comments.new
-    @comments = @article.comments.page(params[:page]).per(5).order(created_at: :desc)
+    @comments = @article.comments.order(created_at: :desc)
     @like = @article.likes.new
     @likes = @article.likes.where(article_id: params[:article_id])
   end
