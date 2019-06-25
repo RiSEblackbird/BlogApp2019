@@ -28,6 +28,9 @@ class User < ApplicationRecord
     Article.where(user_id: id).order(created_at: :desc)
   end
 
+  scope :sidebar_limit, -> { limit(10) }
+  scope :by_date, -> { order(created_at: :desc) }
+
 #  別途要検討
 #  def resized_image
 #    return self.image.variant(resize: '30x30')
