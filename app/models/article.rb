@@ -12,4 +12,8 @@ class Article < ApplicationRecord
   validates :tag_list, length: { maximum: 20 }
   validates :title, length: { maximum: 100 }
   validates :body, length: { maximum: 5000 }
+
+  scope :sidebar_limit, -> { limit(10) }
+  scope :by_dates, -> { order(created_at: :desc) }
+  scope :by_comments, -> { order(comment_count: :desc) }
 end

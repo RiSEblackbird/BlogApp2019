@@ -35,13 +35,13 @@
           </div>
         <% end %>
       </div>
-      <div class="col-lg-10" id="cards-space">
+      <div class="col-12 col-lg-10" id="cards-space">
         <div class="title-sentence">
           <h4><%= (yield(:title)) %></h4>
         </div>
         <%= yield %>
       </div>
-      <div class="col-lg-2"><%= render 'layouts/sidebar' %></div>
+      <div class="col-lg-2 justify-self-center mx-auto px-1"><%= render 'layouts/sidebar' %></div>
     </div>
   </body>
 </html>

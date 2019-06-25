@@ -101,7 +101,7 @@
 /* 記事一覧ページ(index) */
 #columns {
   .card {
-    margin: 0 5% 20% 5%;
+    margin: 0 1% 15% 5%;
   }
   .card-header {
     padding: 6px 10px 6px 10px;
@@ -116,7 +116,7 @@
   }
   .card-body {
     padding: 10px 14px 10px 14px;
-    height: 180px;
+    height: 160px;
     background-color: #DDDDDD;
     font-size: 12px;
     overflow: hidden;
@@ -150,7 +150,7 @@
 /* アカウント一覧ページ(index) */
 #user-card {
   .card {
-    margin: 0 5% 20% 5%;
+    margin: 0 1% 15% 5%;
   }
   .card-header {
     font-size: 16px;
@@ -186,26 +186,20 @@
 /* サイドバー */
 .sidebar {
   z-index: 4;
-  float: right;
   position: fixed;
   margin-top: 60px;
   height: 80vh;
-  width: 15%;
 }
 
 #sidebar-card {
-  margin: 0 5% 10% 0px;
-
   .card-header {
-    padding: 6px 10px 6px 10px;
     font-size: 14px;
     background-color: #BBBBBB;
   }
   .card-body {
-    padding: 6px 10px 6px 10px;
-    height: 150px;
+    /*height: 150px;*/
     background-color: #DDDDDD;
-    font-size: 12px
+    font-size: 10px
   }
 }
 

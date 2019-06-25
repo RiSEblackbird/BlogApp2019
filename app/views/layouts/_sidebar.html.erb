@@ -1,20 +1,38 @@
-<div class="sidebar mx-auto">
-  <div class="card" id="sidebar-card">
-    <div class="card-header">掲載年月別</div>
-    <div class="card-body">
-      <p class="card-text">記事の内容をこ事の内容をこ記事の内容をこの欄に渡す。途中で表示を切る。</p>
-    </div>
+<div class="sidebar mx-3">
+  <% @articles = Article.by_dates.sidebar_limit %>
+  <div class="card mb-4" id="sidebar-card">
+    <div class="card-header p-1">投稿日順</div>
+      <div class="card-body p-1">
+        <% @articles.each do |article| %>
+          <%= link_to article do %>
+            <div class="row d-flex mx-auto justify-content-between">
+              <div class="px-0 col-6 col-lg-7 col-xl-8 d-flex ">
+                <div class="text-truncate"><%= article.title %></div>
+              </div>
+              <div class="d-flex">
+                --<%= article.created_at.strftime("%m/%d") %>
+              </div>
+            </div>
+        <% end %>
+        <% end %>
+      </div>
   </div>
-  <div class="card" id="sidebar-card">
-    <div class="card-header">カテゴリ別</div>
-    <div class="card-body">
-      <p class="card-text">記事の内容をこの渡す。途中で表示を切容をこの欄に渡す。途中で表示を切る。</p>
-    </div>
-  </div>
-  <div class="card" id="sidebar-card">
-    <div class="card-header">キーワードタグ別</div>
-    <div class="card-body">
-      <p class="card-text"><%= debug(params) if Rails.env.development? %></p>
-    </div>
+  <% @articles = Article.by_comments.sidebar_limit %>
+  <div class="card mb-4" id="sidebar-card">
+    <div class="card-header p-1">コメント数順</div>
+      <div class="card-body p-1">
+        <% @articles.each do |article| %>
+          <%= link_to article do %>
+            <div class="row d-flex mx-auto justify-content-between">
+              <div class="px-0 col-6 col-lg-7 col-xl-8 d-flex ">
+                <div class="text-truncate"><%= article.title %></div>
+              </div>
+              <div class="d-flex">
+                --(<%= article.comment_count %>)
+              </div>
+            </div>
+        <% end %>
+        <% end %>
+      </div>
   </div>
 </div>
