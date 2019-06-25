@@ -32,9 +32,11 @@
     <div class="card-body">
       <%= simple_format(@article.body) %>
     </div>
-    <div class="card-footer">
-      <%= render 'articles/like-for-article' %>
-    </div>
+    <% if user_signed_in? %>
+      <div class="card-footer">
+        <%= render 'articles/like-for-article' %>
+      </div>
+    <% end %>
   </div>
   <%= render 'articles/comments' %>
 </div>
