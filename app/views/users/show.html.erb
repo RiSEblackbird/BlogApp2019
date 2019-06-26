@@ -1,6 +1,6 @@
 <% provide(:title, "#{@user.username}さん") %>
 
-<div class="col-5 mx-auto mb-4" id="user-show">
+<div class="col-6 mx-auto mb-4" id="user-show">
   <div class="card mb-2">
     <div class="card-header d-flex justify-content-between">
       <div class="d-flex">
@@ -23,8 +23,10 @@
     </div>
   </div>
   <% if user_signed_in? %>
-    <% if current_user.id == @user.id %>
+    <% if current_page?(current_user) %>
       <%= link_to "ユーザー情報の編集", edit_user_registration_path, class: 'btn btn-secondary btn-block mt-1' ,id: 'edit-btn' %>
+    <% else %>
+      <%= link_to "フォローする(はずす)", "#", class: 'btn btn-primary btn-block mt-1' ,id: 'follow-btn' %>
     <% end %>
   <% end %>
 </div>

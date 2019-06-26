@@ -4,11 +4,11 @@
       <ul class="navbar-nav  navbar-expand">
         <li class="nav-item"><a class="navbar-brand" href="/home">全記事一覧</a></li>
         <li class="nav-item"><a class="navbar-brand" href="/users">アカウント一覧</a></li>
-        <li class="nav-item">
+        <li class="nav-item align-self-center">
           <form class="form-inline">
           <% if user_signed_in? %>
             <%= link_to '新規記事作成', new_article_url,
-                class: 'btn btn-sm btn-dark btn-block navbar-text' %>
+                class: 'btn btn-sm btn-dark btn-block navbar-text p-1' %>
           <% end %>
           </form>
         </li>
