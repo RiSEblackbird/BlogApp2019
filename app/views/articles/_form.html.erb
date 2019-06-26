@@ -1,4 +1,4 @@
-<div id="article-form">
+<div class="mx-auto" id="article-form">
   <%= form_for @article do |f| %>
     <div class= "input-group" id="article-title">
       <span :title, class="input-group-text">タイトル</span>
@@ -9,9 +9,13 @@
       <%= f.text_area :body, class: 'form-control', placeholder: "本文を記載" %>
     </div>
     <div class= "input-group" id="article-tags">
-      <span :tag_list, class="input-group-text">タグ</span>
+      <span :tag_list, class="input-group-text px-4">タグ</span>
       <%= f.text_field :tag_list, value: @article.tag_list.join(","), class: 'form-control', placeholder: "タグを追加(複数可)" %>
     </div>
-    <%= f.submit '編集を登録する', class: 'btn btn-secondary btn-lg btn-block' %>
+    <% if current_page?(new_article_path) %>
+      <%= f.submit '上記の内容で投稿する', class: 'btn btn-secondary btn-lg btn-block' %>
+    <% else %>
+      <%= f.submit '編集を登録する', class: 'btn btn-secondary btn-lg btn-block' %>
+    <% end %>
   <% end %>
 </div>
