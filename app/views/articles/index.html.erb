@@ -4,26 +4,26 @@
     <% @articles.each do |article| %>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 justify-content-center">
       <div class="card">
-        <div class="card-header">
+        <div class="card-header p-1 px-2">
           <div class="align-self-center text-truncate"><%= article.title %></div>
         </div>
-        <div class="card-body">
+        <div class="card-body p-2">
           <p class="card-text"><%= article.body %></p>
         </div>
         <%= link_to "続きを読む", article, class: "py-1", id: "article-more" %>
-        <div class="card-footer d-flex text-truncate", id="tag-footer">
+        <div class="card-footer p-1 d-flex text-truncate", id="tag-footer">
           <div class="d-flex text-truncate">
             <% article.tag_list.each do |tag| %>
-              <span class="tag badge badge-primary float-left"><%= tag %></span>
+              <span class="tag badge badge-primary"><%= tag %></span>
             <% end %>
           </div>
         </div>
-        <div class="card-footer d-flex justify-content-between", id="date-footer">
-          <div class="badge badge-warning d-flex">
-            <div class="align-self-center mr-1">
+        <div class="card-footer p-1 d-flex justify-content-between", id="date-footer">
+          <div class="badge badge-warning d-flex p-0">
+            <div class="mx-1 align-self-center">
               <%= image_tag 'default.jpg', class: 'plofile_img', :size => '20x20' %>
             </div>
-            <div class="align-self-center font-weight-bold">
+            <div class="mr-1 align-self-center font-weight-bold">
               <%= article.author.username %>
             </div>
           </div>
