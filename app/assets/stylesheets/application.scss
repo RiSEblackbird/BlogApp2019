@@ -104,7 +104,6 @@
     margin: 0 1% 15% 5%;
   }
   .card-header {
-    padding: 6px 10px 6px 10px;
     font-size: 12px;
     color: white;
     background-color: #336666;
@@ -115,7 +114,6 @@
     font-size: 18px;
   }
   .card-body {
-    padding: 10px 14px 10px 14px;
     height: 160px;
     background-color: #DDDDDD;
     font-size: 12px;
@@ -131,7 +129,6 @@
     color: #0000FF;
   }
   .card-footer {
-    padding: 6px 10px 6px 10px;
     font-size: 0.4em;
     text-align: center;
     background-color: #808000;
@@ -175,11 +172,6 @@
     color: white;
     overflow: hidden;
     text-overflow: ellipsis;
-    .tag {
-      margin-right: 1%;
-      margin-bottom: 1%;
-      font-size: 9px;
-    }
   }
 }
 
@@ -193,11 +185,10 @@
 
 #sidebar-card {
   .card-header {
-    font-size: 14px;
+    font-size: 13px;
     background-color: #BBBBBB;
   }
   .card-body {
-    /*height: 150px;*/
     background-color: #DDDDDD;
     font-size: 10px
   }
@@ -212,7 +203,6 @@
 /* 新規記事作成ページ(articles/new) */
 #article-form {
   width: 80%;
-  margin-left: 5vh;
 
   .input-group {
     margin-bottom: 10px;
