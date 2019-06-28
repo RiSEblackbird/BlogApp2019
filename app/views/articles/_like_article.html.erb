@@ -1,0 +1,10 @@
+
+  <% if @article.like_user(current_user.id) %>
+    <%= button_to article_like_path(@article), method: :delete, class: "btn btn-sm btn-warning", id: "like-button", local: true do %>
+      <%= icon('fa', 'thumbs-up') %>(<%= @article.like_count %>) いいねを取り消す
+    <% end %>
+  <% else %>
+    <%= button_to article_likes_path(@article), class: "btn btn-sm btn-warning", id: "like-button", local: true do %>
+      <%= icon('fa', 'thumbs-up') %>(<%= @article.like_count %>) いいねする
+    <% end %>
+  <% end %>
