@@ -3,9 +3,16 @@ class User < ApplicationRecord
   # Article, Commentモデルとの関連付け
   has_many :articles, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :articles, dependent: :destroy
-  has_many :likes
+  has_many :likes, dependent: :destroy
+  has_many :follows, dependent: :destroy
+  #has_many :followers, dependent: :destroy
   has_many :liked_articles, through: :likes, source: :article
+  has_many :following_users, through: :follows, source: :user
+  has_many :follower_users, through: :followers, source: :user
+
+  def follower_user(current_id, showing_id)
+    Follow.find_by(user_id: current_id, following_id: showing_id)
+  end
 
   # プロフィール画像の適用
   has_one_attached :image
