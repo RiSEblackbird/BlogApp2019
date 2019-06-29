@@ -26,7 +26,11 @@
     <% if current_page?(current_user) %>
       <%= link_to "ユーザー情報の編集", edit_user_registration_path, class: 'btn btn-secondary btn-block mt-1' ,id: 'edit-btn' %>
     <% else %>
-      <%= link_to "フォローする(はずす)", "#", class: 'btn btn-primary btn-block mt-1' ,id: 'follow-btn' %>
+      <% if current_user.following?(@user) %>
+        <%= render 'users/unfollow' %>
+      <% else %>
+        <%= render 'users/follow' %>
+      <% end %>
     <% end %>
   <% end %>
 </div>
