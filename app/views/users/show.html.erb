@@ -26,14 +26,10 @@
     <% if current_page?(current_user) %>
       <%= link_to "ユーザー情報の編集", edit_user_registration_path, class: 'btn btn-secondary btn-block mt-1' ,id: 'edit-btn' %>
     <% else %>
-      <% if @user.follower_user(current_user.id, @user.id) %>
-        <%= button_to user_follow_path(@user), method: :delete, class: "btn btn-danger btn-block mt-1", id: "unfollow-button", local: true do %>
-          フォローを解除する
-        <% end %>
+      <% if current_user.following?(@user) %>
+        <%= render 'users/unfollow' %>
       <% else %>
-        <%= button_to user_follows_path(@user), class: "btn btn-primary btn-block mt-1", id: "follow-button", local: true do %>
-          フォローする
-        <% end %>
+        <%= render 'users/follow' %>
       <% end %>
     <% end %>
   <% end %>

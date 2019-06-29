@@ -13,10 +13,10 @@
       <a class="nav-link" id="contact-tab" data-toggle="tab" href="#stocks" role="tab" aria-controls="contact" aria-selected="false">ストックした記事(<%= @user.stock_count %>)</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#follows" role="tab" aria-controls="contact" aria-selected="false">フォロー(<%= @user.follow_count %>)</a>
+      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#follows" role="tab" aria-controls="contact" aria-selected="false">フォロー(<%= @user.followings.count %>)</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#followers" role="tab" aria-controls="contact" aria-selected="false">フォロワー(<%= @user.follower_count %>)</a>
+      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#followers" role="tab" aria-controls="contact" aria-selected="false">フォロワー(<%= @user.followers.count %>)</a>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
@@ -24,7 +24,7 @@
     <div class="tab-pane border" id="comments" role="tabpanel" aria-labelledby="profile-tab"><%= render 'users/comments' %></div>
     <div class="tab-pane border" id="like_articles" role="tabpanel" aria-labelledby="home-tab"><%= render 'users/liked_articles' %></div>
     <div class="tab-pane border" id="stocks" role="tabpanel" aria-labelledby="home-tab"></div>
-    <div class="tab-pane border" id="follows" role="tabpanel" aria-labelledby="home-tab"></div>
-    <div class="tab-pane border" id="followers" role="tabpanel" aria-labelledby="home-tab"></div>
+    <div class="tab-pane border" id="follows" role="tabpanel" aria-labelledby="home-tab"><%= render 'users/followings' %></div>
+    <div class="tab-pane border" id="followers" role="tabpanel" aria-labelledby="home-tab"><%= render 'users/followers' %></div>
   </div>
 </div>
