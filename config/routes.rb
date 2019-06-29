@@ -10,9 +10,12 @@ Rails.application.routes.draw do
   get 'contact' => 'static_pages#contact'
 
   resources :users, :only => [:index, :show]
-  
+
   resources :users do
-    resources :follows, only: [:create, :destroy]
+    member do
+      get :following, :followers
+    end
+    resources :relationships, only: [:create, :destroy]
   end
 
   resources :articles do
