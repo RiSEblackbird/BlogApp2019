@@ -6,20 +6,7 @@ class LikesController < ApplicationController
     @like.like_voter = current_user
     @article.reload
     #respond_to do |format|
-    #  if @like.save
-    #    format.html { redirect_to @article, notice: 'いいねしました！' }
-    #    format.js
-    #    format.json { render json: @article, status: :created, location: @article }
-    #  else
-    #    format.html { redirect_to @article, notice: 'いいねに失敗しました。' }
-    #  end
-    #end
-    #if @like.save
-    #  flash[:notice] = "いいねしました！"
-    #  redirect_back(fallback_location: root_path)
-    #else
-    #  flash[:notice] = "いいねに失敗しました。"
-    #  redirect_back(fallback_location: root_path)
+    #  format.js {flash[:notice] = "いいねしました！" }
     #end
   end
 
@@ -29,20 +16,7 @@ class LikesController < ApplicationController
     like.destroy
     @article.reload
     #respond_to do |format|
-    #  if @like.destroy
-    #    format.html { redirect_to @article, notice: 'いいねを取り消しました。' }
-    #    format.js
-    #    format.json { render json: @article, status: :destroyed, location: @article }
-    #  else
-    #    format.html { redirect_to @article, notice: 'いいねの取り消しに失敗しました。' }
-    #  end
-    #end
-    #if @like.destroy
-    #  flash[:notice] = "いいねを取り消しました。"
-    #  redirect_back(fallback_location: root_path)
-    #else
-    #  flash[:notice] = "いいねの取り消しに失敗しました。"
-    #  redirect_back(fallback_location: root_path)
+    #  format.js {flash[:notice] = "いいねを解除しました。" }
     #end
   end
 
