@@ -6,7 +6,4 @@ class Comment < ApplicationRecord
 
   validates :content, length: { maximum: 500 }, presence: true
 
-  def like_user(user_id)
-    likes.find_by(user_id: user_id)
-  end
 end
