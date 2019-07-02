@@ -4,8 +4,8 @@ class Article < ApplicationRecord
   belongs_to :author, class_name: "User", foreign_key: "user_id"
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-  def like_user(user_id)
-    likes.find_by(user_id: user_id)
+  def like_user(user)
+    likes.find_by(user_id: user)
   end
 
   validates :title, :body, presence: true

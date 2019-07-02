@@ -34,7 +34,11 @@
     </div>
     <% if user_signed_in? %>
       <div class="card-footer">
-        <%= render 'articles/like_article' %>
+        <div id="like-buttons">
+          <div id="like-button-<%= @article.id %>">
+            <%= render partial: 'articles/like_article', locals: { article: @article, like: @like } %>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>

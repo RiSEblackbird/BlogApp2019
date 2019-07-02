@@ -21,7 +21,7 @@ class RelationshipsController < ApplicationController
       flash[:notice] = followed.username += "さんのフォローを解除しました。"
       redirect_back(fallback_location: root_path)
     else
-      flash[:notice] = followed += "さんのフォローの解除に失敗しました。"
+      flash[:notice] = followed.username += "さんのフォローの解除に失敗しました。"
       redirect_back(fallback_location: root_path)
     end
   end

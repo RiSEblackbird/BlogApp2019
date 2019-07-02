@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @comment = @article.comments.new
     @comments = @article.comments.order(created_at: :desc)
-    @like = @article.likes.new
+    @like = Like.find_by(user_id: current_user.id, article_id: params[:id])
     @likes = @article.likes.where(article_id: params[:article_id])
   end
 
