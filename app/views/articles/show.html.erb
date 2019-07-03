@@ -34,13 +34,16 @@
     </div>
     <% if user_signed_in? %>
       <div class="card-footer">
-        <div id="like-buttons">
-          <div id="like-button-<%= @article.id %>">
-            <%= render partial: 'articles/like_article', locals: { article: @article, like: @like } %>
-          </div>
+        <div id="like-button-<%= @article.id %>">
+          <%= render partial: 'articles/like_article', locals: { article: @article, like: @like } %>
         </div>
       </div>
     <% end %>
   </div>
-  <%= render 'articles/comments' %>
+  <div id="comment-poster">
+    <%= render partial: 'articles/comment_poster', locals: { article: @article, comment: @comment } %>
+  </div>
+  <div id="comments-list">
+    <%= render partial: 'articles/comments_list', locals: { article: @article, comment: @comment } %>
+  </div>
 </div>

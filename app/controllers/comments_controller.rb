@@ -2,28 +2,27 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def create
-    @comment = current_user.comments.new(comment_params)
+    set_article
+    @comment = Comment.new(comment_params)
     @comment.article_id = params[:article_id]
     @comment.commenter = current_user
-    if @comment.save
-      flash[:notice] = "コメントを投稿しました！"
-      redirect_back(fallback_location: root_path)
-    else
-      flash[:notice] = "コメントの投稿に失敗しました。"
-      redirect_back(fallback_location: root_path)
-    end
+    @comment.save
+    set_comments
   end
 
   def destroy
-    @comment = current_user.comments.find(params[:article_id])
+    set_article
+    set_comments
+    @comment = @article.comments.find(params[:id])
     @comment.destroy
-    if @comment.destroy
-      flash[:notice] = "コメントを削除しました。"
-      redirect_back(fallback_location: root_path)
-    else
-      flash[:notice] = "コメントの削除に失敗しました。"
-      redirect_back(fallback_location: root_path)
-    end
+  end
+
+  def set_article
+    @article = Article.find(params[:article_id])
+  end
+
+  def set_comments
+    @comments = @article.comments.where(article_id: params[:article_id]).order(created_at: :asc)
   end
 
   private
