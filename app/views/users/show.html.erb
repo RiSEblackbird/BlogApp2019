@@ -8,30 +8,29 @@
           <div class="align-self-center mr-2">
             <%= image_tag 'default.jpg', class: 'plofile_img', :size => '50x50' %>
           </div>
-          <div class="align-self-center font-weight-bold" id="badge-name">
-            <%= @user.username %>
-          </div>
+            <div class="d-flex, flex-column">
+              <div class="align-self-center font-weight-bold" id="badge-name">
+                <%= @user.username %>
+              </div>
+              <div><%= @user.created_at.strftime("%Y/%m/%d") %> 〜</div>
+            </div>
         </div>
       </div>
-      <div class="d-flex flex-column align-self-center" id="date">
-        <div>更新；<%= @user.updated_at.strftime("%Y/%m/%d %H:%M") %></div>
-        <div>投稿：<%= @user.created_at.strftime("%Y/%m/%d %H:%M") %></div>
+      <div class="align-self-center">
+        <% if user_signed_in? %>
+          <% if current_page?(current_user) %>
+            <%= link_to "ユーザー情報の編集", edit_user_registration_path, class: 'btn btn-sm btn-secondary btn-block mt-1' ,id: 'edit-btn' %>
+          <% else %>
+            <div id="follow-btn">
+              <%= render partial: 'users/follow', locals: { user: @user, relationship: @relationship } %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
     <div class="card-body">
       <%= simple_format(@user.profile) %>
     </div>
   </div>
-  <% if user_signed_in? %>
-    <% if current_page?(current_user) %>
-      <%= link_to "ユーザー情報の編集", edit_user_registration_path, class: 'btn btn-secondary btn-block mt-1' ,id: 'edit-btn' %>
-    <% else %>
-      <% if current_user.following?(@user) %>
-        <%= render 'users/unfollow' %>
-      <% else %>
-        <%= render 'users/follow' %>
-      <% end %>
-    <% end %>
-  <% end %>
 </div>
 <%= render 'users/tablist' %>
