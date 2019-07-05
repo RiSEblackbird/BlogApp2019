@@ -30,7 +30,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  opacity: 0.3;
+  opacity: 0.8;
 }
 
 #main-layout {
@@ -100,15 +100,28 @@
 
 /* 記事一覧ページ(index) */
 #columns {
+  padding: 0 1% 0 2%;
   .card {
-    margin: 0 1% 15% 5%;
+    margin: 0 0 10% 0;
+    #mordal-btn {
+      outline: 0;
+    }
   }
+
   .card-header {
-    font-size: 12px;
     color: white;
-    background-color: #336666;
+    background-color: #196500;
     overflow: hidden;
     text-overflow: ellipsis;
+    #title {
+      font-size: 13px;
+    }
+    #author {
+      font-size: 10px;
+    }
+    #date {
+      font-size: 8px;
+    }
   }
   .card-title {
     font-size: 18px;
@@ -131,13 +144,13 @@
   .card-footer {
     font-size: 0.4em;
     text-align: center;
-    background-color: #808000;
+    background-color: #989800;
     color: white;
     overflow: hidden;
     text-overflow: ellipsis;
 
     .tag {
-      margin-right: 1%;
+      margin-right: 1.5%;
       margin-bottom: 1%;
       font-size: 8px;
     }
@@ -146,32 +159,23 @@
 
 /* アカウント一覧ページ(index) */
 #user-card {
+  padding: 0 1% 0 2%;
   .card {
-    margin: 0 1% 15% 5%;
-  }
-  .card-header {
-    font-size: 16px;
-    color: white;
-    background-color: #CB9800;
-    padding: 6px 10px 6px 10px;
+    margin: 0 0 5% 0;
   }
   .card-body {
-    padding: 6px 10px 6px 10px;
-    height: 120px;
-    background-color: #DDDDDD;
-    font-size: 12px;
+    min-height: 0px;
+    background-color: white;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-  .card-footer {
-    padding: 6px 10px 6px 10px;
-    height: 70px;
-    font-size: 0.4em;
-    text-align: center;
-    background-color: #CB9800;
-    color: white;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    .media-body {
+      #name {
+        font-size: 16px;
+      }
+      #profile {
+        font-size: 12px;
+      }
+    }
   }
 }
 
