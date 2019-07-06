@@ -1,6 +1,6 @@
 <% provide(:title, '新着記事一覧') %>
 
-  <div class="card-deck mx-auto" id="columns">
+<div class="card-deck mx-auto" id="columns">
     <% @articles.each do |article| %>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 justify-content-center">
       <div class="p-0 card">
@@ -20,12 +20,12 @@
           </div>
         </button>
         <button type="" data-toggle="modal" data-target="#article-modal" class="m-0 p-0 border-0" id="mordal-btn">
-        <div class="card-header rounded-0 p-1 px-2 btn-secondary text-align-start" data-toggle="modal" data-target="#article-modal">
-          <div class="align-self-center text-truncate text-left" id="title"><%= article.title %></div>
-        </div>
-        <div class="card-body p-2">
-          <p class="card-text text-left"><%= article.body %></p>
-        </div>
+          <div class="card-header rounded-0 p-1 px-2 btn-secondary text-align-start" data-toggle="modal" data-target="#article-modal">
+            <div class="align-self-center text-truncate text-left" id="title"><%= article.title %></div>
+          </div>
+          <div class="card-body p-2">
+            <p class="card-text text-left"><%= article.body %></p>
+          </div>
         </button>
         <div class="card-footer p-1 d-flex text-truncate" id="tag-footer">
           <div class="d-flex text-truncate">
@@ -35,12 +35,11 @@
           </div>
         </div>
       </div>
+    </div>
+    <% end %>
+    <div class="container d-flex">
+      <div class="mx-auto">
+        <%= paginate @articles %>
       </div>
-      <% end %>
-      <div class="container d-flex">
-        <div class="mx-auto">
-          <%= paginate @articles %>
-        </div>
-      </div>
-      </div>
-  </div>
+    </div>
+</div>
