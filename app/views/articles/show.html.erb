@@ -40,10 +40,10 @@
       </div>
     <% end %>
   </div>
-  <div id="comment-poster">
-    <%= render partial: 'articles/comment_poster', locals: { article: @article, comment: @comment } %>
-  </div>
   <div id="comments-list">
     <%= render partial: 'articles/comments_list', locals: { article: @article, comment: @comment } %>
+  </div>
+  <div id="comment-poster">
+    <%= render partial: 'articles/comment_poster', locals: { article: @article, comment: @comment } %>
   </div>
 </div>

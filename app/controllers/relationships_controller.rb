@@ -1,30 +1,21 @@
 class RelationshipsController < ApplicationController
+
   def create
     @user = User.find(params[:relationship][:following_id])
     @relationship = current_user.follow!(@user)
     @user.reload
-    #@relationship.save
-    #if @relationship.save
-    #  flash[:notice] = @user.username += "さんをフォローしました！"
-    #  redirect_back(fallback_location: root_path)
-    #else
-    #  flash[:notice] = @user.username += "さんのフォローに失敗しました。"
-    #  redirect_back(fallback_location: root_path)
-    #end
   end
 
   def destroy
     @user = Relationship.find(params[:id]).follower
+    #p "@user >>> ", @user
     followed = Relationship.find(params[:id]).following
-    @relationship = current_user.unfollow!(@user)
+    #p "followed >>> ", followed
+    #p "current_user.following_relationships.find_by(follower_id: current_user.id)", current_user.following_relationships.find_by(follower_id: current_user.id)
+    @relationship = current_user.unfollow!(current_user)
+    #p "@relationship >>> ", @relationship
     @relationship.destroy
-    @user.reload
-    #if @relationship.destroy
-    #  flash[:notice] = followed.username += "さんのフォローを解除しました。"
-    #  redirect_back(fallback_location: root_path)
-    #else
-    #  flash[:notice] = followed.username += "さんのフォローの解除に失敗しました。"
-    #  redirect_back(fallback_location: root_path)
-    #end
+    @user = User.find(params[:id])
+    #p "@user >>> ", @user
   end
 end

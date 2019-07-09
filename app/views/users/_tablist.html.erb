@@ -1,30 +1,47 @@
-<div class="col-11 mx-auto", id="tablist">
+<div class="col-11 mx-auto" id="tablist">
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#articles" role="tab" aria-controls="home" aria-selected="true">投稿記事(<%= @user.article_count %>)</a>
+      <a class="nav-link active" id="article-tab" data-toggle="tab" href="#articles"
+       role="tab" aria-controls="articles" aria-selected="true">投稿記事(<%= user.article_count %>)</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="comments-tab" data-toggle="tab" href="#comments" role="tab" aria-controls="profile" aria-selected="false">投稿コメント(<%= @user.comment_count %>)</a>
+      <a class="nav-link" id="comments-tab" data-toggle="tab" href="#comments"
+       role="tab" aria-controls="comments" aria-selected="false">投稿コメント(<%= user.comment_count %>)</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="likes-tab" data-toggle="tab" href="#like_articles" role="tab" aria-controls="contact" aria-selected="false">いいねした記事(<%= @user.like_count %>)</a>
+      <a class="nav-link" id="likes-tab" data-toggle="tab" href="#like_articles"
+       role="tab" aria-controls="likes" aria-selected="false">いいねした記事(<%= user.like_count %>)</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="stocks-tab" data-toggle="tab" href="#stocks" role="tab" aria-controls="contact" aria-selected="false">ストックした記事(<%= @user.stock_count %>)</a>
+      <a class="nav-link" id="stocks-tab" data-toggle="tab" href="#stocks" role="tab"
+       aria-controls="contact" aria-selected="false">ストックした記事(<%= user.stock_count %>)</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="follows-tab" data-toggle="tab" href="#follows" role="tab" aria-controls="contact" aria-selected="false">フォロー(<%= @user.followings.count %>)</a>
+      <a class="nav-link" id="followings-tab" data-toggle="tab" href="#followings" role="tab"
+       aria-controls="followings" aria-selected="false">フォロー(<%= user.followings.count %>)</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="followers-tab" data-toggle="tab" href="#followers" role="tab" aria-controls="contact" aria-selected="false">フォロワー(<%= @user.followers.count %>)</a>
+      <a class="nav-link" id="followers-tab" data-toggle="tab" href="#followers"
+       role="tab" aria-controls="follows" aria-selected="false">フォロワー(<%= user.followers.count %>)</a>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane show active border" id="articles" role="tabpanel" aria-labelledby="home-tab"><%= render 'users/articles' %></div>
-    <div class="tab-pane border" id="comments" role="tabpanel" aria-labelledby="profile-tab"><%= render 'users/comments' %></div>
-    <div class="tab-pane border" id="like_articles" role="tabpanel" aria-labelledby="home-tab"><%= render 'users/liked_articles' %></div>
-    <div class="tab-pane border" id="stocks" role="tabpanel" aria-labelledby="home-tab"></div>
-    <div class="tab-pane border" id="follows" role="tabpanel" aria-labelledby="home-tab"><%= render 'users/followings' %></div>
-    <div class="tab-pane border" id="followers" role="tabpanel" aria-labelledby="home-tab"><%= render 'users/followers' %></div>
+    <div class="pt-4 tab-pane show active border" id="articles" role="tabpanel" aria-labelledby="article-tab">
+      <%= render 'articles/cards', user_type: 'index', articles: user.posted_articles, article_type: "posted"  %>
+    </div>
+    <div class="pt-4 tab-pane border" id="comments" role="tabpanel" aria-labelledby="comments-tab">
+      <%= render 'users/comments', comments: user.comments %>
+    </div>
+    <div class="pt-4 tab-pane border" id="like_articles" role="tabpanel" aria-labelledby="likes-tab">
+      <%= render 'articles/cards', user_type: 'index', articles: user.liked_articles, article_type: 'liked'  %>
+    </div>
+    <div class="pt-4 tab-pane border" id="stocks" role="tabpanel" aria-labelledby="stocks-tab">
+    </div>
+    <div class="pt-4 tab-pane border" id="followings" role="tabpanel" aria-labelledby="followings-tab">
+      <%= render 'users/cards', users: user.followings, user_type: 'followings' %>
+    </div>
+    <div class="pt-4 tab-pane border" id="followers" role="tabpanel" aria-labelledby="followers-tab">
+      <%= render 'users/cards', users: user.followers, user_type: 'followers' %>
+    </div>
   </div>
 </div>

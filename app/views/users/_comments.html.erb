@@ -1,5 +1,5 @@
 <div class="comments card-deck mx-auto my-4">
-  <% @comments.each do |comment| %>
+  <% comments.each do |comment| %>
     <div class="col-6 justify-content-center">
       <% if comment.id.present? %>
         <div class="card mb-4" id="comments-view">
@@ -27,7 +27,7 @@
   <% end %>
   <div class="container d-flex">
     <div class="mx-auto">
-      <%= paginate @comments %>
+      <%= paginate comments.page(params[:page]).per(6).order(created_at: :desc) %>
     </div>
   </div>
 </div>

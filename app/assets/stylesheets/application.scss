@@ -38,7 +38,6 @@
   height: 100%;
   margin: 0px;
   position: relative;
-
   #login-alert {
     z-index: 4;
     width: 100%;
@@ -58,7 +57,6 @@
   position: sticky;
   top: 0px;
   width: 100%;
-
   .header-menu {
     background-color: #4C0065;
     padding: 0 10px 0 10px;
@@ -103,7 +101,7 @@
   padding: 0 1% 0 2%;
   .card {
     margin: 0 0 10% 0;
-    #mordal-btn {
+    #modal-btn {
       outline: 0;
     }
   }
@@ -148,12 +146,45 @@
     color: white;
     overflow: hidden;
     text-overflow: ellipsis;
-
     .tag {
       margin-right: 1.5%;
       margin-bottom: 1%;
       font-size: 8px;
     }
+  }
+}
+
+/* 記事モーダル */
+.article-modal {
+  .modal-dialog {
+    .modal-content {
+      .modal-header {
+        background-color: #336666;
+        #author {
+          font-size: 14px;
+          color: white;
+        }
+        #date {
+          font-size: 12px;
+          color: white;
+        }
+      }
+      #title {
+        font-size: 18px;
+        color: white;
+      }
+      .modal-body {
+        font-size: 14px;
+        min-height: 55vh;
+      }
+    }
+  }
+}
+
+/* アカウントモーダル */
+.user-modal {
+  #user-modal-dialog {
+    padding-top: 13%;
   }
 }
 
@@ -170,7 +201,7 @@
     text-overflow: ellipsis;
     .media-body {
       #name {
-        font-size: 16px;
+        font-size: 14px;
       }
       #profile {
         font-size: 12px;
@@ -207,7 +238,6 @@
 /* 新規記事作成ページ(articles/new) */
 #article-form {
   width: 80%;
-
   .input-group {
     margin-bottom: 10px;
   }
@@ -220,11 +250,9 @@
 #article-show {
   padding: 0;
   .card-header {
-
     padding: 6px 10px 6px 10px;
     color: white;
     background-color: #336666;
-
       #badge-name {
         font-size: 16px;
       }
@@ -266,7 +294,6 @@
 #user-show {
   .card-header {
     padding: 6px 10px 6px 10px;
-
     #name {
       font-size: 28px;
     }
@@ -279,10 +306,8 @@
 /* コメントフォーム */
 .comments {
   #comment-form {
-    margin: 2% 0 2% 0;
   }
   #comments-view {
-    margin: 2% 0 2% 0;
     .card-header {
       padding: 6px 10px 6px 10px;
       #name {
