@@ -39,6 +39,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop'
+  gem 'meta_request'
 end
 
 group :production do
