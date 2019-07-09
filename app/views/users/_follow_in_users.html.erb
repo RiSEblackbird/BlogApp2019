@@ -1,0 +1,10 @@
+<% if current_user.following?(user) %>
+  <%= form_for [current_user, current_user.following_relationships.find_by(follower_id: current_user.id)], method: :delete, id: "follow-btn", remote: true do |f| %>
+    <%= f.submit "フォロー解除", class: "btn btn-sm btn-large btn-dark" %>
+  <% end %>
+<% else %>
+  <%= form_for [current_user, user.following_relationships.new(following_id: user.id)], id: "follow-btn", remote: true do |f| %>
+    <div><%= f.hidden_field :following_id %></div>
+    <%= f.submit "フォロー", class: "btn btn-sm btn-primary" %>
+  <% end %>
+<% end %>
