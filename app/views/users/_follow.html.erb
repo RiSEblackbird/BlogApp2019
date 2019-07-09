@@ -1,9 +1,9 @@
 <% if current_user %>
   <% if current_page?(controller: 'articles', action: 'index') %>
-    <%= render 'users/follow_in_articles', user: user %>
+    <div id="follow_in_articles"><%= render 'users/follow_in_articles', user: user %></div>
   <% elsif current_page?(controller: 'users', action: 'index') %>
-    <%= render 'users/follow_in_users', user: user %>
+    <div id="follow_in_users"><%= render 'users/follow_in_users', user: user %></div>
   <% elsif current_page?(controller: 'users', action: 'show') %>
-    <%= render 'users/follow_at_an_user', user: user %>
+    <div id="follow_at_an_user"><%= render 'users/follow_at_an_user', user: user %></div>
   <% end %>
 <% end %>

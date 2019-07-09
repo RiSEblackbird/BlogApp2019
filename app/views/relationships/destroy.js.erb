@@ -1,2 +1,6 @@
-$('#follow-btn').
-  html('<%= j(render partial: "users/follow", locals: { user: @user }) %>');
+$('#follow_in_articles').
+  html('<%= j(render partial: "users/follow_in_articles", locals: { user: @user, relationship: @relationship }) %>');
+$('#follow_in_users').
+  html('<%= j(render partial: "users/follow_in_users", locals: { user: @user, relationship: @relationship }) %>');
+$('#follow_at_an_user').
+  html('<%= j(render partial: "users/follow_at_an_user", locals: { user: @user, relationship: @relationship }) %>');

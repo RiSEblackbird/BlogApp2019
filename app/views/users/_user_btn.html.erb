@@ -3,9 +3,7 @@
     <% if user == current_user %>
       <%= link_to "ユーザー情報の編集", edit_user_registration_path, class: 'btn btn-sm btn-secondary btn-block' ,id: 'edit-btn' %>
     <% else %>
-      <div id="follow-btn">
-        <%= render 'users/follow', user: user %>
-      </div>
+      <%= render 'users/follow', user: user %>
     <% end %>
   <% end %>
 </div>
