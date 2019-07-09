@@ -17,7 +17,7 @@
               </div>
             </div>
           </button>
-          <%= render 'users/users_modal', article: article, user: article.user, user_type: user_type %>
+          <%= render 'articles/user_modal', article: article, user: article.user, user_type: user_type %>
           <button type="button" data-toggle="modal" data-target="#article-modal-<%= article_type %>-<%= article.id %>" class="m-0 p-0 border-0" id="modal-btn">
             <div class="card-header rounded-0 p-1 px-2 btn-secondary text-align-start" data-toggle="modal" data-target="#article-modal">
               <div class="align-self-center text-truncate text-left" id="title"><%= article.title %></div>
