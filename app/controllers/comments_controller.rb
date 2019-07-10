@@ -12,13 +12,13 @@ class CommentsController < ApplicationController
 
   def destroy
     set_article
-    set_comments
     @comment = @article.comments.find(params[:id])
     @comment.destroy
+    @comments = @article.comments
   end
 
   def set_article
-    @article = Article.find(params[:article_id])
+    @article = Article.find_by(id: params[:article_id])
   end
 
   def set_comments
