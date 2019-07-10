@@ -1,0 +1,3 @@
+<%= form_for [comment.article, comment], method: :delete, id: 'comment-delete', remote: true do |f| %>
+  <%= f.submit "コメント削除", class: 'd-flex align-self-center btn-sm btn-info', data: { confirm: '本当にコメントを削除しますか？' } %>
+<% end %>

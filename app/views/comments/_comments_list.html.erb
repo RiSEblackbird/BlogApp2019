@@ -1,0 +1,7 @@
+<div class="comments">
+  <% comments.each do |comment| %>
+    <% if comment.id.present? %>
+      <%= render 'comments/comment_card', comment: comment %>
+    <% end %>
+  <% end %>
+</div>
