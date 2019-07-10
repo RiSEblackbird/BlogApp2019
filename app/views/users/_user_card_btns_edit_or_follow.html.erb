@@ -1,0 +1,9 @@
+<div id="user-btn">
+  <% if user_signed_in? %>
+    <% if user == current_user %>
+      <%= link_to "ユーザー情報の編集", edit_user_registration_path, class: 'btn btn-sm btn-secondary btn-block' ,id: 'edit-btn' %>
+    <% else %>
+      <%= render 'users/user_card_btn_follow', user: user %>
+    <% end %>
+  <% end %>
+</div>

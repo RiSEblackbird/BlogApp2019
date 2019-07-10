@@ -1,10 +1,10 @@
-<div class="card m-0">
+<div class="card m-0" id="user-card">
   <div class="card-body media p-0 d-flex">
     <div class="d-flex m-1 mr-2">
       <% if user.image.url.present? %>
-        <%= image_tag 'default.jpg', class: 'plofile_img', :size => '50x50' %>
+        <%= image_tag 'default.jpg', class: 'plofile_img rounded', :size => '50x50' %>
       <% else %>
-        <%= image_tag 'default.jpg', class: 'plofile_img', :size => '50x50' %>
+        <%= image_tag 'default.jpg', class: 'plofile_img rounded', :size => '50x50' %>
       <% end %>
     </div>
     <div class="media-body my-1 mr-1">
@@ -28,9 +28,9 @@
             </div>
           </div>
         </div>
-        <%= render 'users/user_btn', user: user %>
+        <%= render 'users/user_card_btns_edit_or_follow', user: user %>
       </div>
-      <div id="profile">
+      <div class ="card m-2 p-2" id="profile">
         <% if user.profile.present? %>
           <div><%= user.profile %></div>
         <% end %>
