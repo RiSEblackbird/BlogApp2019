@@ -1,0 +1,14 @@
+<div class="card-deck mx-auto" id="columns">
+    <% articles.each do |article| %>
+      <div class="p-0 col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 justify-content-center">
+        <div class="pr-3 pb-3">
+          <%= render 'articles/articles_cards_card', article: article, user_type: user_type, article_type: article_type %>
+        </div>
+      </div>
+    <% end %>
+    <div class="container d-flex">
+      <div class="mx-auto">
+        <%= paginate articles.page(params[:page]).per(8).order(created_at: :desc) %>
+      </div>
+    </div>
+</div>

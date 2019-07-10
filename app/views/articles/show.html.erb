@@ -1,49 +1,11 @@
 <% provide(:title, "記事詳細") %>
 
 <div class="col-11 mx-auto">
-  <div class="card" id="article-show">
-    <div class="card-header d-flex justify-content-between" id="header1">
-      <div class="d-flex">
-        <div class="d-flex badge badge-secondary mr-3">
-          <div class="align-self-center mr-2">
-            <%= image_tag 'default.jpg', class: 'plofile_img', :size => '30x30' %>
-          </div>
-          <div class="align-self-center font-weight-bold" id="badge-name">
-            <%= @article.author.username %>
-          </div>
-        </div>
-        <div class="card-title align-self-center" id="article-title"><%= @article.title %></div>
-      </div>
-      <div class="d-flex flex-column align-self-center" id="date">
-        <div>更新；<%= @article.updated_at.strftime("%Y/%m/%d %H:%M") %></div>
-        <div>投稿：<%= @article.created_at.strftime("%Y/%m/%d %H:%M") %></div>
-      </div>
-    </div>
-    <div class="card-header d-flex justify-content-between">
-      <div class="d-flex">
-        <% @article.tag_list.each do |tag| %>
-          <span class="tag badge badge-primary m-1 align-self-center"><%= tag %></span>
-        <% end %>
-      </div>
-      <div class="d-flex align-self-center">
-        <%= render 'articles/btns' %>
-      </div>
-    </div>
-    <div class="card-body">
-      <%= simple_format(@article.body) %>
-    </div>
-    <% if user_signed_in? %>
-      <div class="card-footer">
-        <div id="like-button-<%= @article.id %>">
-          <%= render partial: 'articles/like_article', locals: { article: @article, like: @like } %>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <%= render 'articles/article_card', article: @article, like: @like %>
   <div id="comments-list">
-    <%= render partial: 'articles/comments_list', locals: { article: @article, comment: @comment } %>
+    <%= render 'comments/comments_list', comments: @article.comments %>
   </div>
   <div id="comment-poster">
-    <%= render partial: 'articles/comment_poster', locals: { article: @article, comment: @comment } %>
+    <%= render 'comments/comment_form_post', article: @article %>
   </div>
 </div>

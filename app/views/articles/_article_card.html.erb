@@ -1,0 +1,40 @@
+<div class="card" id="article-card">
+  <div class="card-header p-1 border-secondary" id="author">
+    <%= link_to article.user do %>
+    <div class="d-flex p-0">
+      <div class="d-flex mx-1 align-self-center">
+        <%= image_tag 'default.jpg', class: 'plofile_img', :size => '40x40' %>
+      </div>
+      <div class="d-flex flex-column align-self-center" id="date">
+        <div class="mr-1 font-weight-bold text-left" id="author">
+          <%= article.author.username %>
+        </div>
+        <div class="text-truncate" id="date"><%= article.created_at.strftime("%m月%d日 %H:%M") %></div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div class="card-header border-secondary rounded-0 p-1 pl-2" id="title">
+    <%= article.title %>
+  </div>
+  <div class="card-header d-flex justify-content-between">
+    <div class="d-flex">
+      <% article.tag_list.each do |tag| %>
+        <span class="tag badge badge-primary m-1 align-self-center"><%= tag %></span>
+      <% end %>
+    </div>
+    <div class="d-flex align-self-center">
+      <%= render 'articles/article_card_edit_or_delete_btn', article: article %>
+    </div>
+  </div>
+  <div class="card-body">
+    <%= simple_format(article.body) %>
+  </div>
+  <% if user_signed_in? %>
+    <div class="card-footer">
+      <div id="like-button-<%= article.id %>">
+        <%= render 'articles/article_card_like_btn', article: article, like: like %>
+      </div>
+    </div>
+  <% end %>
+</div>
