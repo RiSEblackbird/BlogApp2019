@@ -8,8 +8,6 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @comment = @article.comments.new
-    @comments = @article.comments.order(created_at: :asc)
     @like = Like.find_by(user_id: current_user.id, article_id: params[:id])
     @likes = @article.likes.where(article_id: params[:article_id])
   end
@@ -45,7 +43,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to :articles
+    redirect_to controller: 'articles', action: 'index'
   end
 
 
