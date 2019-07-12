@@ -5,7 +5,7 @@
       <div class="d-flex mx-1 align-self-center">
         <%= image_tag 'default.jpg', class: 'plofile_img', :size => '40x40' %>
       </div>
-      <div class="d-flex flex-column align-self-center" id="date">
+      <div class="d-flex flex-column align-self-center">
         <div class="mr-1 font-weight-bold text-left" id="author">
           <%= article.author.username %>
         </div>
@@ -31,7 +31,7 @@
     <%= simple_format(article.body) %>
   </div>
   <% if user_signed_in? %>
-    <div class="card-footer">
+    <div class="card-footer p-1">
       <div id="like-button-<%= article.id %>">
         <%= render 'articles/article_card_like_btn', article: article, like: like %>
       </div>
