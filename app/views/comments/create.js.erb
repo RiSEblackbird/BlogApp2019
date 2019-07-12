@@ -1,4 +1,4 @@
 $('#comment-poster').
-  html('<%= j(render partial: "comments/comment_form_post", locals: { article: @comment.article, comment: @comment }) %>');
-$('#comments-list').
-  html('<%= j(render partial: "comments/comments_list", locals: { comments: @comments, comment: @comment }) %>');
+  html('<%= j(render "comments/comment_form_post", article: @comment.article, comment: @comment ) %>');
+$('#comments-list-<%= @article.id %>').
+  html('<%= j(render "comments/comments_list", comments: @comments, comment: @comment ) %>');

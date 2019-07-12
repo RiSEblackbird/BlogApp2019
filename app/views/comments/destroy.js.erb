@@ -1,4 +1,4 @@
 $('#comment-eraser').
-  html('<%= j(render partial: "comments/comment_card_btn_delete", locals: { comment: @comment, comments: @comments }) %>');
-$('#comments-list').
-  html('<%= j(render partial: "comments/comments_list", locals: { comments: @comments, comment: @comment }) %>');
+  html('<%= j(render "comments/comment_card_btn_delete", comment: @comment, comments: @comments ) %>');
+$('#comments-list-<%= @article.id %>').
+  html('<%= j(render "comments/comments_list", comments: @comments, comment: @comment ) %>');
