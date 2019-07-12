@@ -14,7 +14,7 @@
       </div>
     </div>
   </button>
-  <%= render 'articles/articles_cards_card_user_modal', article: article, user: article.user, user_type: user_type %>
+  <%= render 'articles/articles_cards_card_modal_user', article: article, user: article.user, user_type: user_type %>
   <button type="button" data-toggle="modal" data-target="#article-modal-<%= article_type %>-<%= article.id %>" class="m-0 p-0 border-0" id="modal-btn">
     <div class="card-header rounded-0 p-1 px-2 btn-secondary text-align-start" data-toggle="modal" data-target="#article-modal">
       <div class="align-self-center text-truncate text-left" id="title"><%= article.title %></div>
@@ -24,7 +24,7 @@
       <p class="card-text text-left"><%= article.body %></p>
     </div>
   </button>
-  <%= render 'articles/articles_cards_card_article_modal', article: article, article_type: article_type %>
+  <%= render 'articles/articles_cards_card_modal_article', article: article, article_type: article_type %>
   <div class="card-footer p-1 d-flex text-truncate" id="tags">
     <div class="d-flex text-truncate">
       <% article.tag_list.each do |tag| %>
