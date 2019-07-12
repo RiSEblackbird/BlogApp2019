@@ -166,7 +166,7 @@
         min-height: 55vh;
         max-height: 65vh;
       }
-      #comments-list {
+      .comments-list {
         #comment-card {
           #comment-part-body {
             background-color: white;
@@ -345,7 +345,7 @@
   }
 }
 
-#comments-list {
+.comments-list {
   background-color: white;
   #comment-card {
     #comment-part-body {
