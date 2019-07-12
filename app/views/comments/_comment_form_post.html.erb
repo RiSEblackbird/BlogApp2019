@@ -1,13 +1,28 @@
-<div class="comments">
+<div class="comment-form py-3">
   <% if user_signed_in? %>
-    <div id="comment-form">
-      <%= form_for [article, Comment.new], id: 'comment-poster', remote: true do |f| %>
-        <div class= "input-group">
-          <span :content, class="input-group-text">コメントを書く</span>
-          <%= f.text_area :content, class: 'form-control', placeholder: "コメントを書く" %>
-          <%= f.submit 'コメントする', class: 'btn btn-secondary btn btn-block' %>
+  <div class="p-1 px-5 border-0 rounded-0" id="comment-card">
+    <div class="media p-0 d-flex" id="comment-part-body">
+      <div class="d-flex my-1 mr-1">
+        <%= image_tag 'default.jpg', class: 'plofile_img rounded', :size => '30x30' %>
+      </div>
+      <div class="media-body m-0 mr-1">
+        <div class="d-flex justify-content-between">
+          <div class="flex-column">
+            <div class="font-weight-bold" id="name">
+              <%= current_user.username %>
+            </div>
+          </div>
         </div>
-      <% end %>
+        <div id="comment-input">
+          <%= form_for [article, Comment.new], id: 'comment-poster', remote: true do |f| %>
+            <div class= "input-group mx-1">
+              <%= f.text_area :content, class: 'form-control', placeholder: "コメントを書く..." %>
+              <%= f.submit 'コメントする', class: 'btn btn-secondary btn-sm btn-block' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
+  </div>
   <% end %>
 </div>

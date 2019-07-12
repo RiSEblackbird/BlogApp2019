@@ -164,6 +164,26 @@
       .modal-body {
         font-size: 14px;
         min-height: 55vh;
+        max-height: 65vh;
+      }
+      #comments-list {
+        #comment-card {
+          #comment-part-body {
+            background-color: white;
+            .media-body {
+              #user-page {
+                font-size: 12px;
+              }
+              #date {
+                font-size: 9px;
+              }
+              #comment-words {
+                background-color: #E5E5E5;
+                font-size: 12px;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -246,16 +266,19 @@
     padding: 6px 10px 6px 10px;
     color: white;
     background-color: #336666;
-      #badge-name {
-        font-size: 16px;
+      #author {
+        font-size: 14px;
+        color: white;
+      }
+      #date {
+        font-size: 12px;
+        color: white;
       }
       #article-title {
         margin: 0;
         font-size: 20px;
       }
-      #date {
-        font-size: 12px;
-      }
+
       .tag {
         margin-right: 1%;
         font-size: 12px;
@@ -265,7 +288,8 @@
     background-color: #DDDDDD;
   }
   .card-body {
-    height: 65vh;
+    min-height: 30vh;
+    max-height: 80vh;
     overflow: scroll;
     background-color: #DDDDDD;
     font-size: 14px;
@@ -297,15 +321,6 @@
 }
 
 #user-card {
-  .card-header {
-    padding: 6px 10px 6px 10px;
-    #name {
-      font-size: 28px;
-    }
-    #date {
-      font-size: 14px;
-    }
-  }
   .card-body {
     .media-body {
       #profile {
@@ -316,22 +331,37 @@
   }
 }
 
-/* コメントフォーム */
-.comments {
-  #comment-form {
+/* コメント投稿フォーム */
+.comment-form {
+  background-color: white;
+  #name {
+    font-size: 12px;
   }
-  #comments-view {
-    .card-header {
-      padding: 6px 10px 6px 10px;
-      #name {
-        font-size: 14px;
-      }
-      #date {
-        font-size: 10px;
-      }
+  #comment-input {
+    .form-control {
+      font-size: 14px;
     }
-    .card-body {
-      padding: 6px 10px 6px 10px;
+
+  }
+}
+
+#comments-list {
+  background-color: white;
+  #comment-card {
+    #comment-part-body {
+      background-color: white;
+      .media-body {
+        #user-page {
+          font-size: 12px;
+        }
+        #date {
+          font-size: 9px;
+        }
+        #comment-words {
+          background-color: #E5E5E5;
+          font-size: 12px;
+        }
+      }
     }
   }
 }

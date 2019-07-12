@@ -1,21 +1,33 @@
-<div class="card" id="comments-view">
-  <div class="card-header d-flex justify-content-between">
-    <div class="d-flex">
-      <div class="d-flex align-self-center mr-2">
-        <%= image_tag 'default.jpg', class: 'plofile_img', :size => '30x30' %>
+<div class="p-1 px-5 border-0 rounded-0" id="comment-card">
+  <div class="media p-0 d-flex" id="comment-part-body">
+    <div class="d-flex my-1 mr-1">
+      <% if comment.commenter.image.url.present? %>
+        <%= image_tag 'default.jpg', class: 'plofile_img rounded', :size => '30x30' %>
+      <% else %>
+        <%= image_tag 'default.jpg', class: 'plofile_img rounded', :size => '30x30' %>
+      <% end %>
+    </div>
+    <div class="media-body m-0 mr-1">
+      <div class="d-flex justify-content-between">
+        <div class="flex-column">
+          <div class="font-weight-bold" id="name">
+            <%= link_to comment.commenter.username, comment.commenter, id: "user-page" %>
+          </div>
+          <div class="d-flex">
+            <div id="date"><%= comment.created_at.strftime("%Y/%m/%d %H:%M") %></div>
+          </div>
+        </div>
+        <% if user_signed_in? %>
+          <% if comment.commenter == current_user %>
+            <div class="d-flex align-self-center comment-delete-btn">
+              <%= render 'comments/comment_card_btn_delete', comment: comment, article: comment.article %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
-      <div class="d-flex flex-column">
-        <div class="align-self-start font-weight-bold" id="name"><%= comment.commenter.username %></div>
-        <div id="date"><%= comment.created_at.strftime("%Y/%m/%d %H:%M") %></div>
+      <div class ="rounded m-1 p-1" id="comment-words">
+        <div><%= comment.content %></div>
       </div>
     </div>
-    <% if user_signed_in? %>
-      <% if comment.commenter == current_user %>
-        <div class="comment-eraser">
-          <%= render 'comments/comment_card_btn_delete', comment: comment, article: comment.article %>
-        </div>
-      <% end %>
-    <% end %>
   </div>
-  <div class="card-body"><%= comment.content %></div>
 </div>
