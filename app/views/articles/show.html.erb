@@ -2,7 +2,7 @@
 
 <div class="col-11 mx-auto">
   <%= render 'articles/article_card', article: @article, like: @like %>
-  <div id="comments-list">
+  <div class="comments-list" id="comments-list-<%= @article.id %>" >
     <%= render 'comments/comments_list', comments: @article.comments %>
   </div>
   <div id="comment-poster">
