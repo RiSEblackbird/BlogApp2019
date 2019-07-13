@@ -16,6 +16,7 @@ gem 'acts-as-taggable-on', '~> 6.0'
 gem 'mini_magick'
 gem 'carrierwave'
 gem "better_errors"
+gem 'awesome_print', require: 'ap'
 gem "binding_of_caller"
 gem 'activesupport'
 gem 'rails', '~> 5.2.3'
