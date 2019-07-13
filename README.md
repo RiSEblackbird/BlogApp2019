@@ -25,6 +25,7 @@
 |:-------------|:-----|
 | フロントツール | [Bootstrap4](https://github.com/twbs/bootstrap-rubygem) |
 | エラー詳細表示 | [Better Errors](https://github.com/BetterErrors/better_errors) |
+| ChromeでのRails情報表示 | [MetaRequest](https://github.com/dejan/rails_panel/tree/master/meta_request) |
 | フロント用アイコン | [FontAwesome::Sass](https://github.com/FortAwesome/font-awesome-sass) |
 | 静的コード解析 | [RuboCop](https://github.com/rubocop-hq/rubocop) |
 
