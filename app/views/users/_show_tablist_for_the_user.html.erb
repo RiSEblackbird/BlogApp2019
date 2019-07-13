@@ -29,7 +29,7 @@
     <div class="pt-4 tab-pane show active border" id="articles" role="tabpanel" aria-labelledby="article-tab">
       <%= render 'articles/articles_cards', user_type: 'index', articles: user.posted_articles, article_type: "posted"  %>
     </div>
-    <div class="pt-4 tab-pane border" id="comments" role="tabpanel" aria-labelledby="comments-tab">
+    <div class="pt-4 tab-pane border comments-list" id="comments" role="tabpanel" aria-labelledby="comments-tab">
       <%= render 'comments/comments_list', comments: user.comments %>
     </div>
     <div class="pt-4 tab-pane border" id="like_articles" role="tabpanel" aria-labelledby="likes-tab">
