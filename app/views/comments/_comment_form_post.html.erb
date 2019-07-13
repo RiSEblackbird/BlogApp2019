@@ -16,7 +16,7 @@
         <div id="comment-input">
           <%= form_for [article, Comment.new], id: 'comment-poster', remote: true do |f| %>
             <div class= "input-group mx-1">
-              <%= f.text_area :content, class: 'form-control', placeholder: "コメントを書く..." %>
+              <%= f.text_area :content, class: 'form-control mb-1', placeholder: "コメントを書く..." %>
               <%= f.submit 'コメントする', class: 'btn btn-secondary btn-sm btn-block' %>
             </div>
           <% end %>
