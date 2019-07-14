@@ -19,6 +19,7 @@
 | 画像リサイズ機能 | [MiniMagick](https://github.com/minimagick/minimagick) |
 | 画像アップロード機能 | [CarrierWave](https://github.com/carrierwaveuploader/carrierwave) |
 | ページネーション | [kaminari](https://github.com/kaminari/kaminari) |
+| 記事のマークダウン記法対応 | [Redcarpet](https://github.com/vmg/redcarpet) |
 
 # 開発補助機能
 | 技術 or ツール | 名称 |

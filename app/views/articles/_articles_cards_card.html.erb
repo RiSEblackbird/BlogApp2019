@@ -20,8 +20,8 @@
       <div class="align-self-center text-truncate text-left" id="title"><%= article.title %></div>
     </div>
 
-    <div class="card-body p-2">
-      <p class="card-text text-left"><%= article.body %></p>
+    <div class="card-body p-2 text-left">
+      <%= markdown(article.body).html_safe %>
     </div>
   </button>
   <%= render 'articles/articles_cards_card_modal_article', article: article, article_type: article_type %>

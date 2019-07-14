@@ -28,7 +28,7 @@
     </div>
   </div>
   <div class="card-body">
-    <%= simple_format(article.body) %>
+    <%= markdown(article.body).html_safe %>
   </div>
   <% if user_signed_in? %>
     <div class="card-footer p-1">
