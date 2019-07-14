@@ -4,18 +4,52 @@
       <span :title, class="input-group-text">タイトル</span>
       <%= f.text_field :title, class: 'form-control', placeholder: "タイトルを記載" %>
     </div>
-    <div class= "input-group" id="article-body">
-      <span :body, class="input-group-text">記事本文</span>
-      <%= f.text_area :body, class: 'form-control', placeholder: "本文を記載" %>
+    <div class="card mb-2" id="article-body">
+      <div class="card-header py-1">
+        <ul class="nav nav-pills card-header-pills">
+          <li class="nav-item">
+            <a class="nav-link active py-1 mr-2" id="editor-tab" data-toggle="tab" href="#editor-area" role="tab" aria-controls="editor" aria-selected="true">記述</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link p-1" id="preview-tab" data-toggle="tab" href="#preview-area" role="tab" aria-controls="preview" aria-selected="false">プレビュー</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body" id="markdown-editor">
+        <div class="tab-content" >
+          <div class="tab-pane show active border" id="editor-area" role="tabpanel" aria-labelledby="editor-tab">
+            <%= f.text_area :body, class: 'form-control', id: 'editor', "v-model" => "input", name: "article[body]", placeholder: "本文を記載" %>
+          </div>
+          <div class="tab-pane border" id="preview-area" role="tabpanel" aria-labelledby="preview-tab" >
+            <div id="preview-area" class="content" v-html='input | marked'></div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class= "input-group" id="article-tags">
       <span :tag_list, class="input-group-text px-4">タグ</span>
       <%= f.text_field :tag_list, value: @article.tag_list.join(","), class: 'form-control', placeholder: "タグを追加(複数可)" %>
     </div>
-    <% if current_page?(new_article_path) %>
-      <%= f.submit '上記の内容で投稿する', class: 'btn btn-secondary btn-lg btn-block' %>
-    <% else %>
-      <%= f.submit '編集を登録する', class: 'btn btn-secondary btn-lg btn-block' %>
-    <% end %>
+    <div class="mb-3">
+      <% if current_page?(new_article_path) %>
+        <%= f.submit '上記の内容で投稿する', class: 'btn btn-secondary btn-lg btn-block' %>
+      <% else %>
+        <%= f.submit '編集を登録する', class: 'btn btn-secondary btn-lg btn-block' %>
+      <% end %>
+    </div>
   <% end %>
 </div>
+
+<script type="text/javascript">
+window.onload = function() {
+  new Vue({
+    el: '#markdown-editor',
+    data: {
+      input: '<%= j @article.body %>',
+    },
+    filters: {
+      marked: marked,
+    }
+  });
+};
+</script>

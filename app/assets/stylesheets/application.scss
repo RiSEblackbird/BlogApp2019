@@ -255,7 +255,13 @@
     margin-bottom: 10px;
   }
   #article-body {
-    height: 60vh;
+    min-height: 60vh;
+    #editor {
+      min-height: 50vh;
+    }
+    #preview-area: {
+      min-height: 50vh;
+    }
   }
 }
 

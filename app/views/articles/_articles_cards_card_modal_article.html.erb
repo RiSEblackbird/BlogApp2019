@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="modal-body p-2 px-3 overflow-auto">
-        <%= simple_format(article.body) %>
+        <%= markdown(article.body).html_safe %>
       </div>
       <div class="modal-footer border-top-0 p-2">
         <%= link_to "記事詳細へ", article, class: "p-1 btn btn-sm btn-primary" %>
