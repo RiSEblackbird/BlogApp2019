@@ -10,6 +10,8 @@ gem "kaminari"
 gem 'devise', '4.6.2'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'redcarpet', '~> 2.3.0'
+gem 'coderay'
 gem 'cancancan'
 gem 'rails_admin'
 gem 'acts-as-taggable-on', '~> 6.0'
