@@ -33,6 +33,8 @@
       <div class ="card m-2 p-2" id="profile">
         <% if user.profile.present? %>
           <div><%= user.profile %></div>
+          <%= javascript_pack_tag 'hello_vue' %>
+
         <% end %>
       </div>
     </div>
