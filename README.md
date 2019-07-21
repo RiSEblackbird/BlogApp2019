@@ -8,10 +8,15 @@
 | 技術 or ツール | 名称 |
 |:-------------|:-----|
 | 言語 | Ruby 2.5.3 |
-| アプリフレームワーク | Ruby on Rails 5.2.3 |
+| サーバサイドフレームワーク | Ruby on Rails 5.2.3 |
+| フロントエンドフレームワーク | Vue.js |
 | 開発用DB | SQLite |
 | 本番用DB | PostgreSQL |
 | インフラ | Heroku |
+
+# 付加機能
+| 技術 or ツール | 名称 |
+|:-------------|:-----|
 | ログイン機能 | [device](https://github.com/plataformatec/devise) |
 | 権限管理機能 | [CanCan](https://github.com/ryanb/cancan) |
 | ユーザー管理画面 | [RailsAdmin](https://github.com/sferik/rails_admin) |
@@ -24,10 +29,10 @@
 # 開発補助機能
 | 技術 or ツール | 名称 |
 |:-------------|:-----|
-| フロントツール | [Bootstrap4](https://github.com/twbs/bootstrap-rubygem) |
+| Crome拡張機能 | [Vue.js devtools (github)](https://github.com/vuejs/vue-devtools) |
+|           | [Vue.js devtools (chromeウェブストア)](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=ja&) |
 | エラー詳細表示 | [Better Errors](https://github.com/BetterErrors/better_errors) |
 | ChromeでのRails情報表示 | [MetaRequest](https://github.com/dejan/rails_panel/tree/master/meta_request) |
-| フロント用アイコン | [FontAwesome::Sass](https://github.com/FortAwesome/font-awesome-sass) |
 | 静的コード解析 | [RuboCop](https://github.com/rubocop-hq/rubocop) |
 
 # (実装予定)

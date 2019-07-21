@@ -5,6 +5,7 @@ ruby '2.5.3'
 gem 'bootstrap', '4.3.1'
 gem 'sprockets', '3.7.2'
 gem 'jquery-rails'
+gem 'webpacker'
 gem "font-awesome-sass"
 gem "kaminari"
 gem 'devise', '4.6.2'
