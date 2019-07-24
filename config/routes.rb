@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get 'users/index'
     get 'users/show'
   end
+
   get 'users/show'
   get 'users/index'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -33,5 +34,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :users, only: [:index, :show]
+    resources :articles do
+      resources :comments, only: [:create, :destroy]
+      resources :likes, only: [:create, :destroy]
+    end
   end
 end
