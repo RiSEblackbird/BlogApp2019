@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
-    get 'article/index'
-    get 'article/show'
+    get 'articles/index'
+    get 'articles/show'
   end
   namespace :api do
     get 'users/index'
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
 
-  namespace :api do
+  namespace :api, format: 'json' do
     resources :users, only: [:index, :show]
     resources :articles do
       resources :comments, only: [:create, :destroy]
