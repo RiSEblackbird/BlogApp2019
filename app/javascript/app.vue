@@ -1,22 +1,17 @@
-<template>
-  <div id="app">
-    <p>{{ message }}</p>
-  </div>
-</template>
-
 <script>
-export default {
-  data: function () {
-    return {
-      message: "Hello Vue!"
+  import Header from 'packs/components/header.vue'
+  import Footer from 'packs/components/footer.vue'
+
+  export default {
+    name: 'MyApp',
+    props: {
+      msg: String
+    },
+    components: {
+      Header, Footer
     }
   }
-}
 </script>
 
-<style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
-}
+<style lang="scss">
 </style>
