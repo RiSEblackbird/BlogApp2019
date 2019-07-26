@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
-  namespace :api do
-    get 'users/index'
-    get 'users/show'
-  end
-  get 'users/show'
-  get 'users/index'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
+  get 'users/index'
   get 'users/show'
   root "articles#index"
   get 'home' => 'articles#index'
@@ -25,9 +21,5 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments, only: [:create, :destroy]
     resources :likes, only: [:create, :destroy]
-  end
-
-  namespace :api do
-    resources :users, only: [:index, :show]
   end
 end
