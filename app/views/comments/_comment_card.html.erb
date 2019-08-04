@@ -1,11 +1,7 @@
 <div class="p-1 px-5 border-0 rounded-0" id="comment-card">
   <div class="media p-0 d-flex" id="comment-part-body">
     <div class="d-flex my-1 mr-1">
-      <% if comment.commenter.image.url.present? %>
-        <%= image_tag 'default.jpg', class: 'plofile_img rounded', :size => '30x30' %>
-      <% else %>
-        <%= image_tag 'default.jpg', class: 'plofile_img rounded', :size => '30x30' %>
-      <% end %>
+      <%= render 'comments/comment_user_image', user: comment.commenter %>
     </div>
     <div class="media-body m-0 mr-1">
       <div class="d-flex justify-content-between">
