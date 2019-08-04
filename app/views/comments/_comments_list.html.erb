@@ -1,9 +1,7 @@
 <div class="comments">
   <% comments.each do |comment| %>
-    <% if comment.id.present? %>
-      <div class="p-0">
-        <%= render 'comments/comment_card', comment: comment %>
-      </div>
-    <% end %>
+    <div class="p-0">
+      <%= render 'comments/comment_card', comment: comment %>
+    </div>
   <% end %>
 </div>

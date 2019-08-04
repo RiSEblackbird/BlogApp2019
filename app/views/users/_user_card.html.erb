@@ -1,11 +1,7 @@
 <div class="card m-0" id="user-card">
   <div class="card-body media p-0 d-flex">
     <div class="d-flex m-1 mr-2">
-      <% if user.image.url.present? %>
-        <%= image_tag 'default.jpg', class: 'plofile_img rounded', :size => '50x50' %>
-      <% else %>
-        <%= image_tag 'default.jpg', class: 'plofile_img rounded', :size => '50x50' %>
-      <% end %>
+      <%= render 'users/user_image', user: user %>
     </div>
     <div class="media-body my-1 mr-1">
       <div class="d-flex justify-content-between">

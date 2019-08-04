@@ -122,8 +122,11 @@
   .card-title {
     font-size: 18px;
   }
-  .card-body {
+  #article-image {
     height: 160px;
+  }
+  .card-body {
+    height: 180px;
     background-color: #DDDDDD;
     font-size: 12px;
     overflow: hidden;
@@ -323,7 +326,6 @@
     }
   }
 }
-
 #user-card {
   .card-body {
     .media-body {
@@ -365,6 +367,48 @@
           background-color: #E5E5E5;
           font-size: 12px;
         }
+      }
+    }
+  }
+}
+
+/* ユーザーページタブリスト */
+.user-tablist-comment {
+  padding: 0% 5% 0% 5%;
+  #comment-card {
+    background-color: white;
+    #comment-part-body {
+      .media-body {
+        #name {
+          font-size: 11px;
+        }
+        #date {
+          font-size: 9px;
+        }
+        #comment-words {
+          background-color: #E5E5E5;
+          font-size: 12px;
+        }
+      }
+    }
+    #article-part-body {
+      color: white;
+      font-size: 12px;
+      background-color: #196500;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      #title {
+        font-size: 13px;
+      }
+      #author {
+        font-size: 10px;
+      }
+      #date {
+        font-size: 8px;
+      }
+      #modal-btn {
+        outline: 0;
+        background-color: #009826;
       }
     }
   }

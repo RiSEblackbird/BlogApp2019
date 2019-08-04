@@ -3,7 +3,7 @@
     <%= link_to article.user do %>
     <div class="d-flex p-0">
       <div class="d-flex mx-1 align-self-center">
-        <%= image_tag 'default.jpg', class: 'plofile_img', :size => '40x40' %>
+        <%= render 'articles/article_user_image', user: article.author %>
       </div>
       <div class="d-flex flex-column align-self-center">
         <div class="mr-1 font-weight-bold text-left" id="author">
