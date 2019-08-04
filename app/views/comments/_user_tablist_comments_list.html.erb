@@ -1,0 +1,9 @@
+<div class="user-tablist-comment card-deck mx-auto">
+  <% comments.each do |comment| %>
+    <div class="p-0 col-12 col-sm-6 justify-content-centers">
+      <div class="pr-3 pb-3">
+        <%= render 'comments/user_tablist_comment_card', comment: comment %>
+      </div>
+    </div>
+  <% end %>
+</div>

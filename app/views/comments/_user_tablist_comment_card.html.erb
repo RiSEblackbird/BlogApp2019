@@ -1,0 +1,8 @@
+<div class="border-0 rounded-0" id="comment-card">
+  <div class="card-body p-2">
+    <%= render 'comments/user_tablist_comment_card_comment', comment: comment %>
+  </div>
+  <div class="card-body p-2">
+    <%= render 'comments/user_tablist_comment_card_article', user_type: 'commented', article: comment.article, article_type: 'commented' %>
+  </div>
+</div>
