@@ -9,10 +9,10 @@
 |:-------------|:-----|
 | 言語 | Ruby 2.5.3 |
 | サーバサイドフレームワーク | Ruby on Rails 5.2.3 |
-| フロントエンドフレームワーク | Vue.js |
 | 開発用DB | SQLite |
 | 本番用DB | PostgreSQL |
 | インフラ | Heroku |
+| (フロントエンドフレームワーク) | Vue.js (※Rails上での環境構築のみ) |
 
 # 付加機能
 | 技術 or ツール | 名称 |
@@ -34,6 +34,7 @@
 | エラー詳細表示 | [Better Errors](https://github.com/BetterErrors/better_errors) |
 | ChromeでのRails情報表示 | [MetaRequest](https://github.com/dejan/rails_panel/tree/master/meta_request) |
 | 静的コード解析 | [RuboCop](https://github.com/rubocop-hq/rubocop) |
+| アプリ名変更 | [rename](https://github.com/morshedalam/rename) |
 
 # (実装予定)
 | 技術 or ツール | 名称 |
