@@ -58,8 +58,6 @@
 # 開発補助機能
 | 技術 or ツール | 名称 |
 |:-------------|:-----|
-| Crome拡張機能 | [Vue.js devtools (github)](https://github.com/vuejs/vue-devtools) |
-|           | [Vue.js devtools (chromeウェブストア)](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=ja&) |
 | エラー詳細表示 | [Better Errors](https://github.com/BetterErrors/better_errors) |
 | ChromeでのRails情報表示 | [MetaRequest](https://github.com/dejan/rails_panel/tree/master/meta_request) |
 | 静的コード解析 | [RuboCop](https://github.com/rubocop-hq/rubocop) |
