@@ -10,6 +10,7 @@
           <div class="flex-column">
             <div class="font-weight-bold" id="name">
               <%= current_user.username %>
+              <%= render 'users/user_card_admin_badge', user: current_user %>
             </div>
           </div>
         </div>
