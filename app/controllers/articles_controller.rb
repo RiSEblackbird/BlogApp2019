@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   # [devise由来] ログイン済ユーザーにのみアクセスを許可する。
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @articles = Article.page(params[:page]).per(8).order(created_at: :desc)
