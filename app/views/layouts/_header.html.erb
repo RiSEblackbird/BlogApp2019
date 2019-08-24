@@ -21,6 +21,7 @@
         <div class="dropdown">
           <button class="btn btn-sm btn-dark dropdown-toggle" type="button"
             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= image_tag current_user.image.url, class: 'rounded', :size => '15x15' if current_user.image.url.present? %>
             <%= current_user.username %> さん
             <%= render 'users/user_card_admin_badge', user: current_user %>
           </button>
