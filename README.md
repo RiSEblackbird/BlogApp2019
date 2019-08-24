@@ -5,6 +5,7 @@
 ## 基本機能概要
 ### ユーザー関連(Userモデル)
  - ログイン機能
+ - 画像アップロード機能(AWS S3)
  - 管理者権限＆管理画面機能
  - ユーザー一覧表示
  - ユーザー詳細表示
@@ -27,7 +28,6 @@
 
 ## 実装取り組み中の技術
  - AWS EC2への本アプリのデプロイ
- - AWS S3を用いた画像アップロード機能
  - RSpecによるテスト実装  
 
 ---  
@@ -47,6 +47,7 @@
 | 技術 or ツール | 名称 |
 |:-------------|:-----|
 | ログイン機能 | [device](https://github.com/plataformatec/devise) |
+| AWS S3との接続 | [aws-sdk-s3](https://github.com/aws/aws-sdk-ruby) |
 | 権限管理機能 | [CanCan](https://github.com/ryanb/cancan) |
 | ユーザー管理画面 | [RailsAdmin](https://github.com/sferik/rails_admin) |
 | 記事タグ付け機能 | [ActsAsTaggableOn](https://github.com/mbleigh/acts-as-taggable-on) |
