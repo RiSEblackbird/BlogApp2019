@@ -12,6 +12,12 @@
           <%= f.text_area :profile, autofocus: true, autocomplete: "profile",
               class: "form-control", placeholder: "プロフィール文を記載" %>
         </div>
+        <div class="badge badge-light field">
+          <%= image_tag @user.image.url, class: 'rounded', :size => '100x100' if @user.image.url.present? %>
+          <%= f.file_field :image, class: "m-0" %>
+        </div>
+        <div class="badge badge-primary"><%= f.check_box :remove_image %>画像を削除する</div>
+
         <div class="field">
           <%= f.email_field :email, autofocus: true, autocomplete: "email",
               class: "form-control", placeholder: "Eメールアドレス" %>
