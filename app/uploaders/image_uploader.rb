@@ -8,9 +8,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   # storage :fog
 
   if Rails.env.production?
-    strage :fog
+    storage :fog
   else
-    strage :file
+    storage :file
   end
 
   # Override the directory where uploaded files will be stored.
