@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rename'
 gem "aws-sdk-s3", require: false
+gem 'fog-aws'
 
 group :development, :test do
   gem 'sqlite3'
