@@ -14,8 +14,6 @@ class User < ApplicationRecord
 
   # プロフィール画像の適用
   has_one_attached :image
-
-  # プロフ写真との関連付け
   mount_uploader :image, ImageUploader
 
   # Userモデルに適用するdeviseの機能
