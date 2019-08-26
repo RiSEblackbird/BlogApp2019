@@ -26,6 +26,10 @@
         </div>
       </div>
     </div>
+    <div class="mb-2 badge badge-light field">
+      <%= image_tag @article.article_picture.url if @article.article_picture.url.present? %>
+      <%= f.file_field :article_picture, class: "m-0" %>
+    </div>
     <div class= "input-group" id="article-tags">
       <span :tag_list, class="input-group-text px-4">タグ</span>
       <%= f.text_field :tag_list, value: @article.tag_list.join(","), class: 'form-control', placeholder: "タグを追加(複数可)" %>
