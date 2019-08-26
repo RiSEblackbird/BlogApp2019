@@ -27,9 +27,16 @@
       </div>
     </div>
     <div class="mb-2 badge badge-light field">
-      <%= image_tag @article.article_picture.url if @article.article_picture.url.present? %>
+      <% if current_page?(controller: 'articles', action: 'new') %>
+      <% elsif current_page?(controller: 'articles', action: 'edit') %>
+        <%= image_tag @article.article_picture.url if @article.article_picture.url.present? %>
+      <% end %>
       <%= f.file_field :article_picture, class: "m-0" %>
     </div>
+    <% if current_page?(controller: 'articles', action: 'new') %>
+    <% elsif current_page?(controller: 'articles', action: 'edit') %>
+      <div class="badge badge-primary mb-2"><%= f.check_box :remove_article_picture %>画像を削除する</div>
+    <% end %>
     <div class= "input-group" id="article-tags">
       <span :tag_list, class="input-group-text px-4">タグ</span>
       <%= f.text_field :tag_list, value: @article.tag_list.join(","), class: 'form-control', placeholder: "タグを追加(複数可)" %>
