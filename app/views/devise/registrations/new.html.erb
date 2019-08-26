@@ -9,6 +9,9 @@
           <%= f.text_field :username, autofocus: true, autocomplete: "username",
               class: "form-control", placeholder: "アカウント名" %>
         </div>
+        <div class="badge badge-light field">
+          <%= f.file_field :image, class: "m-0" %>
+        </div>
         <div class="field">
           <%= f.email_field :email, autofocus: true, autocomplete: "email",
               class: "form-control", placeholder: "Eメールアドレス" %>
