@@ -1,7 +1,7 @@
 class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
@@ -28,7 +28,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  # process scale: [200, 300]
   #
   # def scale(width, height)
   #   # do something
@@ -57,5 +56,9 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   def default_url
     "default.jpg"
+  end
+
+  def size_range
+    1..3.megabytes
   end
 end
