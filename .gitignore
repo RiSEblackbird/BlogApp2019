@@ -34,6 +34,7 @@ vendor/bundle
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+/app/assets/images
 /public/packs
 /public/uploads
 /public/packs-test

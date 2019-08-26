@@ -29,6 +29,11 @@
     </div>
   </div>
   <div class="card-body">
+    <div class="card d-flex m-0 p-0 border-0 justify-content-center">
+      <div class="article-picture-field">
+        <%= image_tag article.article_picture.url, class: "article-picture" if article.article_picture.url.present? %>
+      </div>
+    </div>
     <%= markdown(article.body).html_safe %>
   </div>
   <% if user_signed_in? %>

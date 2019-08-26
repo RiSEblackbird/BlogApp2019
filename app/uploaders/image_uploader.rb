@@ -53,7 +53,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    "default.jpg"
+    "#{model.class.to_s.underscore}-default.jpg"
   end
 
   process resize_to_limit: [550, 400]

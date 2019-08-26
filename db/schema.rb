@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_28_075311) do
+ActiveRecord::Schema.define(version: 2019_08_26_130213) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_06_28_075311) do
     t.integer "like_count", default: 0
     t.integer "comment_count", default: 0
     t.integer "stock_count", default: 0
+    t.string "article_picture"
   end
 
   create_table "comments", force: :cascade do |t|
