@@ -49,8 +49,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   def filename
     if original_filename.present?
       "#{model.id}-#{original_filename}.#{file.extension}"
-    else
-      "#{model.id}.#{file.extension}"
     end
   end
 
