@@ -1,0 +1,21 @@
+<div class="modal fade" id="readme-modal" tabindex="-1" role="dialog"
+ aria-labelledby="READMEプレビュー" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+        <div class="modal-header p-1 border-secondary">
+          <button type="button" class="btn btn-secondary btn-block"
+           data-dismiss="modal">閉じる</button>
+        </div>
+        <div class="modal-header">
+          <h5>※ GitのREADME.mdの内容を表示しています。</h5>
+        </div>
+      <div class="modal-body p-2 px-3 overflow-auto">
+        <%= markdown(p File.open("./README.md").read).html_safe %>
+      </div>
+      <div class="modal-footer border-top-0 p-2">
+        <button type="button" class="p-1 btn btn-secondary btn-block"
+         data-dismiss="modal">閉じる</button>
+      </div>
+    </div>
+  </div>
+</div>

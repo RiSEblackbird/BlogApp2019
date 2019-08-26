@@ -13,10 +13,7 @@
           </form>
         </li>
       </ul>
-      <div class="col-auto navbar-brand badge badge-warning align-self-center">
-        ※このポートフォリオアプリは制作中です(2019年8月現在)
-      </div>
-
+      <%= render 'layouts/readme_btn' %>
       <% if user_signed_in? %>
         <div class="dropdown">
           <button class="btn btn-sm btn-dark dropdown-toggle" type="button"
