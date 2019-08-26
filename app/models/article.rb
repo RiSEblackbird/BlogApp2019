@@ -8,6 +8,10 @@ class Article < ApplicationRecord
     likes.find_by(user_id: user)
   end
 
+  # 記事画像の適用
+  has_one_attached :article_picture
+  mount_uploader :article_picture, ImageUploader
+
   validates :title, :body, presence: true
   validates :tag_list, length: { maximum: 20 }
   validates :title, length: { maximum: 100 }
