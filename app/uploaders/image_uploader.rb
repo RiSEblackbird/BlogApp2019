@@ -59,6 +59,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   process resize_to_limit: [550, 400]
 
   def size_range
-    1..10.megabytes
+    1..15.megabytes
   end
 end
