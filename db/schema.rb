@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_130213) do
+ActiveRecord::Schema.define(version: 2019_08_27_082609) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -121,6 +121,7 @@ ActiveRecord::Schema.define(version: 2019_08_26_130213) do
     t.integer "stock_count", default: 0
     t.integer "article_count", default: 0
     t.integer "comment_count", default: 0
+    t.boolean "guest_flg"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
