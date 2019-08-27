@@ -1,0 +1,5 @@
+<% if user.admin_flg == true %>
+  <div class="ml-1 badge badge-sm badge-danger">管理者</div>
+<% elsif user.guest_flg == true %>
+  <div class="ml-1 badge badge-sm badge-warning">閲覧用ゲスト</div>
+<% end %>
