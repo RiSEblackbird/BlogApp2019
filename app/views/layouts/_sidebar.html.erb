@@ -1,7 +1,7 @@
 <div class="sidebar mx-3">
   <% @articles = Article.by_dates.sidebar_limit %>
-  <div class="card mb-4" id="sidebar-card">
-    <div class="card-header p-1">投稿日順</div>
+  <div class="card rounded-0 mb-4" id="sidebar-card">
+    <div class="card-header rounded-0 p-1">投稿日順</div>
       <div class="card-body p-1">
         <% @articles.each do |article| %>
           <%= link_to article do %>
@@ -18,8 +18,8 @@
       </div>
   </div>
   <% @articles = Article.by_comments.sidebar_limit %>
-  <div class="card mb-4" id="sidebar-card">
-    <div class="card-header p-1">コメント数順</div>
+  <div class="card rounded-0 mb-4" id="sidebar-card">
+    <div class="card-header rounded-0 p-1">コメント数順</div>
       <div class="card-body p-1">
         <% @articles.each do |article| %>
           <%= link_to article do %>
