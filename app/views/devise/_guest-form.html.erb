@@ -14,6 +14,7 @@
         <%= f.hidden_field :username, value: "ゲスト甲" %>
         <%= f.hidden_field :email, value: "guest1@mail.com" %>
         <%= f.hidden_field :profile, value: "このアカウントはポートフォリオの内容を確認するためのものです。" %>
+        <%= f.hidden_field :guest_flg, value: "true" %>
         <%= f.hidden_field :password, value: "guestguest1" %>
       </div>
       <%= f.submit 'ゲスト甲として登録(初回のみ)', class: 'container btn btn-secondary my-1' %>
@@ -37,6 +38,7 @@
         <%= f.hidden_field :username, value: "ゲスト乙" %>
         <%= f.hidden_field :email, value: "guest2@mail.com" %>
         <%= f.hidden_field :profile, value: "このアカウントはポートフォリオの内容を確認するためのものです。" %>
+        <%= f.hidden_field :guest_flg, value: "true" %>
         <%= f.hidden_field :password, value: "guestguest2" %>
       </div>
       <%= f.submit 'ゲスト乙として登録(初回のみ)', class: 'container btn btn-secondary my-1' %>
@@ -60,6 +62,7 @@
         <%= f.hidden_field :username, value: "ゲスト丙" %>
         <%= f.hidden_field :email, value: "guest3@mail.com" %>
         <%= f.hidden_field :profile, value: "このアカウントはポートフォリオの内容を確認するためのものです。" %>
+        <%= f.hidden_field :guest_flg, value: "true" %>
         <%= f.hidden_field :password, value: "guestguest3" %>
       </div>
       <%= f.submit 'ゲスト丙として登録(初回のみ)', class: 'container btn btn-secondary my-1' %>
