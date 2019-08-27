@@ -8,7 +8,7 @@
       <div class="d-flex flex-column align-self-center">
         <div class="mr-1 font-weight-bold text-left" id="author">
           <%= article.author.username %>
-          <%= render 'users/user_card_admin_badge', user: article.author %>
+          <%= render 'users/user_card_attribute_badge', user: article.author %>
         </div>
         <div class="text-truncate" id="date"><%= article.created_at.strftime("%m月%d日 %H:%M") %></div>
       </div>
