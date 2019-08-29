@@ -1,5 +1,5 @@
 class AddGuestFlgToUser < ActiveRecord::Migration[5.2]
   def change
-    add_column :users, :guest_flg, :boolean
+    add_column :users, :guest_flg, :boolean, default: 0
   end
 end
