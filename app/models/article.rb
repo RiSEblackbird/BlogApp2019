@@ -20,4 +20,5 @@ class Article < ApplicationRecord
   scope :sidebar_limit, -> { limit(10) }
   scope :by_dates, -> { order(created_at: :desc) }
   scope :by_comments, -> { order(comment_count: :desc) }
+  scope :update_notice, -> { where(update_note: true) }
 end
