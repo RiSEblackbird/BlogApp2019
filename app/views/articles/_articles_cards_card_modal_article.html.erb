@@ -23,7 +23,10 @@
       <% end %>
       <%= link_to article do %>
         <div class="modal-header border-secondary rounded-0 p-1 pl-2" id="title">
-          <%= article.title %>
+          <div class="">
+            <%= render 'articles/article_card_notice_type_badge', article: article %>
+            <%= article.title %>
+          </div>
         </div>
       <% end %>
       <div class="modal-header rounded-0 p-1 pl-2">
