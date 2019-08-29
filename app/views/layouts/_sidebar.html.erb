@@ -13,7 +13,7 @@
                 --<%= article.created_at.strftime("%m/%d") %>
               </div>
             </div>
-        <% end %>
+          <% end %>
         <% end %>
       </div>
   </div>
@@ -31,7 +31,25 @@
                 --(<%= article.comment_count %>)
               </div>
             </div>
+          <% end %>
         <% end %>
+      </div>
+  </div>
+  <% @articles = Article.update_notice.by_dates.sidebar_limit %>
+  <div class="card rounded-0 mb-4" id="sidebar-card">
+    <div class="card-header rounded-0 p-1">最新アップデート</div>
+      <div class="card-body p-1">
+        <% @articles.each do |article| %>
+          <%= link_to article do %>
+            <div class="row d-flex mx-auto justify-content-between">
+              <div class="px-0 col-6 col-lg-7 col-xl-8 d-flex ">
+                <div class="text-truncate"><%= article.title %></div>
+              </div>
+              <div class="d-flex">
+                --<%= article.created_at.strftime("%m/%d") %>
+              </div>
+            </div>
+          <% end %>
         <% end %>
       </div>
   </div>

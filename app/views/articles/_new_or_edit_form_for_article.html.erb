@@ -41,6 +41,9 @@
       <span :tag_list, class="input-group-text px-4">タグ</span>
       <%= f.text_field :tag_list, value: @article.tag_list.join(","), class: 'form-control', placeholder: "タグを追加(複数可)" %>
     </div>
+    <% if current_user.admin_flg == true %>
+      <div class="badge badge-lg badge-danger mb-2"><%= f.check_box :update_note, value: 'true' %>アップデートのお知らせ</div>
+    <% end %>
     <div class="mb-3">
       <% if current_page?(new_article_path) %>
         <%= f.submit '上記の内容で投稿する', class: 'btn btn-secondary btn-lg btn-block' %>

@@ -16,6 +16,7 @@
     <% end %>
   </div>
   <div class="card-header border-secondary rounded-0 p-1 pl-2" id="title">
+    <%= render 'articles/article_card_notice_type_badge', article: article %>
     <%= article.title %>
   </div>
   <div class="card-header d-flex justify-content-between">

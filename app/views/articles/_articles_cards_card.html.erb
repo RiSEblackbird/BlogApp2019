@@ -18,7 +18,10 @@
   <%= render 'articles/articles_cards_card_modal_user', article: article, user: article.user, user_type: user_type %>
   <button type="button" data-toggle="modal" data-target="#article-modal-<%= article_type %>-<%= article.id %>" class="m-0 p-0 border-0" id="modal-btn">
     <div class="card-header rounded-0 p-1 px-2 btn-secondary text-align-start" data-toggle="modal" data-target="#article-modal">
-      <div class="align-self-center text-truncate text-left" id="title"><%= article.title %></div>
+      <div class="align-self-center text-truncate text-left" id="title">
+        <%= render 'articles/article_card_notice_type_badge', article: article %>
+        <%= article.title %>
+      </div>
     </div>
     <div class="card d-flex m-0 p-0 justify-content-center">
       <div class="articles-cards-picture-field">
