@@ -52,8 +52,8 @@
           <% end %>
         <% end %>
       </div>
-  </div>  
-  <% @tags = ActsAsTaggableOn::Tag.most_used(10).order(tagging_count: :desc) %>
+  </div>
+  <% @tags = ActsAsTaggableOn::Tag.most_used(10).order(taggings_count: :desc) %>
   <div class="card rounded-0 mb-4" id="sidebar-card">
     <div class="card-header rounded-0 p-1">人気タグ</div>
       <div class="card-body p-1">
