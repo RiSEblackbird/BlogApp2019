@@ -136,6 +136,11 @@
   .card {
     #modal-btn {
       outline: 0;
+      #counts {
+        background-color: #DDDDDD;
+        font-size: 0.7em;
+        text-align: end;
+      }
     }
   }
   .card-header {
@@ -254,7 +259,8 @@
 /* サイドバー */
 .sidebar {
   z-index: 4;
-  position: fixed;
+  position: sticky;
+  top: -10vh;
   margin-top: 60px;
   height: 80vh;
   min-width: 9em;

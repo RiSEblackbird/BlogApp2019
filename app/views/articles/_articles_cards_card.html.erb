@@ -28,8 +28,11 @@
         <%= image_tag article.article_picture.url, class: "article-picture" if article.article_picture.url.present? %>
       </div>
     </div>
-    <div class="card-body p-2 text-left">
+    <div class="card-body p-2 text-left" id="article-body">
       <%= markdown(article.body).html_safe %>
+    </div>
+    <div class="card-footer p-0" id="counts">
+      コメント(<%= article.comment_count %>) いいね(<%= article.like_count %>)
     </div>
   </button>
   <%= render 'articles/articles_cards_card_modal_article', article: article, article_type: article_type %>
