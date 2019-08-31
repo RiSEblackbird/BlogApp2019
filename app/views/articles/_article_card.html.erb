@@ -20,11 +20,7 @@
     <%= article.title %>
   </div>
   <div class="card-header d-flex justify-content-between">
-    <div class="d-flex">
-      <% article.tag_list.each do |tag| %>
-        <% render 'tags/tag_badge', tag: tag %>
-      <% end %>
-    </div>
+    <%= render 'tags/tag_badge', tags: article.tag_list %>
     <div class="d-flex align-self-center">
       <%= render 'articles/article_card_edit_or_delete_btn', article: article %>
     </div>
