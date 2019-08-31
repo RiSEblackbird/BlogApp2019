@@ -5,7 +5,7 @@ class TagsController < ApplicationController
   end
 
   def show
-    @tag = ActsAsTaggableOn::Tag.find(params[:id])
+    @tag = ActsAsTaggableOn::Tag.all.find(params[:id])
   end
 
   def edit
