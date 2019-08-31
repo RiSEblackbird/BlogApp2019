@@ -39,7 +39,7 @@
   <div class="card-footer p-1 d-flex text-truncate" id="tags">
     <div class="d-flex text-truncate">
       <% article.tag_list.each do |tag| %>
-        <span class="tag mr-1 badge badge-primary"><%= tag %></span>
+        <% render 'tags/tag_badge' article: article %>
       <% end %>
     </div>
   </div>

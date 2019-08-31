@@ -32,7 +32,7 @@
       <div class="modal-header rounded-0 p-1 pl-2">
         <div class="d-flex text-truncate">
           <% article.tag_list.each do |tag| %>
-            <span class="tag badge badge-primary mr-1"><%= tag %></span>
+            <% render 'tags/tag_badge' article: article %>
           <% end %>
         </div>
       </div>
