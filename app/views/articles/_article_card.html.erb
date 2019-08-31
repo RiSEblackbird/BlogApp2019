@@ -19,7 +19,7 @@
     <%= render 'articles/article_card_notice_type_badge', article: article %>
     <%= article.title %>
   </div>
-  <div class="card-header d-flex justify-content-between">
+  <div class="card-header p-1 d-flex justify-content-between">
     <%= render 'tags/tags_badges_line', tags: article.tag_list %>
     <div class="d-flex align-self-center">
       <%= render 'articles/article_card_edit_or_delete_btn', article: article %>
