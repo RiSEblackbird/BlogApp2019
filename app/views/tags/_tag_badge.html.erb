@@ -1,1 +1,5 @@
-<span class="tag badge badge-primary m-1 align-self-center"><%= tag %></span>
+<div class="d-flex text-truncate">
+  <% tags.each do |tag| %>
+    <div class="tag badge badge-primary m-1 align-self-center"><%= tag %></div>
+  <% end %>
+</div>
