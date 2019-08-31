@@ -1,0 +1,6 @@
+<% provide(:title, "カテゴリタグ一覧") %>
+<div class="card-deck mx-auto" id="">
+  <% @tags.each do |tag| %>
+    <div class="tag badge badge-primary m-1 align-self-center"><%= tag %></div>
+  <% end %>
+</div>
