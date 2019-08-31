@@ -81,6 +81,18 @@
   background-color: #CCCCCC;
 }
 
+/* タグ表示 */
+.tags {
+  font-size: 0.4em;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  .tag {
+    font-size: 6px;
+  }
+}
+
 /* ヘッダー */
 #header-content {
   z-index: 5;
@@ -145,6 +157,9 @@
         text-align: end;
       }
     }
+    #tag-footer {
+      background-color: #98CB00;
+    }
   }
   .card-header {
     color: white;
@@ -170,17 +185,6 @@
     font-size: 12px;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-  #tags {
-    background-color: #98CB00;
-    font-size: 0.4em;
-    text-align: center;
-    color: white;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    .tag {
-      font-size: 6px;
-    }
   }
 }
 
@@ -327,7 +331,6 @@
         margin: 0;
         font-size: 20px;
       }
-
       .tag {
         margin-right: 1%;
         font-size: 12px;
