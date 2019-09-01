@@ -9,14 +9,14 @@ class TagsController < ApplicationController
   end
 
   def edit
-    @tag = ActsAsTaggableOn::Tag.find(params[:id])
+    @tag = ActsAsTaggableOn::Tag.all.find(params[:id])
   end
 
   def update
-    @tag = ActsAsTaggableOn::Tag.find(params[:id])
+    @tag = ActsAsTaggableOn::Tag.all.find(params[:id])
     @tag.assign_attributes(tag_params)
     if @tag.save
-      redirect_to @tag, notice: "タグの情報を更新しました！"
+      redirect_to tags_path(params[:id]), notice: "タグの情報を更新しました！"
     else
       render "edit"
     end
