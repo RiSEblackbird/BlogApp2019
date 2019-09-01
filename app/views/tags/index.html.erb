@@ -2,19 +2,21 @@
 
 <div class="row col-11 mx-auto">
   <% @tags.each do |tag| %>
-    <div type="button" class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 p-0" data-toggle="modal" data-target="#tag-index-modal-<%= tag.id %>">
-      <div class="tag-index-card d-flex card p-0 mr-3 mb-3 rounded-0">
-        <div class="card-header py-1 d-flex">
-          <%= tag.name %>
-        </div>
-        <div class="card-body py-1 px-2">
-          <% if tag.description.present? %>
-            <%= markdown(tag.description).html_safe %>
-          <% else %>
-            <div style="color: gray;">
-              まだ説明文がありません。
-            </div>
-          <% end %>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 p-0">
+      <div type="button" class="mr-3 mb-3" data-toggle="modal" data-target="#tag-index-modal-<%= tag.id %>">
+        <div class="tag-index-card d-flex card p-0 rounded-0">
+          <div class="card-header py-1 d-flex">
+            <%= tag.name %>
+          </div>
+          <div class="card-body py-1 px-2">
+            <% if tag.description.present? %>
+              <%= markdown(tag.description).html_safe %>
+            <% else %>
+              <div style="color: gray;">
+                まだ説明文がありません。
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
