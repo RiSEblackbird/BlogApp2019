@@ -1,15 +1,38 @@
-<% provide(:title, "#{@tag.name}") %>
-<div class="card" id="tag-card">
-  <div class="card-header">
-    <%= @tag.name %>
-    <%= link_to "説明の編集", edit_tag_path, method: :get, class: 'float-left mr-3 btn-sm btn-light' ,id: 'edit-btn' %>
+<% provide(:title, "#{@tag.name}とは？") %>
+
+<div class="col-11 mx-auto">
+  <div class="card" id="tag-card">
+    <div class="card-header d-flex justify-content-between">
+      <div class="d-flex align-self-center">
+        <%= @tag.name %>
+      </div>
+      <div>
+        <% if user_signed_in? %>
+          <%= link_to "説明の編集", edit_tag_path, method: :get, class: 'float-left btn btn-sm btn-light' ,id: 'edit-btn' %>
+          <% if current_user.admin_flg == true %>
+            <%= link_to "タグの削除", tag_path(@tag), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'float-left ml-2 btn btn-sm btn-light', id: 'delete-btn' %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="card-body">
+      <% if @tag.description.present? %>
+        <%= markdown(@tag.description).html_safe %>
+      <% else %>
+      <div style="color: gray;">
+        まだ説明文がありません。
+      </div>
+      <% end %>
+    </div>
   </div>
-  <div class="card-body">
-    <%= @tag.description %>
-  </div>
+
+  <% if Article.tagged_with(@tag.name).present? %>
+    <h4 class="title-sentence"><%= @tag.name %>のタグがついた記事</h4>
+  <% else %>
+    <h4 class="title-sentence"><%= @tag.name %>のタグがついた記事があれば以下に一覧表示されます。</h4>
+  <% end %>
 </div>
 
-<h4 class="title-sentence"><%= @tag.name %>のタグがついた記事</h4>
 <%= render 'articles/articles_cards',
  articles: Article.tagged_with(@tag.name).order(created_at: :desc),
  user_type: 'index', article_type: 'index' %>

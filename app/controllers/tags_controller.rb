@@ -1,7 +1,7 @@
 class TagsController < ApplicationController
 
   def index
-    @tags = ActsAsTaggableOn::Tag.all
+    @tags = ActsAsTaggableOn::Tag.page(params[:page]).per(8).order(created_at: :desc)
   end
 
   def show
@@ -16,10 +16,16 @@ class TagsController < ApplicationController
     @tag = ActsAsTaggableOn::Tag.all.find(params[:id])
     @tag.assign_attributes(tag_params)
     if @tag.save
-      redirect_to tags_path(params[:id]), notice: "タグの情報を更新しました！"
+      redirect_to tag_path(params[:id]), notice: "タグの情報を更新しました！"
     else
       render "edit"
     end
+  end
+
+  def destroy
+    @tag = ActsAsTaggableOn::Tag.all.find(params[:id])
+    @tag.destroy
+    redirect_to controller: 'tags', action: 'index'
   end
 
   private

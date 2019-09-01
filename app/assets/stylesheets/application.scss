@@ -1,6 +1,10 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import "font-awesome";
+@import "./tags.scss";
+@import "./articles.scss";
+@import "./users.scss";
+@import "./comments.scss";
 
 /* 全体レイアウト */
 .title-sentence {
@@ -112,156 +116,6 @@
   }
 }
 
-/* ユーザー関連のフォーム */
-#user-forms {
-  #guest-btn {
-    margin: 3em 0 3em 0;
-  }
-  .text-bold {
-    color: yellow;
-  }
-  .btn {
-    margin: 10px 0 10px 0;
-  }
-  .font-weight-bold {
-    color: yellow;
-  }
-  .form-check {
-    color: yellow;
-  }
-  .field {
-    margin-top: 10px;
-  }
-  .form-check {
-    margin: 0;
-    #check_box {
-      padding: 0;
-      margin: 0;
-    }
-    #check-label {
-      padding: 0;
-      margin: 0;
-    }
-  }
-}
-
-/* 記事一覧ページ(index) */
-#columns {
-  padding: 0 5% 0 5%;
-  .card {
-    #modal-btn {
-      outline: 0;
-      #counts {
-        background-color: #DDDDDD;
-        font-size: 0.7em;
-        text-align: end;
-      }
-    }
-    #tag-footer {
-      background-color: #98CB00;
-    }
-  }
-  .card-header {
-    color: white;
-    background-color: #196500;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    #title {
-      font-size: 13px;
-    }
-    #author {
-      font-size: 10px;
-    }
-    #date {
-      font-size: 8px;
-    }
-  }
-  .card-title {
-    font-size: 18px;
-  }
-  .card-body {
-    height: 180px;
-    background-color: #DDDDDD;
-    font-size: 12px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-
-/* 記事モーダル */
-.article-modal {
-  .modal-dialog {
-    .modal-content {
-      .modal-header {
-        background-color: #336666;
-        #author {
-          font-size: 14px;
-          color: white;
-        }
-        #date {
-          font-size: 12px;
-          color: white;
-        }
-      }
-      #title {
-        font-size: 18px;
-        color: white;
-      }
-      .modal-body {
-        font-size: 14px;
-        min-height: 55vh;
-      }
-      .comments-list {
-        #comment-card {
-          #comment-part-body {
-            background-color: white;
-            .media-body {
-              #user-page {
-                font-size: 12px;
-              }
-              #date {
-                font-size: 9px;
-              }
-              #comment-words {
-                background-color: #E5E5E5;
-                font-size: 12px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-/* アカウントモーダル */
-.user-modal {
-  #user-modal-dialog {
-    padding-top: 13%;
-  }
-}
-
-/* アカウント一覧ページ(index) */
-#user-card {
-  padding: 0 1% 0 2%;
-  .card {
-    margin: 0 0 5% 0;
-  }
-  .card-body {
-    min-height: 0px;
-    background-color: white;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    .media-body {
-      #name {
-        font-size: 14px;
-      }
-      #profile {
-        font-size: 12px;
-      }
-    }
-  }
-}
 
 /* サイドバー */
 .sidebar {
@@ -312,52 +166,6 @@
   }
 }
 
-/* 記事詳細ページ(articles/show) */
-#article-card {
-  padding: 0;
-  .card-header {
-    padding: 6px 10px 6px 10px;
-    color: white;
-    background-color: #336666;
-      #author {
-        font-size: 14px;
-        color: white;
-      }
-      #date {
-        font-size: 12px;
-        color: white;
-      }
-      #article-title {
-        margin: 0;
-        font-size: 20px;
-      }
-      .tag {
-        margin-right: 1%;
-        font-size: 12px;
-      }
-  }
-  .username-box {
-    background-color: #DDDDDD;
-  }
-  .card-body {
-    min-height: 30vh;
-    overflow: scroll;
-    background-color: #DDDDDD;
-    font-size: 14px;
-  }
-  .card-footer {
-    font-size: 0.4em;
-    text-align: center;
-    background-color: #808000;
-    color: white;
-  }
-}
-
-/* 記事投稿者オプション */
-#author-option {
-  font-size: 22px;
-}
-
 /* アカウント詳細 */
 #user-show {
   .card-header {
@@ -376,83 +184,6 @@
       #profile {
         background-color: #E5E5E5;
         min-height: 5vh;
-      }
-    }
-  }
-}
-
-/* コメント投稿フォーム */
-.comment-form {
-  background-color: white;
-  #name {
-    font-size: 12px;
-  }
-  #comment-input {
-    .form-control {
-      font-size: 14px;
-    }
-
-  }
-}
-
-.comments-list {
-  background-color: white;
-  #comment-card {
-    #comment-part-body {
-      background-color: white;
-      .media-body {
-        #user-page {
-          font-size: 12px;
-        }
-        #date {
-          font-size: 9px;
-        }
-        #comment-words {
-          background-color: #E5E5E5;
-          font-size: 12px;
-        }
-      }
-    }
-  }
-}
-
-/* ユーザーページタブリスト */
-.user-tablist-comment {
-  padding: 0% 5% 0% 5%;
-  #comment-card {
-    background-color: white;
-    #comment-part-body {
-      .media-body {
-        #name {
-          font-size: 11px;
-        }
-        #date {
-          font-size: 9px;
-        }
-        #comment-words {
-          background-color: #E5E5E5;
-          font-size: 12px;
-        }
-      }
-    }
-    #article-part-body {
-      color: white;
-      font-size: 12px;
-      background-color: #196500;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      #title {
-        font-size: 13px;
-      }
-      #author {
-        font-size: 10px;
-      }
-      #date {
-        font-size: 8px;
-      }
-      #modal-btn {
-        outline: 0;
-        background-color: #009826;
       }
     }
   }

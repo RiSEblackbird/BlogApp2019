@@ -1,9 +1,13 @@
 <div class="tags d-flex p-1">
-  <% tags.each do |tag| %>
-    <div class="mr-1">
-      <%= link_to tag_path(id = ActsAsTaggableOn::Tag.find_by(name: tag).id) do %>
-        <div class="tag badge badge-primary"><%= tag %></div>
-      <% end %>
-    </div>
+  <% if tags.present? %>
+    <% tags.each do |tag| %>
+      <div class="mr-1">
+        <%= link_to tag_path(id = ActsAsTaggableOn::Tag.find_by(name: tag).id) do %>
+          <div class="tag badge badge-primary"><%= tag %></div>
+        <% end %>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="tag badge badge-secondary px-3 align-self-center">タグ登録なし</div>
   <% end %>
 </div>
