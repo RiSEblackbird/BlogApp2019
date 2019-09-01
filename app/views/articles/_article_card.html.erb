@@ -19,12 +19,8 @@
     <%= render 'articles/article_card_notice_type_badge', article: article %>
     <%= article.title %>
   </div>
-  <div class="card-header d-flex justify-content-between">
-    <div class="d-flex">
-      <% article.tag_list.each do |tag| %>
-        <span class="tag badge badge-primary m-1 align-self-center"><%= tag %></span>
-      <% end %>
-    </div>
+  <div class="card-header p-1 d-flex justify-content-between">
+    <%= render 'tags/tags_badges_line', article: article, tags: article.tag_list %>
     <div class="d-flex align-self-center">
       <%= render 'articles/article_card_edit_or_delete_btn', article: article %>
     </div>

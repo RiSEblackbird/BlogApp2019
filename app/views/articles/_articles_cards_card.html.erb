@@ -36,11 +36,7 @@
     </div>
   </button>
   <%= render 'articles/articles_cards_card_modal_article', article: article, article_type: article_type %>
-  <div class="card-footer p-1 d-flex text-truncate" id="tags">
-    <div class="d-flex text-truncate">
-      <% article.tag_list.each do |tag| %>
-        <span class="tag mr-1 badge badge-primary"><%= tag %></span>
-      <% end %>
-    </div>
+  <div class="card-footer p-0" id="tag-footer">
+    <%= render 'tags/tags_badges_line', article: article, tags: article.tag_list %>
   </div>
 </div>

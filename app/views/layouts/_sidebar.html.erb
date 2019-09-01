@@ -58,7 +58,7 @@
     <div class="card-header rounded-0 p-1">人気タグ</div>
       <div class="card-body p-1">
         <% @tags.each do |tag| %>
-
+          <%= link_to tag_path(tag.id) do %>
             <div class="row d-flex mx-auto justify-content-between">
               <div class="px-0 col-6 col-lg-7 col-xl-8 d-flex ">
                 <div class="text-truncate"><%= tag.name %></div>
@@ -67,7 +67,7 @@
                 --(<%= tag.taggings_count %>)
               </div>
             </div>
-
+          <% end %>
         <% end %>
       </div>
   </div>

@@ -1,0 +1,9 @@
+<div class="tags d-flex p-1">
+  <% tags.each do |tag| %>
+    <div class="mr-1">
+      <%= link_to tag_path(id = ActsAsTaggableOn::Tag.find_by(name: tag).id) do %>
+        <div class="tag badge badge-primary"><%= tag %></div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

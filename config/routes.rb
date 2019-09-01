@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   get 'home' => 'articles#index'
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
+  post "tags/:id/edit"  => "tags#edit"
 
   resources :users, :only => [:index, :show]
+
+  resources :tags
 
   resources :users do
     member do
