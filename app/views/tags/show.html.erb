@@ -1,6 +1,15 @@
 <% provide(:title, "#{@tag.name}") %>
-<div class="card-deck mx-auto" id="">
-
-    <div class="tag badge badge-primary m-1 align-self-center"><%= @tag.name %></div>
-
+<div class="card" id="tag-card">
+  <div class="card-header">
+    <%= @tag.name %>
+    <%= link_to "説明の編集", edit_tag_path, method: :get, class: 'float-left mr-3 btn-sm btn-light' ,id: 'edit-btn' %>
+  </div>
+  <div class="card-body">
+    <%= @tag.description %>
+  </div>
 </div>
+
+<h4 class="title-sentence"><%= @tag.name %>のタグがついた記事</h4>
+<%= render 'articles/articles_cards',
+ articles: Article.tagged_with(@tag.name).order(created_at: :desc),
+ user_type: 'index', article_type: 'index' %>
