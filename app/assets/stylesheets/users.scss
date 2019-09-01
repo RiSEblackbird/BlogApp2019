@@ -1,3 +1,104 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* ユーザー関連のフォーム */
+#user-forms {
+  #guest-btn {
+    margin: 3em 0 3em 0;
+  }
+  .text-bold {
+    color: yellow;
+  }
+  .btn {
+    margin: 10px 0 10px 0;
+  }
+  .font-weight-bold {
+    color: yellow;
+  }
+  .form-check {
+    color: yellow;
+  }
+  .field {
+    margin-top: 10px;
+  }
+  .form-check {
+    margin: 0;
+    #check_box {
+      padding: 0;
+      margin: 0;
+    }
+    #check-label {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+
+/* アカウントモーダル */
+.user-modal {
+  #user-modal-dialog {
+    padding-top: 13%;
+  }
+}
+
+/* アカウント一覧ページ(index) */
+#user-card {
+  padding: 0 1% 0 2%;
+  .card {
+    margin: 0 0 5% 0;
+  }
+  .card-body {
+    min-height: 0px;
+    background-color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    .media-body {
+      #name {
+        font-size: 14px;
+      }
+      #profile {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+/* ユーザーページタブリスト */
+.user-tablist-comment {
+  padding: 0% 5% 0% 5%;
+  #comment-card {
+    background-color: white;
+    #comment-part-body {
+      .media-body {
+        #name {
+          font-size: 11px;
+        }
+        #date {
+          font-size: 9px;
+        }
+        #comment-words {
+          background-color: #E5E5E5;
+          font-size: 12px;
+        }
+      }
+    }
+    #article-part-body {
+      color: white;
+      font-size: 12px;
+      background-color: #196500;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      #title {
+        font-size: 13px;
+      }
+      #author {
+        font-size: 10px;
+      }
+      #date {
+        font-size: 8px;
+      }
+      #modal-btn {
+        outline: 0;
+        background-color: #009826;
+      }
+    }
+  }
+}

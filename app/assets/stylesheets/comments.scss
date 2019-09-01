@@ -1,3 +1,35 @@
-// Place all the styles related to the comments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* コメント投稿フォーム */
+.comment-form {
+  background-color: white;
+  #name {
+    font-size: 12px;
+  }
+  #comment-input {
+    .form-control {
+      font-size: 14px;
+    }
+
+  }
+}
+
+/* コメントリスト */
+.comments-list {
+  background-color: white;
+  #comment-card {
+    #comment-part-body {
+      background-color: white;
+      .media-body {
+        #user-page {
+          font-size: 12px;
+        }
+        #date {
+          font-size: 9px;
+        }
+        #comment-words {
+          background-color: #E5E5E5;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
