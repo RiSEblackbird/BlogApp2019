@@ -52,7 +52,7 @@
   <% end %>
   <div class="container d-flex">
     <div class="mx-auto">
-      <%= paginate @tags.page(params[:page]).per(8).order(created_at: :desc) %>
+      <%= paginate @tags.page(params[:page]).per(8).order(name: :asc) %>
     </div>
   </div>
 </div>
