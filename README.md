@@ -45,7 +45,7 @@
 | 開発用DB | SQLite |
 | 本番用DB | PostgreSQL |
 | インフラ | Heroku |
-| (フロントエンドフレームワーク) | Vue.js (※Rails上での環境構築のみ) |
+| フロントエンドフレームワーク | Bootstrap4 |
 
 # 付加機能
 | 技術 or ツール | 名称 |
