@@ -1,6 +1,58 @@
 <% provide(:title, "カテゴリタグ一覧") %>
-<div class="card-deck mx-auto" id="">
+
+<div class="row col-11 mx-auto">
   <% @tags.each do |tag| %>
-    <div class="tag badge badge-primary m-1 align-self-center"><%= tag %></div>
+    <div type="button" class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 p-0" data-toggle="modal" data-target="#tag-index-modal-<%= tag.id %>">
+      <div class="tag-index-card d-flex card p-0 mr-3 mb-3 rounded-0">
+        <div class="card-header py-1 d-flex">
+          <%= tag.name %>
+        </div>
+        <div class="card-body py-1 px-2">
+          <% if tag.description.present? %>
+            <%= markdown(tag.description).html_safe %>
+          <% else %>
+            <div style="color: gray;">
+              まだ説明文がありません。
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="tag-index-modal modal fade" id="tag-index-modal-<%= tag.id %>" tabindex="-1"
+          role="dialog" aria-labelledby="label1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content rounded-0 border-0">
+          <div class="modal-header p-2 d-flex justify-content-between">
+            <h5 class="modal-title" id="label1"><%= tag.name %></h5>
+            <div>
+              <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">閉じる</button>
+              <%= link_to tag_path(tag.id) do %>
+                <button type="button" class="btn btn-sm btn-primary">タグの詳細へ</button>
+              <% end %>
+            </div>
+          </div>
+          <div class="modal-body">
+            <% if tag.description.present? %>
+              <%= markdown(tag.description).html_safe %>
+            <% else %>
+              <div style="color: gray;">
+                まだ説明文がありません。
+              </div>
+            <% end %>
+          </div>
+          <div class="modal-footer p-1">
+            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">閉じる</button>
+            <%= link_to tag_path(tag.id) do %>
+              <button type="button" class="btn btn-sm btn-primary">タグの詳細へ</button>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
+  <div class="container d-flex">
+    <div class="mx-auto">
+      <%= paginate @tags.page(params[:page]).per(8).order(created_at: :desc) %>
+    </div>
+  </div>
 </div>

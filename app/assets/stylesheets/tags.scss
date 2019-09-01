@@ -1,5 +1,30 @@
 #tag-card {
   .card-header {
-    background-color: green;
+    background-color: #FF7F00;
+    color: white;
+    font-size: 20px;
+  }
+}
+
+.tag-index-card {
+  height: 25vh;
+  .card-header {
+    background-color: #006565;
+    color: white;
+    font-size: 18px;
+  }
+  .card-body {
+    background-color: #DDDDDD;
+  }
+}
+
+.tag-index-modal {
+  .modal-header {
+    background-color: #FF7F00;
+    color: white;
+    font-size: 20px;
+  }
+  .modal-body {
+    min-height: 30vh;
   }
 }
