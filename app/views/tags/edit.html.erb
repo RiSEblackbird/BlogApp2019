@@ -1,0 +1,40 @@
+<% provide(:title, "#{@tag.name}の編集") %>
+<%= form_for @tag, url: url_for(:controller => :tags, :action => :update) do |f| %>
+  <div class="card mb-2" id="article-body">
+    <div class="card-header py-1">
+      <ul class="nav nav-pills card-header-pills">
+        <li class="nav-item">
+          <a class="nav-link active py-1 mr-2" id="editor-tab" data-toggle="tab" href="#editor-area" role="tab" aria-controls="editor" aria-selected="true">記述</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link p-1" id="preview-tab" data-toggle="tab" href="#preview-area" role="tab" aria-controls="preview" aria-selected="false">プレビュー</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body" id="markdown-editor">
+      <div class="tab-content" >
+        <div class="tab-pane show active border" id="editor-area" role="tabpanel" aria-labelledby="editor-tab">
+          <%= f.text_area :description, class: 'form-control', id: 'editor', "v-model" => "input", name: "tag[description]", placeholder: "タグの説明を記載" %>
+        </div>
+        <div class="tab-pane border" id="preview-area" role="tabpanel" aria-labelledby="preview-tab" >
+          <div id="preview-area" class="content" v-html='input | marked'></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= f.submit '編集を登録する', class: 'btn btn-secondary btn-lg btn-block' %>
+<% end %>
+
+<script type="text/javascript">
+window.onload = function() {
+  new Vue({
+    el: '#markdown-editor',
+    data: {
+      input: '<%= j @tag.description %>',
+    },
+    filters: {
+      marked: marked,
+    }
+  });
+};
+</script>
