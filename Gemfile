@@ -34,6 +34,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rename'
 gem "aws-sdk-s3", require: false
 gem 'fog-aws'
+gem 'google-analytics-rails'
 
 group :development, :test do
   gem 'sqlite3'
