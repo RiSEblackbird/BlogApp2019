@@ -10,6 +10,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= render 'layouts/shim' %>
+    <%= analytics_init if GoogleAnalytics.valid_tracker? %>
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@RiSE_blackbird">
