@@ -94,5 +94,4 @@ Rails.application.configure do
 
   # replace this with your tracker code
   GA.tracker = "UA-147066788-1"
-  GA.script_source = :doubleclick
 end
