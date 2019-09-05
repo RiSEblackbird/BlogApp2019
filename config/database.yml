@@ -26,3 +26,4 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
+  database: BlogApp2019_production
