@@ -24,6 +24,6 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  encoding: unicode
+  encoding: utf8
   pool: 5
   database: BlogApp2019_production
