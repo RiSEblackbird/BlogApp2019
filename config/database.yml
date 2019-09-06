@@ -26,6 +26,3 @@ production:
   adapter: postgresql
   encoding: utf8
   pool: 5
-  database: BlogApp2019_production
-  username: postgres
-  password:
