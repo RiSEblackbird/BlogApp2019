@@ -27,4 +27,3 @@ production:
   encoding: utf8
   pool: 5
   database: BlogApp2019_production
-  username: blogapp2019
