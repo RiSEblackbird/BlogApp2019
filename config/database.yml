@@ -27,5 +27,5 @@ production:
   encoding: utf8
   pool: 5
   database: postgres
-  username: taishi
-  password: 1z2oRaCi
+  username: postgres
+  password:
