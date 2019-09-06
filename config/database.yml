@@ -26,3 +26,5 @@ production:
   adapter: postgresql
   encoding: utf8
   pool: 5
+  database: postgres
+  username: postgres
