@@ -26,6 +26,4 @@ production:
   adapter: postgresql
   encoding: utf8
   pool: 5
-  database: postgres
-  username: taishi
-  password: '1z2oRaCi'
+  database: blogapp2019
