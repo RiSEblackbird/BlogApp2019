@@ -54,6 +54,7 @@ end
 
 group :production do
   gem 'pg', '0.20.0'
+  gem 'unicorn', '5.4.1'
 end
 
 group :test do
@@ -61,10 +62,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'rspec-rails', '~> 3.7'
-end
-
-group :production, :staging do
-  gem 'unicorn', '5.4.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
