@@ -27,4 +27,5 @@ production:
   encoding: utf8
   pool: 5
   database: postgres
-  username: postgres
+  username: root
+  password: 1z2oRaCi
