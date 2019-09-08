@@ -1,7 +1,7 @@
 <div class="card-deck mx-auto" id="user-card">
   <% users.each do |user| %>
-    <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4 justify-content-center" id="<%= user_type %>">
-      <%= render 'users/user_card', user: user %>
+    <div class="user-card-<%= user_card_type %><%= user.id %> col-12 col-sm-12 col-md-12 col-lg-6 mb-4 justify-content-center">
+      <%= render 'users/user_card', user: user, user_card_type: user_card_type %>
     </div>
   <% end %>
   <div class="container d-flex">
