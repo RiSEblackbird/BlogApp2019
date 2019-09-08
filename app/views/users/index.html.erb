@@ -1,2 +1,4 @@
 <% provide(:title, "アカウント一覧") %>
-<%= render 'users/users_cards', users: @users, user_type: 'index' %>
+<div class="user_cards">
+  <%= render 'users/users_cards', users: @users, user_card_type: 'user_index' %>
+</div>

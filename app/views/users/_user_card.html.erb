@@ -25,7 +25,9 @@
             </div>
           </div>
         </div>
-        <%= render 'users/user_card_btns_edit_or_follow', user: user %>
+        <div class="follow-btn-in-user-<%= user.id %>">
+          <%= render 'users/user_card_btns_edit_or_follow', user: user %>
+        </div>
       </div>
       <div class ="card m-2 p-2" id="profile">
         <% if user.profile.present? %>

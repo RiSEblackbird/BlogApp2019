@@ -38,10 +38,10 @@
     <div class="pt-4 tab-pane border" id="stocks" role="tabpanel" aria-labelledby="stocks-tab">
     </div>
     <div class="pt-4 tab-pane border" id="followings" role="tabpanel" aria-labelledby="followings-tab">
-      <%= render 'users/users_cards', users: user.followings, user_type: 'followings' %>
+      <%= render 'users/users_cards', users: user.followings, user_type: 'followings', user_card_type: 'followings' %>
     </div>
     <div class="pt-4 tab-pane border" id="followers" role="tabpanel" aria-labelledby="followers-tab">
-      <%= render 'users/users_cards', users: user.followers, user_type: 'followers' %>
+      <%= render 'users/users_cards', users: user.followers, user_type: 'followers', user_card_type: 'followers' %>
     </div>
   </div>
 </div>
