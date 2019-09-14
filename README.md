@@ -64,6 +64,7 @@
 | 技術 or ツール | 名称 |
 |:-------------|:-----|
 | エラー詳細表示 | [Better Errors](https://github.com/BetterErrors/better_errors) |
+| デバッグツール | [pry-byebug](https://github.com/deivid-rodriguez/pry-byebug) |
 | ChromeでのRails情報表示 | [MetaRequest](https://github.com/dejan/rails_panel/tree/master/meta_request) |
 | 静的コード解析 | [RuboCop](https://github.com/rubocop-hq/rubocop) |
 | アプリ名変更 | [rename](https://github.com/morshedalam/rename) |
