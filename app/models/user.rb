@@ -40,7 +40,7 @@ class User < ApplicationRecord
   end
 
   def unfollow!(other_user)
-    following_relationships.find_by(follower_id: other_user.id)
+    following_relationships.find_by(following_id: other_user.id)
   end
 
   scope :sidebar_limit, -> { limit(10) }
