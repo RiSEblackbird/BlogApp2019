@@ -1,4 +1,7 @@
 <div id="guestuser-form">
+  <div class="letters">
+    ※ テストユーザーは下記欄の入力なしにログイン後のページを閲覧できます。
+  </div>
   <% if User.where(email: "guest1@mail.com").present? %>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class= "input-group" id="article-title">
