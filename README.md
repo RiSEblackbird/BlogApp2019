@@ -29,10 +29,8 @@
 
 ### その他
  - ページネーション機能
+ - RSpecによるテスト(初期整備中)
 
-## 実装取り組み中の技術
- - AWS EC2への本アプリのデプロイ
- - RSpecによるテスト実装  
 
 ---  
 
@@ -46,6 +44,7 @@
 | 本番用DB | PostgreSQL |
 | インフラ | Heroku |
 | フロントエンドフレームワーク | Bootstrap4 |
+| テスト | RSpec |
 
 # 付加機能
 | 技術 or ツール | 名称 |
@@ -69,15 +68,3 @@
 | 静的コード解析 | [RuboCop](https://github.com/rubocop-hq/rubocop) |
 | アプリ名変更 | [rename](https://github.com/morshedalam/rename) |
 | アクセス解析 | [google-analytics-rails](https://github.com/bgarret/google-analytics-rails) |
-
-# (実装予定)
-| 技術 or ツール | 名称 |
-|:-------------|:-----|
-| テスト(単体・結合) | RSpec |
-| インフラ | AWS |
-
-# (使用検討中)
-| 技術 or ツール | 名称 |
-|:-------------|:-----|
-| 仮想化 | Docker |
-| CI/CD | CircleCI |
