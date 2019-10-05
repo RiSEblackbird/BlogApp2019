@@ -1,14 +1,15 @@
-class User < ApplicationRecord
+# frozen_string_literal: true
 
+class User < ApplicationRecord
   # Article, Commentモデルとの関連付け
   has_many :articles, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :following_relationships, foreign_key: "follower_id",
-           class_name: "Relationship", dependent: :destroy
+  has_many :following_relationships, foreign_key: 'follower_id',
+                                     class_name: 'Relationship', dependent: :destroy
   has_many :followings, through: :following_relationships
-  has_many :follower_relationships, foreign_key: "following_id",
-           class_name: "Relationship", dependent: :destroy
+  has_many :follower_relationships, foreign_key: 'following_id',
+                                    class_name: 'Relationship', dependent: :destroy
   has_many :followers, through: :follower_relationships
   has_many :liked_articles, through: :likes, source: :article
 
@@ -18,14 +19,14 @@ class User < ApplicationRecord
 
   # Userモデルに適用するdeviseの機能
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable,:trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable
 
   # Userモデルのカラムのバリデーション
   validates :username, presence: true,
-    length: { minimum: 2, maximum: 20, allow_blank: true },
-    uniqueness: { case_sensitive: false }
+                       length: { minimum: 2, maximum: 20, allow_blank: true },
+                       uniqueness: { case_sensitive: false }
   validates :profile,
-    length: { maximum: 150 }
+            length: { maximum: 150 }
 
   def posted_articles
     Article.where(user_id: id).order(created_at: :desc)
@@ -45,5 +46,4 @@ class User < ApplicationRecord
 
   scope :sidebar_limit, -> { limit(10) }
   scope :by_date, -> { order(created_at: :desc) }
-
 end

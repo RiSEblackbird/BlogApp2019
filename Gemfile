@@ -1,56 +1,58 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
+gem 'activesupport'
+gem 'acts-as-taggable-on', '~> 6.0'
+gem 'awesome_print', require: 'ap'
+gem 'aws-sdk-s3', require: false
+gem 'better_errors'
+gem 'binding_of_caller'
+gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '4.3.1'
-gem 'sprockets', '3.7.2'
-gem 'jquery-rails'
-gem 'webpacker'
-gem 'foreman'
-gem "font-awesome-sass"
-gem "kaminari"
+gem 'cancancan'
+gem 'carrierwave'
+gem 'coderay'
+gem 'coffee-rails', '~> 4.2'
 gem 'devise', '4.6.2'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-gem 'redcarpet', '~> 2.3.0'
-gem 'coderay'
-gem 'cancancan'
-gem 'rails_admin'
-gem 'acts-as-taggable-on', '~> 6.0'
-gem 'mini_magick'
-gem 'carrierwave'
-gem "better_errors"
-gem 'awesome_print', require: 'ap'
-gem "binding_of_caller"
-gem 'activesupport'
-gem 'rails', '~> 5.2.3'
-gem 'puma', '~> 3.11'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2'
-gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
-gem 'bootsnap', '>= 1.1.0', require: false
-gem 'rename'
-gem "aws-sdk-s3", require: false
 gem 'fog-aws'
+gem 'font-awesome-sass'
+gem 'foreman'
 gem 'google-analytics-rails'
+gem 'jbuilder', '~> 2.5'
+gem 'jquery-rails'
+gem 'kaminari'
+gem 'mini_magick'
+gem 'puma', '~> 3.11'
+gem 'rails', '~> 5.2.3'
+gem 'rails_admin'
+gem 'redcarpet', '~> 2.3.0'
+gem 'rename'
+gem 'sass-rails', '~> 5.0'
+gem 'sprockets', '3.7.2'
+gem 'turbolinks', '~> 5'
+gem 'uglifier', '>= 1.3.0'
+gem 'webpacker'
 
 group :development, :test do
-  gem 'sqlite3'
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'pry-byebug'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 4.11'
+  gem 'pry-byebug'
   gem 'rails-erd'
+  gem 'sqlite3'
 end
 
 group :development do
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'meta_request'
+  gem 'rubocop'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rubocop'
-  gem 'meta_request'
+  gem 'web-console', '>= 3.3.0'
 end
 
 group :production do
@@ -60,10 +62,10 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'rspec-rails', '~> 3.7'
+  gem 'selenium-webdriver'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
