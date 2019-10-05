@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class Article < ApplicationRecord
   acts_as_taggable
-  belongs_to :user, :counter_cache => :article_count
-  belongs_to :author, class_name: "User", foreign_key: "user_id"
+  belongs_to :user, counter_cache: :article_count
+  belongs_to :author, class_name: 'User', foreign_key: 'user_id'
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   def like_user(user)
@@ -15,7 +17,7 @@ class Article < ApplicationRecord
   validates :title, :body, presence: true
   validates :tag_list, length: { maximum: 20 }
   validates :title, length: { maximum: 100 }
-  validates :body, length: { maximum: 20000 }
+  validates :body, length: { maximum: 20_000 }
 
   scope :sidebar_limit, -> { limit(10) }
   scope :by_dates, -> { order(created_at: :desc) }

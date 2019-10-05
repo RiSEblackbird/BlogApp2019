@@ -1,5 +1,6 @@
-class TagsController < ApplicationController
+# frozen_string_literal: true
 
+class TagsController < ApplicationController
   def index
     @tags = ActsAsTaggableOn::Tag.page(params[:page]).per(8).order(name: :asc)
   end
@@ -16,9 +17,9 @@ class TagsController < ApplicationController
     @tag = ActsAsTaggableOn::Tag.all.find(params[:id])
     @tag.assign_attributes(tag_params)
     if @tag.save
-      redirect_to tag_path(params[:id]), notice: "タグの情報を更新しました！"
+      redirect_to tag_path(params[:id]), notice: 'タグの情報を更新しました！'
     else
-      render "edit"
+      render 'edit'
     end
   end
 
@@ -30,7 +31,7 @@ class TagsController < ApplicationController
 
   private
 
-   def tag_params
-     params.require(:tag).permit(:description)
-   end
+  def tag_params
+    params.require(:tag).permit(:description)
+  end
 end

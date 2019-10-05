@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   # [devise由来] ログイン済ユーザーにのみアクセスを許可する。
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: %i[index show]
 
   def index
     @users = User.page(params[:page]).per(8).order(created_at: :desc)
@@ -18,9 +20,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.assign_attributes(configure_permitted_parameters)
     if @user.save
-      redirect_to @user, notice: "ユーザー情報を更新しました！"
+      redirect_to @user, notice: 'ユーザー情報を更新しました！'
     else
-      render "edit"
+      render 'edit'
     end
   end
 end

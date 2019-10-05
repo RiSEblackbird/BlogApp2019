@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -10,7 +12,7 @@ module BlogApp2019
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
-    config.time_zone = "Tokyo"
+    config.time_zone = 'Tokyo'
     config.i18n.default_locale = :ja
 
     # Settings in config/environments/* take precedence over those specified here.
@@ -22,10 +24,10 @@ module BlogApp2019
 
     config.generators do |g|
       g.test_framework :rspec,
-        fixtures: false,
-        view_specs: false,
-        helper_specs: false,
-        routing_specs: false
+                       fixtures: false,
+                       view_specs: false,
+                       helper_specs: false,
+                       routing_specs: false
     end
   end
 end

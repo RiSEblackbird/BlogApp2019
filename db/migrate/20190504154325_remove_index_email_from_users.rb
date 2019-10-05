@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RemoveIndexEmailFromUsers < ActiveRecord::Migration[5.2]
   def change
     remove_index :users, column: :email, unique: true
