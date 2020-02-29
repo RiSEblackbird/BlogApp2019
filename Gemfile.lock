@@ -240,7 +240,7 @@ GEM
       byebug (~> 11.0)
       pry (~> 0.10)
     public_suffix (4.0.1)
-    puma (3.12.1)
+    puma (3.12.3)
     rack (2.0.8)
     rack-contrib (2.1.0)
       rack (~> 2.0)
@@ -439,7 +439,7 @@ DEPENDENCIES
   mini_magick
   pg (= 0.20.0)
   pry-byebug
-  puma (~> 3.11)
+  puma (~> 3.12)
   rails (~> 5.2.3)
   rails-erd
   rails_admin
