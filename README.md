@@ -15,6 +15,7 @@
 # BlogApp2019の概要
 簡易な個人ブログサービスの作成を目的としています。  
 [BlogApp2019(https://peaceful-reaches-94880.herokuapp.com/)](https://peaceful-reaches-94880.herokuapp.com/)  
+![ポートフォリオ20190908](https://user-images.githubusercontent.com/43542677/81930523-a38a6800-9623-11ea-88ae-3276a18564da.gif)
 
 ## 基本機能概要
 ### ユーザー関連(Userモデル)
