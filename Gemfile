@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.3'
+ruby "3.0.0"
 gem 'activesupport'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'awesome_print', require: 'ap'
@@ -28,7 +28,7 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'mini_magick'
 gem 'puma', '~> 3.12'
-gem 'rails', '~> 5.2.3'
+gem 'rails', '~> 6.0.0'
 gem 'rails_admin'
 gem 'redcarpet', '~> 2.3.0'
 gem 'rename'
@@ -57,7 +57,7 @@ end
 
 group :production do
   gem 'pg', '0.20.0'
-  gem 'unicorn', '5.4.1'
+  # gem 'unicorn', '5.4.1'
 end
 
 group :test do
