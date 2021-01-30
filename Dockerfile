@@ -1,13 +1,13 @@
 FROM ruby:3.0
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
-RUN mkdir /myapp
-WORKDIR /myapp
-COPY Gemfile /myapp/Gemfile
-COPY Gemfile.lock /myapp/Gemfile.lock
+RUN mkdir /BlogApp2019
+WORKDIR /BlogApp2019
+COPY Gemfile /BlogApp2019/Gemfile
+COPY Gemfile.lock /BlogApp2019/Gemfile.lock
 # bundlerのエラーへの対処するためにBundler 2系をインストール
 RUN gem install bundler
 RUN bundle install
-COPY . /myapp
+COPY . /BlogApp2019
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
