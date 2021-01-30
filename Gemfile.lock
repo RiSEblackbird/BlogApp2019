@@ -227,11 +227,15 @@ GEM
     mimemagic (0.3.5)
     mini_magick (4.11.0)
     mini_mime (1.0.2)
+    mini_portile2 (2.5.0)
     minitest (5.14.3)
     msgpack (1.4.1)
     multi_json (1.15.0)
     nested_form (0.3.2)
     nio4r (2.5.4)
+    nokogiri (1.11.1)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     nokogiri (1.11.1-x86_64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -307,7 +311,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    redcarpet (2.3.0)
+    redcarpet (3.5.1)
     regexp_parser (2.0.3)
     remotipart (1.4.4)
     rename (1.0.6)
@@ -419,6 +423,7 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
+  ruby
   x86_64-darwin-19
 
 DEPENDENCIES
@@ -457,7 +462,7 @@ DEPENDENCIES
   rails (~> 6.0.0)
   rails-erd
   rails_admin
-  redcarpet (~> 2.3.0)
+  redcarpet (~> 3.5.1)
   rename
   rspec-rails (~> 3.7)
   rubocop
