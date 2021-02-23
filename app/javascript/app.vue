@@ -3,7 +3,7 @@
   import Footer from 'packs/components/footer.vue'
 
   export default {
-    name: 'MyApp',
+    name: 'Blogapp2019',
     props: {
       msg: String
     },
