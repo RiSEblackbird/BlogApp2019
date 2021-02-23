@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.0.0"
+ruby '3.0.0'
 gem 'activesupport'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'awesome_print', require: 'ap'
@@ -20,13 +20,14 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'fog-aws'
 gem 'font-awesome-sass'
-gem 'foreman'
+# gem 'foreman'
 gem 'google-analytics-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'mini_magick'
-gem 'puma', '~> 3.12'
+gem 'pg', '~> 1.1'
+gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.0.0'
 gem 'rails_admin'
 gem 'redcarpet', '~> 3.5.1'
@@ -42,7 +43,7 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 4.11'
   gem 'pry-byebug'
   gem 'rails-erd'
-  gem 'sqlite3'
+  # gem 'sqlite3'
 end
 
 group :development do
@@ -55,7 +56,6 @@ group :development do
 end
 
 group :production do
-  gem 'pg', '0.20.0'
   # gem 'unicorn', '5.4.1'
 end
 
